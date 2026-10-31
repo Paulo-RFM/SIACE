@@ -23,8 +23,8 @@ from sklearn.model_selection import train_test_split
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
 
-csv_summary = "/home/paulomaciel/proj/benchmark_unetpp_summary.csv"
-csv_history = "/home/paulomaciel/proj/benchmark_unetpp_history.csv"
+csv_summary = "/home/paulomaciel/proj/lab_2026/benchmark_unetpp_summary.csv"
+csv_history = "/home/paulomaciel/proj/lab_2026/benchmark_unetpp_history.csv"
 
 img_size = (512,512)
 batch_size = 6
@@ -248,7 +248,7 @@ for encoder in encoders:
             no_improve = 0
 
             torch.save(model.state_dict(),
-                       f"/home/paulomaciel/proj/Unetpp/unetpp_{encoder}_best.pth")
+                       f"/home/paulomaciel/proj/lab_2026/unetpp_{encoder}_best.pth")
 
             print("✔ Melhor modelo salvo")
 

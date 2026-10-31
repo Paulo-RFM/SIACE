@@ -24,8 +24,8 @@ from tqdm import tqdm
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
 
-output_csv = "/home/paulomaciel/proj/benchmark_unet.csv"
-model_dir  = "/home/paulomaciel/proj/models_benchmark/"
+output_csv = "/home/paulomaciel/proj/lab_2026/benchmark_unet.csv"
+model_dir  = "/home/paulomaciel/proj/lab_2026/models_benchmark/"
 os.makedirs(model_dir, exist_ok=True)
 
 img_size = (512,512)

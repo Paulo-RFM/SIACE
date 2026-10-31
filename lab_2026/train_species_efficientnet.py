@@ -25,7 +25,7 @@ from efficientnet_pytorch import EfficientNet
 # ====================================================
 
 csv_path = "/home/paulomaciel/proj/species_crops_balanced/species_labels_balanced.csv"
-output_dir = "/home/paulomaciel/proj/species_model/"
+output_dir = "/home/paulomaciel/proj/lab_2026/species_model/"
 os.makedirs(output_dir, exist_ok=True)
 
 num_classes = 6
