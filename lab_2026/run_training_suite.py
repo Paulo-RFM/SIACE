@@ -25,7 +25,6 @@ def parse_args():
     parser.add_argument(
         "experiments",
         nargs="*",
-        choices=list(TRAINING_SCRIPTS),
         help="Experimentos a executar. Sem argumentos, executa todos.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Somente lista os comandos.")
@@ -34,6 +33,13 @@ def parse_args():
 
 def main():
     args = parse_args()
+    invalid = [name for name in args.experiments if name not in TRAINING_SCRIPTS]
+    if invalid:
+        choices = ", ".join(TRAINING_SCRIPTS)
+        raise SystemExit(
+            f"Experimento(s) inválido(s): {', '.join(invalid)}. "
+            f"Escolhas válidas: {choices}"
+        )
     selected = args.experiments or list(TRAINING_SCRIPTS)
     base_dir = Path(__file__).resolve().parent
 
