@@ -1,0 +1,100 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+% Title, author, and date
+\title{Identification and Classification of Tree Species Using Machine Learning and Remote Sensing}
+\author{Paulo Roberto Ferreira Maciel}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Introduction slide
+\begin{frame}{Introduction}
+    \begin{itemize}
+        \item Use of machine learning methods and remote sensing for tree species segmentation and classification.
+        \item Data collection with UAVs (aerial images) and GPS georeferencing systems.
+        \item Ground-level image capture using 360º cameras for comprehensive analysis.
+    \end{itemize}
+\end{frame}
+
+% Challenges slide
+\begin{frame}{Challenges}
+    \begin{itemize}
+        \item \textbf{Intraclass Variability:} Significant differences in images of the same species due to lighting conditions, capture angles, and tree state.
+        \item \textbf{Interclass Similarity:} Similar appearance among different species, making distinction difficult.
+        \item \textbf{Technical Issues:} Color imbalance in cameras, resulting in undesired tones such as greenish hues and shadows.
+    \end{itemize}
+\end{frame}
+
+% Methodology slide
+\begin{frame}{Methodology}
+    \begin{itemize}
+        \item \textbf{Data Collection:}
+            \begin{itemize}
+                \item UAVs for capturing georeferenced aerial images.
+                \item 360º cameras for ground-level images.
+            \end{itemize}
+        \item \textbf{Dataset Creation:}
+            \begin{itemize}
+                \item Combined aerial and ground images into a large dataset for training.
+            \end{itemize}
+        \item \textbf{Model Training:}
+            \begin{itemize}
+                \item Comparison of algorithms: Random Forest, SVM, and Convolutional Neural Networks (CNNs).
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Results slide
+\begin{frame}{Results}
+    \begin{itemize}
+        \item \textbf{Image Segmentation:} Use of the U-net model with resnet-34 and mobilenet-v2 backbones for vegetation classification in high-resolution images.
+    \end{itemize}
+\end{frame}
+
+% Techniques slide
+\begin{frame}{Techniques and Algorithms}
+    \begin{itemize}
+        \item \textbf{Machine Learning:}
+            \begin{itemize}
+                \item Random Forest and SVM for basic classification.
+                \item CNNs like U-net for precise image segmentation.
+            \end{itemize}
+        \item \textbf{Remote Sensing:}
+            \begin{itemize}
+                \item Capturing high-resolution (RGB) images.
+                \item Georeferencing for detailed spatial analysis.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Related studies slide
+\begin{frame}{Related Studies}
+    \begin{itemize}
+        \item Studies by Kattenborn, Eichel, and Fassnacht show that CNNs like U-net can achieve up to 84\% accuracy in vegetation classification.
+        \item U-net is widely used in remote sensing applications due to its ability to capture complex image features.
+    \end{itemize}
+\end{frame}
+
+% Conclusion slide
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item The application of machine learning and remote sensing can improve accuracy in tree species identification.
+        \item The integration of aerial and ground images provides a more detailed approach to vegetation analysis.
+        \item U-net-based techniques are a promising choice for segmentation and classification of geospatial data.
+    \end{itemize}
+\end{frame}
+
+% Thank you slide
+\begin{frame}{Thank You!}
+    \centering
+    Questions?
+\end{frame}
+
+\end{document}
