@@ -23,7 +23,7 @@ import time
 
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
-checkpoint_path      = "/home/paulomaciel/proj/unet_binary_tree_detector512_semAug.pth"
+checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_binary_tree_detector512_semAug.pth"
 
 img_size = (512, 512)
 batch_size = 6
@@ -302,7 +302,7 @@ for epoch in range(epochs):
         mode='max',
         patience=3,
         factor=0.5
-    )   
+    )
 
     # =========================
     # LOG
@@ -340,12 +340,12 @@ for epoch in range(epochs):
         "threshold": best_threshold,
         "tp": best_metrics["tp"],
         "fp": best_metrics["fp"],
-    	"fn": best_metrics["fn"],
-    	"tn": best_metrics["tn"],
-    	"model": "Unet_resnet34",
-    	"img_size": 512,
-    	"batch_size": batch_size,
-    	"lr": 1e-4
+        "fn": best_metrics["fn"],
+        "tn": best_metrics["tn"],
+        "model": "Unet_resnet34",
+        "img_size": 512,
+        "batch_size": batch_size,
+        "lr": 1e-4
     })
 
     # =========================
@@ -357,7 +357,7 @@ for epoch in range(epochs):
     df.to_csv("/home/paulomaciel/proj/unet_metrics_512_softAug.csv", index=False)
     print("CSV atualizado com sucesso")
     print("CSV salvo em: /home/paulomaciel/proj/unet_metrics_512_semAug.csv")
-    
+
     if iou > best_iou:
         best_iou = iou
         no_improve = 0

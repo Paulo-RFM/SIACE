@@ -8,11 +8,10 @@ from pathlib import Path
 
 TRAINING_SCRIPTS = {
     "unet-basic": "tree_segmentation_resnet.py",
-    "unet-256-semaug": "tree_segmentation_resnet_26_semAug.py",
-    "unet-256-softaug": "tree_segmentation_resnet_26_256softAug3.py",
     "unet-512-semaug": "tree_segmentation_resnet_26_512semAug2.py",
     "unet-512-softaug-run1": "tree_segmentation_resnet_26_512softAug2.py",
-    "unet-512-softaug-run2": "tree_segmentation_resnet_26_512Aug5.py",
+    "unet-512-softaug-run2": "tree_segmentation_resnet_26_512softAug4.py",
+    "unet-512-pseudo": "tree_segmentation_resnet_26_512Aug5.py",
     "unet-multiclass-bias": "resnet2.py",
     "unet-multiclass": "resnet3.py",
     "unet-encoder-benchmark": "banchmark_Unet.py",

@@ -23,7 +23,7 @@ import time
 
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
-checkpoint_path      = "/home/paulomaciel/proj/unet_binary_tree_detector01.pth"
+checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_binary_tree_detector01.pth"
 
 img_size = (512, 512)
 batch_size = 6
@@ -112,7 +112,7 @@ class TreeBinaryDataset(Dataset):
 
         # Converter máscara RGB → binária
         mask_np = rgb_to_binary(np.array(mask))
-        mask_tensor = torch.tensor(mask_np, dtype=torch.float32).unsqueeze(0)  
+        mask_tensor = torch.tensor(mask_np, dtype=torch.float32).unsqueeze(0)
 
         # Normalizar imagem
         img = self.to_tensor(img)

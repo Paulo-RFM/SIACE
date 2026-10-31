@@ -23,7 +23,7 @@ import time
 
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
-checkpoint_path      = "/home/paulomaciel/proj/unet_binary_tree_detector.pth"
+checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_binary_tree_detector.pth"
 
 img_size = (512, 512)
 batch_size = 6

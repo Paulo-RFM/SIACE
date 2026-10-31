@@ -22,7 +22,7 @@ from datetime import timedelta
 # Paths
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks_distin/"
-checkpoint_path      = "/home/paulomaciel/proj/unet_tree_segmentation_model3.pth"
+checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_tree_segmentation_model3.pth"
 
 img_size = (512, 512)
 batch_size = 6

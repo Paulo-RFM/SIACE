@@ -23,7 +23,7 @@ import time
 
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
-checkpoint_path      = "/home/paulomaciel/proj/unet_binary_tree_detector512_softAug2.pth"
+checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_binary_tree_detector512_softAug2.pth"
 
 img_size = (512,512)
 batch_size = 6
@@ -222,7 +222,7 @@ no_improve = 0
 history = []
 
 thresholds = [0.4, 0.5, 0.6, 0.7]
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,mode='max',patience=3,factor=0.5)   
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,mode='max',patience=3,factor=0.5)
 
 for epoch in range(epochs):
 
@@ -325,11 +325,11 @@ for epoch in range(epochs):
     f1 = best_metrics["f1"]
     acc = best_metrics["acc"]
     iou = best_metrics["iou"]
-    
 
-    scheduler.step(iou)	
+
+    scheduler.step(iou)
     current_lr = optimizer.param_groups[0]['lr']
-    
+
     # =========================
     # LOG
     # =========================
@@ -366,12 +366,12 @@ for epoch in range(epochs):
         "threshold": best_threshold,
         "tp": best_metrics["tp"],
         "fp": best_metrics["fp"],
-    	"fn": best_metrics["fn"],
-    	"tn": best_metrics["tn"],
-    	"model": "Unet_resnet34",
-    	"img_size": 512,
-    	"batch_size": batch_size,
-    	"lr": 1e-4
+        "fn": best_metrics["fn"],
+        "tn": best_metrics["tn"],
+        "model": "Unet_resnet34",
+        "img_size": 512,
+        "batch_size": batch_size,
+        "lr": 1e-4
     })
 
     # =========================
@@ -380,10 +380,10 @@ for epoch in range(epochs):
     torch.save(model.state_dict(), checkpoint_path.replace(".pth", "_last.pth"))
 
     df = pd.DataFrame(history)
-    df.to_csv("/home/paulomaciel/proj/unet_metrics_512_softAug2.csv", index=False)
+    df.to_csv("/home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug2.csv", index=False)
     print("CSV atualizado com sucesso")
-    print("CSV salvo em: /home/paulomaciel/proj/unet_metrics_512_softAug.csv")
-    
+    print("CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug.csv")
+
     if iou > best_iou:
         best_iou = iou
         no_improve = 0

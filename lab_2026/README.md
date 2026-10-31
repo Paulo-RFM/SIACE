@@ -4,6 +4,10 @@ Este diretório reúne os experimentos, scripts auxiliares, métricas e materiai
 do Trabalho de Conclusão de Curso sobre detecção de copas de árvores por
 segmentação semântica e classificação de espécies.
 
+> Todos os tiles reais do conjunto atual têm 512 × 512 pixels. Os scripts
+> históricos cujo nome contém `256` foram retirados da matriz de novos
+> treinamentos.
+
 O fluxo principal combina imagens aéreas multiespectrais, máscaras binárias ou
 multiclasse, U-Net com encoders ResNet, EfficientNet-B0, dados sintéticos
 rotulados pelo próprio modelo e um pipeline final de geoprocessamento.
@@ -42,11 +46,7 @@ e F1.
 Scripts principais:
 
 - `tree_segmentation_resnet.py`: treino básico da U-Net binária.
-- `tree_segmentation_resnet_26.py`: variante histórica de 256 pixels.
 - `tree_segmentation_resnet_26_semAug.py`: variante de 512 pixels sem aumento.
-- `tree_segmentation_resnet_26_256softAug2.py`: experimento de 256 pixels.
-- `tree_segmentation_resnet_26_256softAug3.py`: variante revisada com aumento
-  moderado de dados.
 - `tree_segmentation_resnet_26_512semAug.py`: experimento de 512 pixels.
 - `tree_segmentation_resnet_26_512semAug2.py`: variante revisada sem aumento.
 - `tree_segmentation_resnet_26_512softAug2.py`: aumento moderado em tiles de
@@ -63,7 +63,6 @@ salvaram checkpoints `.pth`; o histórico por época foi salvo em arquivos CSV.
 Arquivos históricos já disponíveis:
 
 - `unet_metrics.csv`
-- `unet_metrics_256_softAug.csv`
 - `unet_metrics_512_semAug.csv`
 - `unet_metrics_512_softAug.csv`
 - `unet_metrics_512_softAug2.csv`
