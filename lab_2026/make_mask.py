@@ -6,7 +6,7 @@ from glob import glob
 from PIL import Image
 
 # Caminhos para os diretórios de entrada e saída
-json_dir = r"/home/paulomaciel/proj/labels/"
+json_dir = r"/home/paulomaciel/proj/labels2/"
 output_mask_dir = r"/home/paulomaciel/proj/masks"
 
 
