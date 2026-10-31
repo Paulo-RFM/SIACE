@@ -1,0 +1,253 @@
+import os
+import shutil
+from pathlib import Path
+from collections import Counter
+
+import numpy as np
+from PIL import Image
+import cv2
+
+import torch
+from torchvision import transforms
+from skimage import morphology, segmentation, feature
+from scipy import ndimage as ndi
+
+from segmentation_models_pytorch import Unet
+from efficientnet_pytorch import EfficientNet
+
+# ======================================================
+# CONFIGURAÇÕES
+# ======================================================
+
+tiles_dir = "/home/paulomaciel/proj/tiles_512/"
+masks_dir = "/home/paulomaciel/proj/masks"
+dataset_dir = "/home/paulomaciel/proj/dataset_auto/"
+
+NUM_CLASSES = 6
+TARGET_PER_CLASS = 150
+
+CONF_THRESHOLD = 0.5
+
+seg_model_path = "/home/paulomaciel/proj/unet_binary_tree_detector.pth"
+cls_model_path = "/home/paulomaciel/proj/species_model/efficientnet_b0_best.pth"
+
+seg_img_size = (512, 512)
+cls_img_size = 512
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print("Device:", device)
+
+MASK_THRESHOLD = 0.25
+MIN_OBJ = 8
+PEAK_FOOT = (7, 7)
+
+# ======================================================
+# CARREGAR NOMES DAS MÁSCARAS (SEM EXTENSÃO)
+# ======================================================
+
+mask_names = set()
+
+for f in os.listdir(masks_dir):
+    name = Path(f).stem
+    name = name.replace("_mask", "")  # caso tenha sufixo
+    mask_names.add(name)
+
+print(f"Máscaras carregadas: {len(mask_names)}")
+
+# ======================================================
+# PREPARAR PASTAS
+# ======================================================
+
+os.makedirs(dataset_dir, exist_ok=True)
+
+for i in range(1, NUM_CLASSES+1):
+    os.makedirs(f"{dataset_dir}/especie_{i}", exist_ok=True)
+
+# ======================================================
+# CONTADOR GLOBAL
+# ======================================================
+
+class_counter = {i: 0 for i in range(1, NUM_CLASSES+1)}
+
+def all_classes_full():
+    return all(v >= TARGET_PER_CLASS for v in class_counter.values())
+
+# ======================================================
+# MODELOS
+# ======================================================
+
+seg_model = Unet(
+    encoder_name="resnet34",
+    encoder_weights=None,
+    in_channels=3,
+    classes=1
+).to(device)
+
+seg_model.load_state_dict(torch.load(seg_model_path, map_location=device))
+seg_model.eval()
+
+cls_model = EfficientNet.from_pretrained("efficientnet-b0", num_classes=NUM_CLASSES).to(device)
+cls_model.load_state_dict(torch.load(cls_model_path, map_location=device))
+cls_model.eval()
+
+softmax = torch.nn.Softmax(dim=1)
+
+# ======================================================
+# TRANSFORMS
+# ======================================================
+
+seg_transform = transforms.Compose([
+    transforms.Resize(seg_img_size),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485,0.456,0.406],
+                         std=[0.229,0.224,0.225])
+])
+
+cls_transform = transforms.Compose([
+    transforms.Resize((cls_img_size, cls_img_size)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485,0.456,0.406],
+                         std=[0.229,0.224,0.225])
+])
+
+# ======================================================
+# PROCESSAMENTO
+# ======================================================
+
+def process_tile(path):
+    base = path.stem
+
+    img = np.array(Image.open(path).convert("RGB"))
+    H, W = img.shape[:2]
+
+    # -------------------------------
+    # 1) Segmentação
+    # -------------------------------
+    inp = seg_transform(Image.fromarray(img)).unsqueeze(0).to(device)
+
+    with torch.no_grad():
+        pr = torch.sigmoid(seg_model(inp)).squeeze().cpu().numpy()
+
+    pr = cv2.resize(pr, (W, H))
+    mask_bin = (pr > MASK_THRESHOLD).astype(np.uint8)
+
+    # -------------------------------
+    # 2) Watershed
+    # -------------------------------
+    clean = morphology.remove_small_objects(mask_bin.astype(bool), MIN_OBJ).astype(np.uint8)
+    clean = cv2.erode(clean, np.ones((3,3), np.uint8), iterations=1)
+
+    dist = ndi.distance_transform_edt(clean)
+
+    peak_mask = feature.peak_local_max(
+        dist,
+        footprint=np.ones(PEAK_FOOT),
+        labels=clean
+    )
+
+    coords = np.argwhere(peak_mask)
+
+    markers = np.zeros_like(dist, dtype=np.int32)
+    for i, (r, c) in enumerate(coords, 1):
+        markers[r, c] = i
+
+    if np.max(markers) == 0:
+        labeled, _ = ndi.label(clean)
+    else:
+        marked = ndi.label(markers)[0]
+        labeled = segmentation.watershed(-dist, marked, mask=clean)
+
+    inst = labeled
+
+    # -------------------------------
+    # 3) Classificação
+    # -------------------------------
+    class_preds = []
+
+    n_inst = inst.max()
+
+    for i in range(1, n_inst+1):
+
+        if all_classes_full():
+            return
+
+        region = (inst == i)
+        ys, xs = np.where(region)
+
+        if len(ys) < 20:
+            continue
+
+        y0, y1 = ys.min(), ys.max()
+        x0, x1 = xs.min(), xs.max()
+
+        pad = 10
+        y0 = max(0, y0 - pad)
+        y1 = min(H, y1 + pad)
+        x0 = max(0, x0 - pad)
+        x1 = min(W, x1 + pad)
+
+        crop = img[y0:y1+1, x0:x1+1]
+
+        crop_mask = region[y0:y1+1, x0:x1+1]
+        crop = crop * crop_mask[..., None]
+
+        crop_tensor = cls_transform(Image.fromarray(crop)).unsqueeze(0).to(device)
+
+        with torch.no_grad():
+            out = cls_model(crop_tensor)
+            probs = softmax(out).cpu().numpy()[0]
+
+        pred = int(np.argmax(probs)) + 1
+        conf = probs[pred-1]
+
+        if conf >= CONF_THRESHOLD:
+            class_preds.append(pred)
+
+    # -------------------------------
+    # 4) Classe dominante
+    # -------------------------------
+    if len(class_preds) == 0:
+        return
+
+    major_class = Counter(class_preds).most_common(1)[0][0]
+
+    if class_counter[major_class] >= TARGET_PER_CLASS:
+        return
+
+    # -------------------------------
+    # 5) COPIAR TILE
+    # -------------------------------
+    dst_path = f"{dataset_dir}/especie_{major_class}/{path.name}"
+    shutil.copy(str(path), dst_path)
+
+    class_counter[major_class] += 1
+
+# ======================================================
+# LOOP PRINCIPAL
+# ======================================================
+
+all_tiles = sorted(Path(tiles_dir).glob("*.tif"))
+
+# filtrar tiles que NÃO estão no treino
+tiles = [t for t in all_tiles if t.stem not in mask_names]
+
+total_tiles = len(tiles)
+
+print(f"Tiles totais: {len(all_tiles)}")
+print(f"Tiles novos (não usados): {total_tiles}")
+
+for idx, t in enumerate(tiles, start=1):
+
+    if all_classes_full():
+        print("\nTodas as classes atingiram o limite!")
+        break
+
+    progress = (idx / total_tiles) * 100
+    print(f"[{idx}/{total_tiles}] ({progress:.2f}%) - {t.name} | {class_counter}")
+
+    process_tile(t)
+
+print("\nFinalizado!")
+print("Distribuição final:", class_counter)
+print("Dataset salvo em:", dataset_dir)
+/home/paulomaciel/Datasets/drone_rp_v01/tiles512/home/paulomaciel/Datasets/drone_rp_v01/tiles512

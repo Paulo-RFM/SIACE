@@ -1,0 +1,29 @@
+# Imagens e datasets
+novas_imagens/
+imagens/
+species_crops/
+species_crops_balanced/
+pseudo_dataset/
+dataset_auto/
+labels/
+tiles_512/
+
+# Arquivos compactados
+*.zip
+
+# Modelos treinados
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.onnx
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
