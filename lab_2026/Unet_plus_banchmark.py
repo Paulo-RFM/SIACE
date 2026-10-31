@@ -25,6 +25,7 @@ base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
 
 csv_summary = "/home/paulomaciel/proj/lab_2026/benchmark_unetpp_summary.csv"
 csv_history = "/home/paulomaciel/proj/lab_2026/benchmark_unetpp_history.csv"
+os.makedirs(os.path.dirname(csv_summary), exist_ok=True)
 
 img_size = (512,512)
 batch_size = 6

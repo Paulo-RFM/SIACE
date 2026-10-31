@@ -26,6 +26,7 @@ pseudo_img_dir = "/home/paulomaciel/proj/pseudo_dataset/images"
 pseudo_mask_dir = "/home/paulomaciel/proj/pseudo_dataset/masks"
 
 checkpoint_path = "/home/paulomaciel/proj/lab_2026/unet_binary_tree_detector512_pseudo.pth"
+os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
 
 img_size = (512,512)
 batch_size = 6

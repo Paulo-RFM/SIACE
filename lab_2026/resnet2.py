@@ -21,6 +21,7 @@ from datetime import timedelta
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks_distin/"
 checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_tree_segmentation_model_aug_bias.pth"
+os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
 
 img_size = (512, 512)
 batch_size = 6
@@ -272,7 +273,7 @@ for epoch in range(epochs):
         "epoch_time_sec": epoch_time,
     })
     pd.DataFrame(history).to_csv(
-        os.path.join(os.path.dirname(checkpoint_path), "unet_multiclass_history.csv"),
+        os.path.join(os.path.dirname(checkpoint_path), "unet_multiclass_bias_history.csv"),
         index=False,
     )
 

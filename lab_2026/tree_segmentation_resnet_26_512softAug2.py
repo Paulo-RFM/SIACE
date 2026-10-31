@@ -24,6 +24,7 @@ import time
 base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
 checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_binary_tree_detector512_softAug_run1.pth"
+os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
 
 img_size = (512, 512)
 batch_size = 6
@@ -354,9 +355,9 @@ for epoch in range(epochs):
     torch.save(model.state_dict(), checkpoint_path.replace(".pth", "_last.pth"))
 
     df = pd.DataFrame(history)
-    df.to_csv("/home/paulomaciel/proj/unet_metrics_512_softAug.csv", index=False)
+    df.to_csv("/home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv", index=False)
     print("CSV atualizado com sucesso")
-    print("CSV salvo em: /home/paulomaciel/proj/unet_metrics_512_semAug.csv")
+    print("CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv")
 
     if iou > best_iou:
         best_iou = iou
