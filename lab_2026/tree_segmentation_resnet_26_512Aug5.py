@@ -1,6 +1,7 @@
 import os
 import random
 import numpy as np
+import pandas as pd
 from PIL import Image
 from sklearn.model_selection import train_test_split
 
@@ -209,6 +210,7 @@ scaler = GradScaler(enabled=(device.type == "cuda"))
 
 best_iou = -1
 no_improve = 0
+history = []
 
 for epoch in range(epochs):
 
@@ -235,7 +237,7 @@ for epoch in range(epochs):
     # ===== VALIDATION =====
     model.eval()
 
-    TP = FP = FN = 0
+    TP = FP = FN = TN = 0
 
     with torch.no_grad():
         for img, mask in val_loader:
@@ -247,12 +249,36 @@ for epoch in range(epochs):
             TP += ((pred == 1) & (mask == 1)).sum().item()
             FP += ((pred == 1) & (mask == 0)).sum().item()
             FN += ((pred == 0) & (mask == 1)).sum().item()
+            TN += ((pred == 0) & (mask == 0)).sum().item()
 
     iou = TP / max(TP + FP + FN, 1)
+    precision = TP / max(TP + FP, 1)
+    recall = TP / max(TP + FN, 1)
+    f1 = 0 if precision + recall == 0 else 2 * precision * recall / (precision + recall)
+    accuracy = (TP + TN) / max(TP + TN + FP + FN, 1)
 
     print(f"\nEpoch {epoch+1}")
     print(f"Train Loss: {train_loss:.4f}")
     print(f"IoU: {iou:.4f}")
+    print(f"Accuracy: {accuracy:.4f}  Precision: {precision:.4f}  Recall: {recall:.4f}  F1: {f1:.4f}")
+    history.append({
+        "epoch": epoch + 1,
+        "train_loss": train_loss,
+        "accuracy": accuracy,
+        "precision": precision,
+        "recall": recall,
+        "f1": f1,
+        "iou": iou,
+        "tp": TP,
+        "fp": FP,
+        "fn": FN,
+        "tn": TN,
+        "threshold": 0.5,
+    })
+    pd.DataFrame(history).to_csv(
+        os.path.join(os.path.dirname(checkpoint_path), "unet_metrics_512_softAug2.csv"),
+        index=False,
+    )
 
     if iou > best_iou:
         best_iou = iou

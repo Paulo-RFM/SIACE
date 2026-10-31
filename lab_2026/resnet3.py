@@ -1,6 +1,7 @@
 import os
 import random
 import numpy as np
+import pandas as pd
 from PIL import Image
 from sklearn.model_selection import train_test_split
 
@@ -244,6 +245,7 @@ scaler = GradScaler()
 
 best_iou = -1
 no_improve = 0
+history = []
 
 for epoch in range(epochs):
     model.train()
@@ -293,6 +295,20 @@ for epoch in range(epochs):
     print(f"Recall: {metrics['recall']:.4f}")
     print(f"F1: {metrics['f1']:.4f}")
     print(f"IoU: {metrics['iou']:.4f}")
+    history.append({
+        "epoch": epoch + 1,
+        "train_loss": train_loss,
+        "val_loss": val_loss,
+        "accuracy": metrics["accuracy"],
+        "precision": metrics["precision"],
+        "recall": metrics["recall"],
+        "f1": metrics["f1"],
+        "iou": metrics["iou"],
+    })
+    pd.DataFrame(history).to_csv(
+        os.path.join(os.path.dirname(checkpoint_path), "unet_multiclass_history.csv"),
+        index=False,
+    )
 
     if metrics["iou"] > best_iou:
         best_iou = metrics["iou"]

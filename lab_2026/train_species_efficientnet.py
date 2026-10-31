@@ -1,4 +1,5 @@
 import os
+import json
 import numpy as np
 import pandas as pd
 from PIL import Image
@@ -9,7 +10,12 @@ import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader, WeightedRandomSampler
 import torchvision.transforms as T
 
-from sklearn.metrics import f1_score, accuracy_score
+from sklearn.metrics import (
+    accuracy_score,
+    confusion_matrix,
+    f1_score,
+    precision_recall_fscore_support,
+)
 from sklearn.model_selection import train_test_split
 
 from efficientnet_pytorch import EfficientNet
@@ -121,6 +127,7 @@ scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=10)
 
 best_f1 = 0
 es_counter = 0
+history = []
 
 for epoch in range(1, epochs+1):
 
@@ -163,12 +170,32 @@ for epoch in range(1, epochs+1):
 
     val_acc = accuracy_score(labels_val, preds_val)
     val_f1  = f1_score(labels_val, preds_val, average="macro")
+    val_precision_macro = precision_recall_fscore_support(
+        labels_val, preds_val, average="macro", zero_division=0
+    )[0]
+    val_recall_macro = precision_recall_fscore_support(
+        labels_val, preds_val, average="macro", zero_division=0
+    )[1]
 
     scheduler.step()
 
     print(f"\nEpoch {epoch}/{epochs}")
     print(f"Train Loss: {np.mean(train_losses):.4f} | Acc: {train_acc:.4f} | F1: {train_f1:.4f}")
     print(f"Val   Loss: {np.mean(val_losses):.4f} | Acc: {val_acc:.4f} | F1: {val_f1:.4f}")
+    history.append({
+        "epoch": epoch,
+        "train_loss": float(np.mean(train_losses)),
+        "train_accuracy": float(train_acc),
+        "train_f1_macro": float(train_f1),
+        "val_loss": float(np.mean(val_losses)),
+        "val_accuracy": float(val_acc),
+        "val_precision_macro": float(val_precision_macro),
+        "val_recall_macro": float(val_recall_macro),
+        "val_f1_macro": float(val_f1),
+    })
+    pd.DataFrame(history).to_csv(
+        os.path.join(output_dir, "species_training_metrics.csv"), index=False
+    )
 
     # ========== CHECAR MELHORA (EARLY STOPPING) ==========
     if val_f1 > best_f1:
@@ -183,6 +210,51 @@ for epoch in range(1, epochs+1):
         if es_counter >= patience:
             print("\nEarly Stopping ativado!")
             break
+
+# Avaliação completa do melhor modelo no conjunto de validação.
+model.load_state_dict(torch.load(os.path.join(output_dir, "efficientnet_b0_best.pth"), map_location=device))
+model.eval()
+final_preds = []
+final_labels = []
+with torch.no_grad():
+    for imgs, labels in val_loader:
+        imgs = imgs.to(device)
+        outputs = model(imgs)
+        final_preds.extend(outputs.argmax(1).cpu().numpy().tolist())
+        final_labels.extend(labels.numpy().tolist())
+
+precision, recall, per_class_f1, support = precision_recall_fscore_support(
+    final_labels, final_preds, labels=list(range(num_classes)), zero_division=0
+)
+metrics_by_class = pd.DataFrame({
+    "class_id": list(range(num_classes)),
+    "precision": precision,
+    "recall": recall,
+    "f1": per_class_f1,
+    "support": support,
+})
+metrics_by_class.to_csv(os.path.join(output_dir, "species_metrics_by_class.csv"), index=False)
+cm = confusion_matrix(final_labels, final_preds, labels=list(range(num_classes)))
+pd.DataFrame(cm).to_csv(os.path.join(output_dir, "species_confusion_matrix.csv"), index=False, header=False)
+
+summary = {
+    "accuracy": float(accuracy_score(final_labels, final_preds)),
+    "precision_macro": float(precision.mean()),
+    "recall_macro": float(recall.mean()),
+    "f1_macro": float(f1_score(final_labels, final_preds, average="macro", zero_division=0)),
+    "best_f1_during_training": float(best_f1),
+    "num_classes": num_classes,
+    "val_samples": len(final_labels),
+    "epochs_completed": len(history),
+}
+with open(os.path.join(output_dir, "species_metrics_summary.json"), "w", encoding="utf-8") as f:
+    json.dump(summary, f, indent=2, ensure_ascii=False)
+
+print("\nMétricas finais:")
+print(json.dumps(summary, indent=2, ensure_ascii=False))
+print("CSV por época:", os.path.join(output_dir, "species_training_metrics.csv"))
+print("CSV por classe:", os.path.join(output_dir, "species_metrics_by_class.csv"))
+print("Matriz CSV:", os.path.join(output_dir, "species_confusion_matrix.csv"))
 
 print("\nTreinamento finalizado!")
 print("Melhor F1 obtido:", best_f1)

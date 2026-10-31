@@ -1,5 +1,6 @@
 import os
 import numpy as np
+import pandas as pd
 from PIL import Image
 from sklearn.model_selection import train_test_split
 
@@ -197,6 +198,7 @@ def segmentation_metrics_multiclass(preds, masks, num_classes, ignore_index=0):
 best_loss = float('inf')
 no_improve = 0
 epoch_times = []
+history = []
 
 for epoch in range(epochs):
     start_time = time.time()
@@ -257,6 +259,22 @@ for epoch in range(epochs):
     print(f"F1-score : {metric_sum['f1']:.4f}        (macro, sem fundo)")
     print(f"Mean IoU : {metric_sum['iou']:.4f}       (sem fundo)")
     print("===================================\n")
+
+    history.append({
+        "epoch": epoch + 1,
+        "train_loss": train_loss,
+        "val_loss": val_loss,
+        "accuracy": metric_sum["accuracy"],
+        "precision": metric_sum["precision"],
+        "recall": metric_sum["recall"],
+        "f1": metric_sum["f1"],
+        "iou": metric_sum["iou"],
+        "epoch_time_sec": epoch_time,
+    })
+    pd.DataFrame(history).to_csv(
+        os.path.join(os.path.dirname(checkpoint_path), "unet_multiclass_history.csv"),
+        index=False,
+    )
 
     # ===== EARLY STOPPING =====
     if val_loss < best_loss:
