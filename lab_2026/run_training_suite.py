@@ -16,18 +16,15 @@ TEST_SCRIPT = "evaluate_unet_binary_test.py"
 BINARY_SEGMENTATION_SCRIPTS = (
     "tree_segmentation_resnet.py",
     "tree_segmentation_resnet_26.py",
-    "tree_segmentation_resnet_26_256softAug2.py",
     "tree_segmentation_resnet_26_512semAug.py",
     "tree_segmentation_resnet_26_512semAug2.py",
     "tree_segmentation_resnet_26_512softAug2.py",
-    "tree_segmentation_resnet_26_512Aug5.py",
     "tree_segmentation_resnet_26_512softAug4.py",
 )
 MODERN_SEGMENTATION_SCRIPTS = {"tree_segmentation_resnet_26_512softAug4.py"}
 EXPERIMENTS = {
     "tree_segmentation_resnet.py": {"resolution": 512, "batch": 6},
     "tree_segmentation_resnet_26.py": {"resolution": 512, "batch": 6},
-    "tree_segmentation_resnet_26_256softAug2.py": {"resolution": 256, "batch": 12},
     "tree_segmentation_resnet_26_512semAug.py": {"resolution": 512, "batch": 6},
     "tree_segmentation_resnet_26_512semAug2.py": {"resolution": 512, "batch": 6},
     "tree_segmentation_resnet_26_512softAug2.py": {"resolution": 512, "batch": 6},
