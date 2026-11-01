@@ -7,7 +7,7 @@ from glob import glob
 Image.MAX_IMAGE_PIXELS = None
 # Caminhos para os diretórios de entrada e saída
 json_dir = r"/home/paulomaciel/proj/labels/"
-output_mask_dir = r"/home/paulomaciel/proj/masks_distin/"
+output_mask_dir = r"/home/paulomaciel/proj/masks_distin2/"
 
 # Criar o diretório de saída, se ele não existir
 os.makedirs(output_mask_dir, exist_ok=True)

@@ -72,7 +72,10 @@ for species, target in target_counts.items():
 
     # copiar originais — sempre como dict
     for _, row in subset.iterrows():
-        new_rows.append(row.to_dict())   # <<< LINHA CORRIGIDA
+        original_row = row.to_dict()
+        original_row.setdefault("origin", "manual")
+        original_row.setdefault("source_origin", original_row["origin"])
+        new_rows.append(original_row)
 
     # já suficiente
     if current >= target:
@@ -101,7 +104,9 @@ for species, target in target_counts.items():
             "image": row["image"],
             "tree_id": row["tree_id"],
             "crop": new_path,
-            "species": species
+            "species": species,
+            "origin": "aumentado",
+            "source_origin": row.get("source_origin", row.get("origin", "manual")),
         })
 
 # salvar novo CSV

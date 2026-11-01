@@ -1,5 +1,7 @@
 import os
 import random
+import argparse
+import json
 import numpy as np
 from PIL import Image
 from sklearn.model_selection import train_test_split
@@ -16,20 +18,62 @@ from segmentation_models_pytorch.losses import DiceLoss
 from torch.cuda.amp import autocast, GradScaler
 from datetime import timedelta
 import time
+import psutil
+import uuid
+import gc
+from unet_spatial_protocol import (
+    filter_black_tiles,
+    load_split,
+    paired_tiles,
+    frozen_threshold,
+    valid_pixel_mask,
+    runtime_metadata,
+    freeze_validation_threshold,
+)
 
 # ==============================
 # CONFIGURAÇÕES (sem almento de dados)
 # ==============================
 
-base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
-base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
-checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_binary_tree_detector512_softAug_run2.pth"
+parser = argparse.ArgumentParser()
+parser.add_argument("--images-dir", default="/home/paulomaciel/proj/imagens/")
+parser.add_argument("--masks-dir", default="/home/paulomaciel/proj/masks/")
+parser.add_argument("--run-root", default="/home/paulomaciel/proj/lab_2026/runs")
+parser.add_argument("--run-id")
+parser.add_argument("--epochs", type=int, default=40)
+parser.add_argument("--smoke", action="store_true", help="Executa ate uma epoca para validacao.")
+args = parser.parse_args()
+
+base_image_tiles_dir = args.images_dir
+base_mask_tiles_dir = args.masks_dir
+run_id = args.run_id or uuid.uuid4().hex[:12]
+run_dir = os.path.join(args.run_root, run_id)
+os.makedirs(run_dir, exist_ok=True)
+checkpoint_path = os.path.join(run_dir, "checkpoint_best.pth")
+last_checkpoint_path = os.path.join(run_dir, "checkpoint_last.pth")
 os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
 
 img_size = (512,512)
 batch_size = 6
-epochs = 50
-patience = 8
+epochs = 1 if args.smoke else min(args.epochs, 40)
+patience = 5
+
+random.seed(42)
+np.random.seed(42)
+torch.manual_seed(42)
+torch.cuda.manual_seed_all(42)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+
+try:
+    torch.use_deterministic_algorithms(True)
+except (RuntimeError, TypeError):
+    print("Aviso: esta versao do PyTorch nao habilita todos os algoritmos deterministas.")
+
+def seed_worker(worker_id):
+    worker_seed = 42 + worker_id
+    np.random.seed(worker_seed)
+    random.seed(worker_seed)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -66,16 +110,14 @@ class TreeBinaryDataset(Dataset):
         # AUGMENTAÇÃO
         self.crop = transforms.RandomResizedCrop(
             img_size,
-            scale=(0.75, 1.0)
+            scale=(0.85, 1.0)
         )
 
         self.color_jitter = transforms.ColorJitter(
-            brightness=0.1,
-            contrast=0.1,
-            saturation=0.1
+            brightness=0.05,
+            contrast=0.05,
+            saturation=0.05
         )
-
-        self.blur = transforms.GaussianBlur(kernel_size=3)
 
         self.to_tensor = transforms.ToTensor()
         self.normalize = transforms.Normalize(
@@ -109,28 +151,9 @@ class TreeBinaryDataset(Dataset):
                 img = img.transpose(Image.FLIP_LEFT_RIGHT)
                 mask = mask.transpose(Image.FLIP_LEFT_RIGHT)
 
-            if random.random() < 0.5:
-                img = img.transpose(Image.FLIP_TOP_BOTTOM)
-                mask = mask.transpose(Image.FLIP_TOP_BOTTOM)
-
-            # =========================
-            # ROTAÇÃO (CRÍTICO)
-            # =========================
-            if random.random() < 0.5:
-                angle = random.choice([90, 180, 270])
-                img = img.rotate(angle)
-                mask = mask.rotate(angle)
-
-            # =========================
             # COLOR JITTER (só imagem)
             # =========================
             img = self.color_jitter(img)
-
-            # =========================
-            # BLUR (opcional)
-            # =========================
-            if random.random() < 0.3:
-                img = self.blur(img)
 
         else:
             img = img.resize(self.img_size, Image.BILINEAR)
@@ -141,31 +164,56 @@ class TreeBinaryDataset(Dataset):
         # =========================
         mask_np = rgb_to_binary(np.array(mask))
         mask_tensor = torch.tensor(mask_np, dtype=torch.float32).unsqueeze(0)
+        valid = torch.tensor(valid_pixel_mask(img), dtype=torch.bool)
 
         img = self.to_tensor(img)
         img = self.normalize(img)
 
-        return img, mask_tensor
+        return img, mask_tensor, valid
 # ==============================
 # CARREGAR ARQUIVOS
 # ==============================
 
-image_files = list_all_files(base_image_tiles_dir, '.tif')
-mask_files  = list_all_files(base_mask_tiles_dir , '.png')
-
-print("Imagens:", len(image_files))
-print("Máscaras:", len(mask_files))
-assert len(image_files) == len(mask_files)
-
-image_train, image_val, mask_train, mask_val = train_test_split(
-    image_files, mask_files, test_size=0.3, random_state=42
+SPLIT_DIR = os.environ.get(
+    "UNET_SPATIAL_SPLIT_DIR",
+    "/home/paulomaciel/proj/unet_spatial_split",
 )
+THRESHOLD_PATH = os.path.join(SPLIT_DIR, "frozen_threshold.json")
+
+pairs = paired_tiles(base_image_tiles_dir, base_mask_tiles_dir)
+pairs, excluded_black = filter_black_tiles(pairs)
+image_files = [image for image, _ in pairs]
+split_by_name, split_mapping, split_manifest = load_split(SPLIT_DIR, image_files)
+image_train = split_by_name["train"]
+image_val = split_by_name["val"]
+mask_by_image = {os.path.splitext(os.path.basename(image))[0]: mask for image, mask in pairs}
+mask_train = [mask_by_image[os.path.splitext(os.path.basename(image))[0]] for image in image_train]
+mask_val = [mask_by_image[os.path.splitext(os.path.basename(image))[0]] for image in image_val]
+
+def positive_fraction(paths):
+    foreground = 0
+    valid_count = 0
+    for mask_path in paths:
+        mask = np.asarray(Image.open(mask_path).convert("RGB"))
+        valid = np.any(mask != 0, axis=2)
+        foreground += int(np.any(mask != 0, axis=2)[valid].sum())
+        valid_count += int(valid.sum())
+    return foreground / max(valid_count, 1)
+
+train_positive_fraction = positive_fraction(mask_train)
+val_positive_fraction = positive_fraction(mask_val)
+print("Imagens:", len(pairs))
+print("Pretos integralmente excluidos:", len(excluded_black))
 
 train_dataset = TreeBinaryDataset(image_train, mask_train, img_size, train=True)
 val_dataset   = TreeBinaryDataset(image_val  , mask_val  , img_size, train=False)
 
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
-val_loader   = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=4, pin_memory=True)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4,
+                          pin_memory=True, persistent_workers=True, drop_last=False,
+                          worker_init_fn=seed_worker)
+val_loader   = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=4,
+                          pin_memory=True, persistent_workers=True, drop_last=False,
+                          worker_init_fn=seed_worker)
 
 # ==============================
 # MODELO
@@ -182,8 +230,15 @@ model = Unet(
 bce = nn.BCEWithLogitsLoss()
 dice = DiceLoss(mode="binary", from_logits=True)
 
-def loss_fn(pred, target):
-    return 0.5 * bce(pred, target) + 0.5 * dice(pred, target)
+def loss_fn(pred, target, valid):
+    valid = valid.unsqueeze(1)
+    bce_per_pixel = nn.functional.binary_cross_entropy_with_logits(
+        pred, target, reduction="none"
+    )
+    bce_value = (bce_per_pixel * valid).sum() / valid.sum().clamp_min(1)
+    masked_pred = pred * valid
+    masked_target = target * valid
+    return 0.5 * bce_value + 0.5 * dice(masked_pred, masked_target)
 
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=1e-4)
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=3, factor=0.5)
@@ -222,7 +277,7 @@ best_iou = -1
 no_improve = 0
 history = []
 
-thresholds = [0.4, 0.5, 0.6, 0.7]
+run_started = time.perf_counter()
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,mode='max',patience=3,factor=0.5)
 
 for epoch in range(epochs):
@@ -233,14 +288,16 @@ for epoch in range(epochs):
     model.train()
     train_loss = 0
 
-    for img, mask in train_loader:
+    epoch_started = time.perf_counter()
+    for img, mask, valid in train_loader:
         img, mask = img.to(device), mask.to(device)
+        valid = valid.to(device)
 
         optimizer.zero_grad()
 
         with autocast(enabled=(device.type == "cuda")):
             pred = model(img)
-            loss = loss_fn(pred, mask)
+            loss = loss_fn(pred, mask, valid)
 
         scaler.scale(loss).backward()
         scaler.step(optimizer)
@@ -251,71 +308,43 @@ for epoch in range(epochs):
     train_loss /= len(train_loader)
 
     # =========================
-    # VALIDAÇÃO + BEST THRESHOLD
+    # VALIDAÇÃO; 0,5 é apenas métrico por época.
+    # A curva de limiar é calculada uma vez ao final.
     # =========================
     model.eval()
     val_loss = 0
+    val_started = time.perf_counter()
 
-    best_threshold = 0
-    best_iou_epoch = 0
-
-    best_metrics = None
+    TP_total = FP_total = FN_total = TN_total = 0
+    val_loss_temp = 0
 
     with torch.no_grad():
-        for t in thresholds:
+        for img, mask, valid in val_loader:
+            img, mask, valid = img.to(device), mask.to(device), valid.to(device)
+            with autocast(enabled=(device.type == "cuda")):
+                pred = model(img)
+                loss = loss_fn(pred, mask, valid)
+            val_loss_temp += loss.item()
 
-            TP_total = FP_total = FN_total = TN_total = 0
-            val_loss_temp = 0
+            pred_bin = (torch.sigmoid(pred) >= 0.5).float()
+            valid_expanded = valid.unsqueeze(1).bool()
+            pred_valid = pred_bin[valid_expanded].view(-1)
+            mask_valid = mask[valid_expanded].view(-1)
+            TP_total += ((pred_valid == 1) & (mask_valid == 1)).sum().item()
+            FP_total += ((pred_valid == 1) & (mask_valid == 0)).sum().item()
+            FN_total += ((pred_valid == 0) & (mask_valid == 1)).sum().item()
+            TN_total += ((pred_valid == 0) & (mask_valid == 0)).sum().item()
 
-            for img, mask in val_loader:
-                img, mask = img.to(device), mask.to(device)
-
-                with autocast(enabled=(device.type == "cuda")):
-                    pred = model(img)
-                    loss = loss_fn(pred, mask)
-
-                val_loss_temp += loss.item()
-
-                pred_bin = torch.sigmoid(pred)
-                pred_bin = (pred_bin > t).float()
-
-                pred_flat = pred_bin.view(-1)
-                mask_flat = mask.view(-1)
-
-                TP = ((pred_flat == 1) & (mask_flat == 1)).sum().item()
-                FP = ((pred_flat == 1) & (mask_flat == 0)).sum().item()
-                FN = ((pred_flat == 0) & (mask_flat == 1)).sum().item()
-                TN = ((pred_flat == 0) & (mask_flat == 0)).sum().item()
-
-                TP_total += TP
-                FP_total += FP
-                FN_total += FN
-                TN_total += TN
-
-            iou = TP_total / max(TP_total + FP_total + FN_total, 1)
-
-            if iou > best_iou_epoch:
-                best_iou_epoch = iou
-                best_threshold = t
-
-                precision = TP_total / max(TP_total + FP_total, 1)
-                recall    = TP_total / max(TP_total + FN_total, 1)
-                f1        = 0 if (precision + recall == 0) else 2 * precision * recall / (precision + recall)
-                acc       = (TP_total + TN_total) / max(TP_total + TN_total + FP_total + FN_total, 1)
-
-                best_metrics = {
-                    "precision": precision,
-                    "recall": recall,
-                    "f1": f1,
-                    "acc": acc,
-                    "tp": TP_total,
-                    "fp": FP_total,
-                    "fn": FN_total,
-                    "tn": TN_total,
-                    "val_loss": val_loss_temp / len(val_loader),
-                    "threshold": t,
-                    "iou": iou
-                }
+    precision = TP_total / max(TP_total + FP_total, 1)
+    recall = TP_total / max(TP_total + FN_total, 1)
+    f1 = 0 if precision + recall == 0 else 2 * precision * recall / (precision + recall)
+    iou = TP_total / max(TP_total + FP_total + FN_total, 1)
+    acc = (TP_total + TN_total) / max(TP_total + TN_total + FP_total + FN_total, 1)
+    best_metrics = {
+        "precision": precision, "recall": recall, "f1": f1, "acc": acc,
+        "tp": TP_total, "fp": FP_total, "fn": FN_total, "tn": TN_total,
+        "val_loss": val_loss_temp / len(val_loader), "threshold": 0.5, "iou": iou,
+    }
 
     # =========================
     # RESULTADOS DA ÉPOCA
@@ -328,6 +357,7 @@ for epoch in range(epochs):
     iou = best_metrics["iou"]
 
 
+    tempo_val_s = time.perf_counter() - val_started
     scheduler.step(iou)
     current_lr = optimizer.param_groups[0]['lr']
 
@@ -344,7 +374,7 @@ for epoch in range(epochs):
     print(f"Rec:  {recall:.4f}")
     print(f"F1:   {f1:.4f}")
     print(f"IoU:  {iou:.4f}")
-    print(f"Threshold escolhido: {best_threshold:.2f}")
+    print("Threshold de validacao atual: 0.50")
 
     print("\n--- MATRIZ DE CONFUSÃO ---")
     print(f"TP: {best_metrics['tp']}")
@@ -364,26 +394,49 @@ for epoch in range(epochs):
         "recall": recall,
         "f1": f1,
         "iou": iou,
-        "threshold": best_threshold,
+        "threshold": 0.5,
         "tp": best_metrics["tp"],
         "fp": best_metrics["fp"],
         "fn": best_metrics["fn"],
         "tn": best_metrics["tn"],
         "model": "Unet_resnet34",
+        "total_parameters": sum(parameter.numel() for parameter in model.parameters()),
+        "trainable_parameters": sum(
+            parameter.numel() for parameter in model.parameters() if parameter.requires_grad
+        ),
         "img_size": 512,
         "batch_size": batch_size,
         "lr": 1e-4
+        ,
+        "split": "val",
+        "lr_efetiva": current_lr,
+        "gpu_mem_alloc_mb": round(torch.cuda.max_memory_allocated() / 1024**2, 2)
+        if torch.cuda.is_available() else 0,
+        "gpu_mem_res_mb": round(torch.cuda.max_memory_reserved() / 1024**2, 2)
+        if torch.cuda.is_available() else 0,
+        "seed": 42,
+        "run_id": run_id,
+        "tempo_epoca_s": round(time.perf_counter() - epoch_started, 3),
+        "tempo_val_s": round(tempo_val_s, 3),
+        "fracao_pixels_positivos": val_positive_fraction,
     })
 
     # =========================
     # SALVAR MODELOS
     # =========================
-    torch.save(model.state_dict(), checkpoint_path.replace(".pth", "_last.pth"))
+    if (epoch + 1) % 5 == 0:
+        torch.save(model.state_dict(), last_checkpoint_path)
 
     df = pd.DataFrame(history)
-    df.to_csv("/home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug2.csv", index=False)
+    metrics_path = os.path.join(
+        os.path.dirname(checkpoint_path),
+        f"unet_metrics_512_softAug2_{run_id}.csv",
+    )
+    fixed_metrics_path = os.path.join(run_dir, "metrics.csv")
+    df.to_csv(metrics_path, index=False)
+    df.to_csv(fixed_metrics_path, index=False)
     print("CSV atualizado com sucesso")
-    print("CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug2.csv")
+    print(f"CSV do run salvo em: {metrics_path}")
 
     if iou > best_iou:
         best_iou = iou
@@ -399,3 +452,76 @@ for epoch in range(epochs):
         if no_improve >= patience:
             print("\n🛑 Early Stopping ativado")
             break
+
+torch.save(model.state_dict(), last_checkpoint_path)
+if os.path.isfile(checkpoint_path):
+    model.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
+model.eval()
+validation_probabilities = []
+validation_targets = []
+validation_valid_pixels = []
+with torch.no_grad():
+    for img, mask, valid in val_loader:
+        img = img.to(device)
+        logits = model(img)
+        validation_probabilities.append(torch.sigmoid(logits).cpu().numpy().reshape(-1))
+        validation_targets.append(mask.numpy().reshape(-1))
+        validation_valid_pixels.append(valid.numpy().reshape(-1))
+
+threshold_values = np.arange(0.1, 0.91, 0.05)
+frozen_threshold_value = freeze_validation_threshold(
+    np.concatenate(validation_probabilities),
+    np.concatenate(validation_targets),
+    np.concatenate(validation_valid_pixels),
+    run_dir,
+    thresholds=threshold_values,
+)
+print(f"Limiar congelado pela validacao: {frozen_threshold_value:.2f}")
+print(f"Curva salva em: {run_dir}/threshold_iou_curve.csv")
+gc.collect()
+
+metadata = runtime_metadata(
+    {
+        "seed": 42,
+        "img_size": img_size,
+        "batch_size": batch_size,
+        "learning_rate": 1e-4,
+        "optimizer": "AdamW",
+        "scheduler": "ReduceLROnPlateau(mode=max, patience=3, factor=0.5)",
+        "loss": "0.5 BCEWithLogits + 0.5 Dice",
+        "epochs_max": epochs,
+        "patience": patience,
+        "weight_decay": 1e-4,
+        "model": "Unet_resnet34",
+    },
+    os.path.dirname(checkpoint_path),
+    SPLIT_DIR,
+    split_by_name["test"],
+    run_id,
+)
+
+from unet_spatial_protocol import hash_files
+metadata["split_hash"] = hash_files([os.path.join(SPLIT_DIR, "tiles_split.csv")])
+metadata["split_manifest_hash"] = hash_files([os.path.join(SPLIT_DIR, "tiles_by_split.json")])
+
+positive_fraction = {}
+for split_name, image_paths in split_by_name.items():
+    mask_paths = [mask_by_image[os.path.splitext(os.path.basename(path))[0]] for path in image_paths]
+    positive_pixels = 0
+    valid_pixels = 0
+    for mask_path in mask_paths:
+        mask = np.array(Image.open(mask_path).convert("RGB"))
+        foreground = np.any(mask != 0, axis=2)
+        valid = valid_pixel_mask(Image.open(mask_path).convert("RGB"))
+        positive_pixels += int(foreground[valid].sum())
+        valid_pixels += int(valid.sum())
+    positive_fraction[split_name] = positive_pixels / max(valid_pixels, 1)
+metadata["positive_fraction_by_split"] = positive_fraction
+
+Path(run_dir, "config.json").write_text(
+    json.dumps(metadata, ensure_ascii=False, indent=2),
+    encoding="utf-8",
+)
+Path(run_dir, "split_hash.txt").write_text(
+    metadata["split_hash"] + "\n", encoding="utf-8"
+)

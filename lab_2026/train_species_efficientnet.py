@@ -1,6 +1,7 @@
 import os
 import json
 import numpy as np
+import random
 import pandas as pd
 from PIL import Image
 from pathlib import Path
@@ -16,7 +17,6 @@ from sklearn.metrics import (
     f1_score,
     precision_recall_fscore_support,
 )
-from sklearn.model_selection import train_test_split
 
 from efficientnet_pytorch import EfficientNet
 
@@ -26,6 +26,7 @@ from efficientnet_pytorch import EfficientNet
 
 csv_path = "/home/paulomaciel/proj/species_crops_balanced/species_labels_balanced.csv"
 output_dir = "/home/paulomaciel/proj/lab_2026/species_model/"
+split_dir = os.environ.get("UNET_SPATIAL_SPLIT_DIR", "/home/paulomaciel/proj/unet_spatial_split")
 os.makedirs(output_dir, exist_ok=True)
 
 num_classes = 6
@@ -33,6 +34,24 @@ batch_size = 6
 epochs = 40
 lr = 1e-4
 img_size = 512
+seed = 42
+
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed_all(seed)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+
+try:
+    torch.use_deterministic_algorithms(True)
+except (RuntimeError, TypeError):
+    print("Aviso: esta versao do PyTorch nao habilita todos os algoritmos deterministas.")
+
+def seed_worker(worker_id):
+    worker_seed = seed + worker_id
+    random.seed(worker_seed)
+    np.random.seed(worker_seed)
 
 patience = 5        # <<< EARLY STOPPING
 es_counter = 0      # contador de "épocas sem melhora"
@@ -68,9 +87,51 @@ class SpeciesDataset(Dataset):
 # ====================================================
 
 df = pd.read_csv(csv_path)
-train_df, val_df = train_test_split(df, test_size=0.2, random_state=42, stratify=df["species"])
+required = {"species", "origin"}
+missing_columns = required - set(df.columns)
+if missing_columns:
+    raise ValueError(
+        "CSV de especies bloqueado: colunas obrigatorias ausentes: "
+        + ", ".join(sorted(missing_columns))
+        + ". Recrie com origin=manual/pseudorrotulo/aumentado."
+    )
 
-print(f"Train: {len(train_df)}  |  Val: {len(val_df)}")
+tile_column_candidates = [name for name in ("tile", "source_tile", "image") if name in df.columns]
+if not tile_column_candidates:
+    raise ValueError("CSV de especies bloqueado: informe a coluna tile/source_tile/image.")
+tile_column = tile_column_candidates[0]
+df["tile"] = df[tile_column].map(lambda value: Path(str(value)).stem)
+
+mapping_path = Path(split_dir) / "tiles_split.csv"
+if not mapping_path.is_file():
+    raise FileNotFoundError(f"Split espacial ausente: {mapping_path}")
+mapping = pd.read_csv(mapping_path)
+if "tile" not in mapping.columns or "split" not in mapping.columns:
+    raise ValueError(f"{mapping_path} deve conter tile e split.")
+tile_split = dict(zip(mapping["tile"].astype(str), mapping["split"].astype(str)))
+unknown_tiles = sorted(set(df["tile"]) - set(tile_split))
+if unknown_tiles:
+    raise ValueError(f"Tiles sem split espacial: {unknown_tiles[:20]}")
+df["spatial_split"] = df["tile"].map(tile_split)
+
+pseudolabel_mask = df["origin"].astype(str).str.lower().isin({"pseudo", "pseudorrotulo", "pseudolabel"})
+if pseudolabel_mask.any() and df.loc[pseudolabel_mask, "spatial_split"].ne("train").any():
+    raise ValueError("Bloqueio: pseudorrotulos encontrados fora da particao train.")
+augmented_mask = df["origin"].astype(str).str.lower().isin({"aumentado", "augmented"})
+if augmented_mask.any():
+    raise ValueError("Bloqueio: augmentation pre-split detectado. Balanceie apenas o treino.")
+
+manual = df["origin"].astype(str).str.lower().eq("manual")
+train_df = df[(df["spatial_split"] == "train") & (manual | pseudolabel_mask)].copy()
+val_df = df[(df["spatial_split"] == "val") & manual].copy()
+test_df = df[(df["spatial_split"] == "test") & manual].copy()
+
+if test_df.empty:
+    raise ValueError("Teste de especies vazio; inclua recortes anotados manualmente dos tiles test.")
+print(f"Train: {len(train_df)} | Val: {len(val_df)} | Test: {len(test_df)}")
+print("Origem por particao:")
+for split_name, frame in (("train", train_df), ("val", val_df), ("test", test_df)):
+    print(split_name, frame.groupby("species").size().to_dict())
 
 # ====================================================
 # TRANSFORMS
@@ -107,8 +168,10 @@ inv_freq = 1.0 / class_counts.values
 weights = train_df["species"].map(lambda x: inv_freq[x-1]).values
 sampler = WeightedRandomSampler(weights, len(weights), replacement=True)
 
-train_loader = DataLoader(train_dataset, batch_size=batch_size, sampler=sampler, num_workers=4)
-val_loader   = DataLoader(val_dataset,   batch_size=batch_size, shuffle=False, num_workers=4)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, sampler=sampler, num_workers=4,
+                          persistent_workers=True, worker_init_fn=seed_worker, drop_last=False)
+val_loader   = DataLoader(val_dataset,   batch_size=batch_size, shuffle=False, num_workers=4,
+                          persistent_workers=True, worker_init_fn=seed_worker, drop_last=False)
 
 # ====================================================
 # MODELO
