@@ -18,7 +18,6 @@ from segmentation_models_pytorch.losses import DiceLoss
 from torch.cuda.amp import autocast, GradScaler
 from datetime import timedelta
 import time
-import psutil
 import uuid
 import gc
 from unet_spatial_protocol import (

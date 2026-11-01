@@ -12,7 +12,10 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import psutil
+try:
+    import psutil
+except ImportError:
+    psutil = None
 import torch
 from PIL import Image
 
@@ -204,7 +207,8 @@ def runtime_metadata(config, run_dir, split_path, test_paths, run_id=None):
         },
         "split_path": str(split_path),
         "test_hash": hash_files(test_paths),
-        "process_rss_mb": round(psutil.Process().memory_info().rss / 1024**2, 2),
+        "process_rss_mb": round(psutil.Process().memory_info().rss / 1024**2, 2)
+        if psutil is not None else None,
         "gpu_mem_alloc_mb": round(torch.cuda.max_memory_allocated() / 1024**2, 2)
         if torch.cuda.is_available() else 0,
         "gpu_mem_reserved_mb": round(torch.cuda.max_memory_reserved() / 1024**2, 2)
