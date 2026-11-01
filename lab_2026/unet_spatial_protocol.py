@@ -229,7 +229,8 @@ def frozen_threshold(threshold_path, default=0.5):
 
 
 def freeze_validation_threshold(probabilities, targets, valid_pixels, output_dir, thresholds=None):
-    thresholds = thresholds or np.linspace(0.05, 0.95, 19)
+    if thresholds is None:
+        thresholds = np.linspace(0.05, 0.95, 19)
     probabilities = probabilities.reshape(-1)
     targets = targets.reshape(-1).astype(np.uint8)
     valid_pixels = valid_pixels.reshape(-1).astype(bool)
