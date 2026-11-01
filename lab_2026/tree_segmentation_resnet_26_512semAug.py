@@ -25,7 +25,7 @@ base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
 base_mask_tiles_dir  = "/home/paulomaciel/proj/masks/"
 checkpoint_path      = "/home/paulomaciel/proj/lab_2026/unet_binary_tree_detector512_semAug.pth"
 
-img_size = (256, 256)
+img_size = (512, 512)
 batch_size = 6
 epochs = 40
 patience = 5

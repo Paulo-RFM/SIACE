@@ -190,18 +190,19 @@ mask_by_image = {os.path.splitext(os.path.basename(image))[0]: mask for image, m
 mask_train = [mask_by_image[os.path.splitext(os.path.basename(image))[0]] for image in image_train]
 mask_val = [mask_by_image[os.path.splitext(os.path.basename(image))[0]] for image in image_val]
 
-def positive_fraction(paths):
+def positive_fraction(image_paths, mask_paths):
     foreground = 0
     valid_count = 0
-    for mask_path in paths:
+    for image_path, mask_path in zip(image_paths, mask_paths):
         mask = np.asarray(Image.open(mask_path).convert("RGB"))
-        valid = np.any(mask != 0, axis=2)
-        foreground += int(np.any(mask != 0, axis=2)[valid].sum())
+        label = np.any(mask != 0, axis=2)
+        valid = valid_pixel_mask(Image.open(image_path).convert("RGB"))
+        foreground += int(label[valid].sum())
         valid_count += int(valid.sum())
     return foreground / max(valid_count, 1)
 
-train_positive_fraction = positive_fraction(mask_train)
-val_positive_fraction = positive_fraction(mask_val)
+train_positive_fraction = positive_fraction(image_train, mask_train)
+val_positive_fraction = positive_fraction(image_val, mask_val)
 print("Imagens:", len(pairs))
 print("Pretos integralmente excluidos:", len(excluded_black))
 
@@ -509,10 +510,10 @@ for split_name, image_paths in split_by_name.items():
     mask_paths = [mask_by_image[os.path.splitext(os.path.basename(path))[0]] for path in image_paths]
     positive_pixels = 0
     valid_pixels = 0
-    for mask_path in mask_paths:
+    for image_path, mask_path in zip(image_paths, mask_paths):
         mask = np.array(Image.open(mask_path).convert("RGB"))
         foreground = np.any(mask != 0, axis=2)
-        valid = valid_pixel_mask(Image.open(mask_path).convert("RGB"))
+        valid = valid_pixel_mask(Image.open(image_path).convert("RGB"))
         positive_pixels += int(foreground[valid].sum())
         valid_pixels += int(valid.sum())
     positive_fraction[split_name] = positive_pixels / max(valid_pixels, 1)

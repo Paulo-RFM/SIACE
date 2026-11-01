@@ -12,8 +12,27 @@ import time
 from pathlib import Path
 
 
-SEGMENTATION_SCRIPT = "tree_segmentation_resnet_26_512softAug4.py"
 TEST_SCRIPT = "evaluate_unet_binary_test.py"
+BINARY_SEGMENTATION_SCRIPTS = (
+    "tree_segmentation_resnet.py",
+    "tree_segmentation_resnet_26.py",
+    "tree_segmentation_resnet_26_256softAug2.py",
+    "tree_segmentation_resnet_26_512semAug.py",
+    "tree_segmentation_resnet_26_512semAug2.py",
+    "tree_segmentation_resnet_26_512softAug2.py",
+    "tree_segmentation_resnet_26_512Aug5.py",
+    "tree_segmentation_resnet_26_512softAug4.py",
+)
+MODERN_SEGMENTATION_SCRIPTS = {"tree_segmentation_resnet_26_512softAug4.py"}
+EXPERIMENTS = {
+    "tree_segmentation_resnet.py": {"resolution": 512, "batch": 6},
+    "tree_segmentation_resnet_26.py": {"resolution": 512, "batch": 6},
+    "tree_segmentation_resnet_26_256softAug2.py": {"resolution": 256, "batch": 12},
+    "tree_segmentation_resnet_26_512semAug.py": {"resolution": 512, "batch": 6},
+    "tree_segmentation_resnet_26_512semAug2.py": {"resolution": 512, "batch": 6},
+    "tree_segmentation_resnet_26_512softAug2.py": {"resolution": 512, "batch": 6},
+    "tree_segmentation_resnet_26_512softAug4.py": {"resolution": 512, "batch": 6},
+}
 
 
 def sha256(path):
@@ -87,6 +106,10 @@ def parse_args():
     parser.add_argument("--run-id")
     parser.add_argument("--run-root", default="/home/paulomaciel/proj/lab_2026/runs")
     parser.add_argument("--smoke", action="store_true")
+    parser.add_argument(
+        "--experiments", nargs="+", default=["all"], metavar="EXPERIMENT",
+        help="all ou nomes de scripts; aceita a stem ou o nome completo.",
+    )
     return parser.parse_args()
 
 
@@ -109,21 +132,61 @@ def run_logged(command, log_file, env, cwd, label):
         log.write(f"[{label}] elapsed_s={elapsed:.3f}\n")
 
 
+def model_run_id(base_run_id, script_name):
+    stem = Path(script_name).stem
+    suffixes = {
+        "tree_segmentation_resnet": "base",
+        "tree_segmentation_resnet_26": "26",
+    }
+    suffix = suffixes.get(stem)
+    if suffix is None:
+        suffix = stem.removeprefix("tree_segmentation_resnet_26_")
+        suffix = suffix.removeprefix("tree_segmentation_resnet_")
+    return f"{base_run_id}_{suffix}"
+
+
+def check_binary_scripts(base_dir):
+    missing = [script for script in BINARY_SEGMENTATION_SCRIPTS
+           if not (base_dir / script).is_file()]
+    if missing:
+        raise RuntimeError(f"Scripts binarios ausentes: {', '.join(missing)}")
+
+
+def select_experiments(requested):
+    if requested == ["all"]:
+        return [script for script in BINARY_SEGMENTATION_SCRIPTS
+                if script in EXPERIMENTS]
+    selected = []
+    aliases = {script: script for script in BINARY_SEGMENTATION_SCRIPTS}
+    aliases.update({
+        Path(script).stem.removeprefix("tree_segmentation_resnet_26_"): script
+        for script in BINARY_SEGMENTATION_SCRIPTS
+    })
+    aliases.update({
+        Path(script).stem.removeprefix("tree_segmentation_resnet_"): script
+        for script in BINARY_SEGMENTATION_SCRIPTS
+    })
+    for requested_name in requested:
+        script_name = aliases.get(requested_name)
+        if script_name is None:
+            raise ValueError(f"Experimento desconhecido: {requested_name}")
+        if script_name not in EXPERIMENTS:
+            raise ValueError(
+                f"Experimento desativado ou nao adaptado: {requested_name}"
+            )
+        if script_name not in selected:
+            selected.append(script_name)
+    return selected
+
+
 def main():
     args = parse_args()
     base_dir = Path(__file__).resolve().parent
+    check_binary_scripts(base_dir)
     split_dir, images_dir, masks_dir, mapping = preflight(base_dir)
     run_id = args.run_id or dt.datetime.now(dt.timezone.utc).strftime("%Y%m%d_%H%M%S")
     run_root = Path(args.run_root)
-    run_dir = run_root / run_id
-
-    config = {
-        "run_id": run_id, "script": SEGMENTATION_SCRIPT, "architecture": "U-Net",
-        "encoder": "resnet34", "resolution": 512, "batch": 6, "lr": 1e-4,
-        "seed": 42, "split_path": str(split_dir),
-        "split_sha256": sha256(split_dir / "tiles_split.csv"),
-        "partition_counts": mapping["split"].value_counts().to_dict(),
-    }
+    selected_scripts = select_experiments(args.experiments)
 
     env = os.environ.copy()
     env["UNET_SPATIAL_SPLIT_DIR"] = str(split_dir)
@@ -133,51 +196,104 @@ def main():
     if args.skip_test:
         selected.discard("test")
 
-    train_command = [
-        sys.executable, "-u", str(base_dir / SEGMENTATION_SCRIPT),
-        "--images-dir", str(images_dir), "--masks-dir", str(masks_dir),
-        "--run-root", str(run_root), "--run-id", run_id,
-    ]
-    if args.smoke:
-        train_command.append("--smoke")
+    commands_by_model = {}
+    for script_name in selected_scripts:
+        model_run_id_value = model_run_id(run_id, script_name)
+        run_dir = run_root / model_run_id_value
+        if script_name in MODERN_SEGMENTATION_SCRIPTS:
+            train_command = [
+                sys.executable, "-u", str(base_dir / script_name),
+                "--images-dir", str(images_dir), "--masks-dir", str(masks_dir),
+                "--run-root", str(run_root), "--run-id", model_run_id_value,
+            ]
+        else:
+            train_command = [
+                sys.executable, "-u", str(base_dir / "run_legacy_binary_training.py"),
+                "--script", str(base_dir / script_name),
+                "--images-dir", str(images_dir), "--masks-dir", str(masks_dir),
+                "--run-root", str(run_root), "--run-id", model_run_id_value,
+            ]
+        if args.smoke:
+            train_command.append("--smoke")
 
-    checkpoint = run_dir / "checkpoint_best.pth"
-    threshold = run_dir / "frozen_threshold.json"
-    test_command = [
-        sys.executable, "-u", str(base_dir / TEST_SCRIPT),
-        "--images", str(images_dir), "--masks", str(masks_dir),
-        "--split", str(split_dir), "--checkpoint", str(checkpoint),
-        "--threshold", str(threshold), "--output", str(run_dir / "test_eval"),
-        "--img-size", "512",
-    ]
+        checkpoint = run_dir / "checkpoint_best.pth"
+        threshold = run_dir / "frozen_threshold.json"
+        test_command = [
+            sys.executable, "-u", str(base_dir / TEST_SCRIPT),
+            "--images", str(images_dir), "--masks", str(masks_dir),
+            "--split", str(split_dir), "--checkpoint", str(checkpoint),
+            "--threshold", str(threshold), "--output", str(run_dir / "test_eval"),
+            "--img-size", str(EXPERIMENTS[script_name]["resolution"]),
+        ]
+        commands_by_model[script_name] = {
+            "run_id": model_run_id_value,
+            "run_dir": str(run_dir),
+            "train": train_command,
+            "test": test_command,
+        }
 
     if args.dry_run:
         commands = {}
         if "train" in selected:
-            commands["train"] = train_command
+            commands["train"] = {name: item["train"] for name, item in commands_by_model.items()}
         if "test" in selected:
-            commands["test"] = test_command
+            commands["test"] = {name: item["test"] for name, item in commands_by_model.items()}
         if "summary" in selected:
             commands["summary"] = ["build_run_index.py"]
         print(json.dumps({"run_id": run_id, "commands": commands}, indent=2))
         return
 
-    run_dir.mkdir(parents=True, exist_ok=False)
-    log_file = run_dir / "log.txt"
-    (run_dir / "config.json").write_text(json.dumps(config, indent=2, ensure_ascii=False))
+    for script_name, item in commands_by_model.items():
+        run_dir = Path(item["run_dir"])
+        run_dir.mkdir(parents=True, exist_ok=False)
+        log_file = run_dir / "log.txt"
+        config = {
+            "run_id": item["run_id"], "script": script_name, "architecture": "U-Net",
+            "encoder": "resnet34", "seed": 42, "split_path": str(split_dir),
+            "resolution": EXPERIMENTS[script_name]["resolution"],
+            "batch": EXPERIMENTS[script_name]["batch"],
+            "split_sha256": sha256(split_dir / "tiles_split.csv"),
+            "partition_counts": mapping["split"].value_counts().to_dict(),
+        }
+        (run_dir / "config.json").write_text(json.dumps(config, indent=2, ensure_ascii=False))
 
-    if "train" in selected:
-        run_logged(train_command, log_file, env, base_dir, "train")
+        if "train" in selected:
+            try:
+                run_logged(item["train"], log_file, env, base_dir, "train")
+            except Exception as exc:
+                print(f"[ERRO] {script_name}: {exc}", file=sys.stderr)
+                (run_dir / "failure.json").write_text(json.dumps({
+                    "experiment": script_name,
+                    "stage": "train",
+                    "error": str(exc),
+                }, ensure_ascii=False, indent=2), encoding="utf-8")
+                continue
 
-    if "test" in selected:
-        if not checkpoint.is_file():
-            raise RuntimeError(f"Teste abortado: checkpoint do run ausente: {checkpoint}")
-        if not threshold.is_file():
-            raise RuntimeError(f"Teste abortado: limiar do run ausente: {threshold}")
-        run_logged(test_command, log_file, env, base_dir, "test")
+        checkpoint = run_dir / "checkpoint_best.pth"
+        threshold = run_dir / "frozen_threshold.json"
+        if "test" in selected:
+            if not checkpoint.is_file():
+                print(f"[ERRO] {script_name}: checkpoint ausente {checkpoint}", file=sys.stderr)
+                continue
+            if not threshold.is_file():
+                print(f"[ERRO] {script_name}: limiar ausente {threshold}", file=sys.stderr)
+                continue
+            try:
+                run_logged(item["test"], log_file, env, base_dir, "test")
+            except Exception as exc:
+                print(f"[ERRO] {script_name}: {exc}", file=sys.stderr)
+                (run_dir / "failure.json").write_text(json.dumps({
+                    "experiment": script_name,
+                    "stage": "test",
+                    "error": str(exc),
+                }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     if "summary" in selected:
-        summary = dict(config)
+        summary = {
+            "run_id": run_id,
+            "scripts": list(BINARY_SEGMENTATION_SCRIPTS),
+            "split_sha256": sha256(split_dir / "tiles_split.csv"),
+        }
         summary["ended_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
         (run_dir / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
         subprocess.run(
