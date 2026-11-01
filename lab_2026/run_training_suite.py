@@ -116,8 +116,6 @@ def main():
     run_id = args.run_id or dt.datetime.now(dt.timezone.utc).strftime("%Y%m%d_%H%M%S")
     run_root = Path(args.run_root)
     run_dir = run_root / run_id
-    run_dir.mkdir(parents=True, exist_ok=False)
-    log_file = run_dir / "log.txt"
 
     config = {
         "run_id": run_id, "script": SEGMENTATION_SCRIPT, "architecture": "U-Net",
@@ -126,7 +124,6 @@ def main():
         "split_sha256": sha256(split_dir / "tiles_split.csv"),
         "partition_counts": mapping["split"].value_counts().to_dict(),
     }
-    (run_dir / "config.json").write_text(json.dumps(config, indent=2, ensure_ascii=False))
 
     env = os.environ.copy()
     env["UNET_SPATIAL_SPLIT_DIR"] = str(split_dir)
@@ -144,26 +141,39 @@ def main():
     if args.smoke:
         train_command.append("--smoke")
 
+    checkpoint = run_dir / "checkpoint_best.pth"
+    threshold = run_dir / "frozen_threshold.json"
+    test_command = [
+        sys.executable, "-u", str(base_dir / TEST_SCRIPT),
+        "--images", str(images_dir), "--masks", str(masks_dir),
+        "--split", str(split_dir), "--checkpoint", str(checkpoint),
+        "--threshold", str(threshold), "--output", str(run_dir / "test_eval"),
+        "--img-size", "512",
+    ]
+
     if args.dry_run:
-        print(json.dumps(train_command))
+        commands = {}
+        if "train" in selected:
+            commands["train"] = train_command
+        if "test" in selected:
+            commands["test"] = test_command
+        if "summary" in selected:
+            commands["summary"] = ["build_run_index.py"]
+        print(json.dumps({"run_id": run_id, "commands": commands}, indent=2))
         return
+
+    run_dir.mkdir(parents=True, exist_ok=False)
+    log_file = run_dir / "log.txt"
+    (run_dir / "config.json").write_text(json.dumps(config, indent=2, ensure_ascii=False))
+
     if "train" in selected:
         run_logged(train_command, log_file, env, base_dir, "train")
 
-    checkpoint = run_dir / "checkpoint_best.pth"
-    threshold = run_dir / "frozen_threshold.json"
     if "test" in selected:
         if not checkpoint.is_file():
             raise RuntimeError(f"Teste abortado: checkpoint do run ausente: {checkpoint}")
         if not threshold.is_file():
             raise RuntimeError(f"Teste abortado: limiar do run ausente: {threshold}")
-        test_command = [
-            sys.executable, "-u", str(base_dir / TEST_SCRIPT),
-            "--images", str(images_dir), "--masks", str(masks_dir),
-            "--split", str(split_dir), "--checkpoint", str(checkpoint),
-            "--threshold", str(threshold), "--output", str(run_dir / "test_eval"),
-            "--img-size", "512",
-        ]
         run_logged(test_command, log_file, env, base_dir, "test")
 
     if "summary" in selected:
