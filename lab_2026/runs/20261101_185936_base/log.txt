@@ -1,0 +1,134 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_binary_training.py", "--script", "/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/masks", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "20261101_185936_base"]
+[train] started_at=2026-11-01T18:59:36.156399+00:00
+Imagens: 1018
+Máscaras: 1018
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet.py:165: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet.py:211: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet.py:233: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+
+=== Época 1/40 ===
+Train Loss: 0.5100
+Val Loss:   0.3819
+Acc: 0.8774  Prec: 0.7241  Rec: 0.7441  F1: 0.7340  IoU: 0.5798
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 2/40 ===
+Train Loss: 0.4326
+Val Loss:   0.3492
+Acc: 0.8700  Prec: 0.6570  Rec: 0.8956  F1: 0.7580  IoU: 0.6103
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 3/40 ===
+Train Loss: 0.4178
+Val Loss:   0.3334
+Acc: 0.8604  Prec: 0.6327  Rec: 0.9201  F1: 0.7498  IoU: 0.5997
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 4/40 ===
+Train Loss: 0.4115
+Val Loss:   0.3316
+Acc: 0.8558  Prec: 0.6219  Rec: 0.9326  F1: 0.7462  IoU: 0.5951
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 5/40 ===
+Train Loss: 0.3976
+Val Loss:   0.3144
+Acc: 0.8795  Prec: 0.6833  Rec: 0.8759  F1: 0.7677  IoU: 0.6230
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 6/40 ===
+Train Loss: 0.3920
+Val Loss:   0.2865
+Acc: 0.8952  Prec: 0.7440  Rec: 0.8218  F1: 0.7810  IoU: 0.6407
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 7/40 ===
+Train Loss: 0.3838
+Val Loss:   0.2794
+Acc: 0.8973  Prec: 0.7351  Rec: 0.8574  F1: 0.7916  IoU: 0.6551
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 8/40 ===
+Train Loss: 0.3657
+Val Loss:   0.2921
+Acc: 0.9004  Prec: 0.8447  Rec: 0.6885  F1: 0.7586  IoU: 0.6111
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 9/40 ===
+Train Loss: 0.3690
+Val Loss:   0.3106
+Acc: 0.9010  Prec: 0.8357  Rec: 0.7026  F1: 0.7634  IoU: 0.6174
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 10/40 ===
+Train Loss: 0.3843
+Val Loss:   0.2961
+Acc: 0.8737  Prec: 0.6530  Rec: 0.9492  F1: 0.7737  IoU: 0.6309
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 11/40 ===
+Train Loss: 0.3544
+Val Loss:   0.2890
+Acc: 0.9002  Prec: 0.7181  Rec: 0.9236  F1: 0.8080  IoU: 0.6778
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 12/40 ===
+Train Loss: 0.3480
+Val Loss:   0.2575
+Acc: 0.9140  Prec: 0.7863  Rec: 0.8538  F1: 0.8186  IoU: 0.6929
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 13/40 ===
+Train Loss: 0.3345
+Val Loss:   0.2613
+Acc: 0.9093  Prec: 0.7515  Rec: 0.8984  F1: 0.8184  IoU: 0.6926
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 14/40 ===
+Train Loss: 0.3332
+Val Loss:   0.2800
+Acc: 0.9135  Prec: 0.8104  Rec: 0.8088  F1: 0.8096  IoU: 0.6801
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 15/40 ===
+Train Loss: 0.3394
+Val Loss:   0.2741
+Acc: 0.8946  Prec: 0.7145  Rec: 0.8935  F1: 0.7940  IoU: 0.6584
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 16/40 ===
+Train Loss: 0.3261
+Val Loss:   0.2602
+Acc: 0.9066  Prec: 0.7627  Rec: 0.8551  F1: 0.8063  IoU: 0.6754
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+
+=== Época 17/40 ===
+Train Loss: 0.3253
+Val Loss:   0.2575
+Acc: 0.9141  Prec: 0.8053  Rec: 0.8207  F1: 0.8129  IoU: 0.6848
+CSV atualizado: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/unet_metrics.csv
+⛔ Early Stopping
+
+Treinamento finalizado!
+Melhor IoU: 0.6929245278589102
+Modelo salvo em: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/checkpoint_best.pth
+Modelo legado treinado com split espacial: tree_segmentation_resnet.py
+[train] ended_at=2026-11-01T19:31:03.939103+00:00
+[train] elapsed_s=1887.783
+
+[test] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/evaluate_unet_binary_test.py", "--images", "/home/paulomaciel/proj/imagens", "--masks", "/home/paulomaciel/proj/masks", "--split", "/home/paulomaciel/proj/unet_spatial_split", "--checkpoint", "/home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/checkpoint_best.pth", "--threshold", "/home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/frozen_threshold.json", "--output", "/home/paulomaciel/proj/lab_2026/runs/20261101_185936_base/test_eval", "--img-size", "512"]
+[test] started_at=2026-11-01T19:31:03.939296+00:00
+Teste avaliado uma unica vez: 204 tiles, threshold=0.5000
+[test] ended_at=2026-11-01T19:31:31.529242+00:00
+[test] elapsed_s=27.590

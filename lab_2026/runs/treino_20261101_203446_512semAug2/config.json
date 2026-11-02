@@ -1,0 +1,16 @@
+{
+  "run_id": "treino_20261101_203446_512semAug2",
+  "script": "tree_segmentation_resnet_26_512semAug2.py",
+  "architecture": "U-Net",
+  "encoder": "resnet34",
+  "seed": 42,
+  "split_path": "/home/paulomaciel/proj/unet_spatial_split",
+  "resolution": 512,
+  "batch": 6,
+  "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+  "partition_counts": {
+    "train": 611,
+    "test": 204,
+    "val": 203
+  }
+}

@@ -1,0 +1,563 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_binary_training.py", "--script", "/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/masks", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "20261101_185936_512semAug"]
+[train] started_at=2026-11-01T20:29:19.327555+00:00
+Imagens: 1018
+Máscaras: 1018
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug.py:166: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug.py:213: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug.py:240: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+
+=== Época 1/40 ===
+Train Loss: 0.4043
+Val Loss:   0.3333
+
+--- MÉTRICAS ---
+Acc:  0.8921
+Prec: 0.6960
+Rec:  0.9331
+F1:   0.7973
+IoU:  0.6629
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 11289519
+FP: 4930341
+FN: 809920
+TN: 36185452
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.6629)
+
+=== Época 2/40 ===
+Train Loss: 0.2758
+Val Loss:   0.2640
+
+--- MÉTRICAS ---
+Acc:  0.9170
+Prec: 0.7954
+Rec:  0.8549
+F1:   0.8240
+IoU:  0.7007
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10343516
+FP: 2661453
+FN: 1755923
+TN: 38454340
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.7007)
+
+=== Época 3/40 ===
+Train Loss: 0.2178
+Val Loss:   0.2586
+
+--- MÉTRICAS ---
+Acc:  0.9037
+Prec: 0.7279
+Rec:  0.9207
+F1:   0.8130
+IoU:  0.6849
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 11140372
+FP: 4165223
+FN: 959067
+TN: 36950570
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 1/5
+
+=== Época 4/40 ===
+Train Loss: 0.1668
+Val Loss:   0.2486
+
+--- MÉTRICAS ---
+Acc:  0.9171
+Prec: 0.8636
+Rec:  0.7547
+F1:   0.8055
+IoU:  0.6743
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9131572
+FP: 1442010
+FN: 2967867
+TN: 39673783
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 2/5
+
+=== Época 5/40 ===
+Train Loss: 0.1432
+Val Loss:   0.2333
+
+--- MÉTRICAS ---
+Acc:  0.9143
+Prec: 0.7845
+Rec:  0.8589
+F1:   0.8200
+IoU:  0.6949
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10392021
+FP: 2855055
+FN: 1707418
+TN: 38260738
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 3/5
+
+=== Época 6/40 ===
+Train Loss: 0.1329
+Val Loss:   0.2188
+
+--- MÉTRICAS ---
+Acc:  0.9208
+Prec: 0.8025
+Rec:  0.8647
+F1:   0.8324
+IoU:  0.7130
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10462893
+FP: 2575647
+FN: 1636546
+TN: 38540146
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.7130)
+
+=== Época 7/40 ===
+Train Loss: 0.1018
+Val Loss:   0.2498
+
+--- MÉTRICAS ---
+Acc:  0.9155
+Prec: 0.8636
+Rec:  0.7464
+F1:   0.8007
+IoU:  0.6677
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9031031
+FP: 1426370
+FN: 3068408
+TN: 39689423
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 1/5
+
+=== Época 8/40 ===
+Train Loss: 0.0894
+Val Loss:   0.2276
+
+--- MÉTRICAS ---
+Acc:  0.9215
+Prec: 0.8409
+Rec:  0.8077
+F1:   0.8240
+IoU:  0.7006
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9772874
+FP: 1849648
+FN: 2326565
+TN: 39266145
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 2/5
+
+=== Época 9/40 ===
+Train Loss: 0.0788
+Val Loss:   0.2251
+
+--- MÉTRICAS ---
+Acc:  0.9213
+Prec: 0.8004
+Rec:  0.8711
+F1:   0.8343
+IoU:  0.7156
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10539711
+FP: 2628144
+FN: 1559728
+TN: 38487649
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.7156)
+
+=== Época 10/40 ===
+Train Loss: 0.0714
+Val Loss:   0.2247
+
+--- MÉTRICAS ---
+Acc:  0.9241
+Prec: 0.8515
+Rec:  0.8069
+F1:   0.8286
+IoU:  0.7074
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9763362
+FP: 1703170
+FN: 2336077
+TN: 39412623
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 1/5
+
+=== Época 11/40 ===
+Train Loss: 0.0657
+Val Loss:   0.2226
+
+--- MÉTRICAS ---
+Acc:  0.9248
+Prec: 0.8437
+Rec:  0.8211
+F1:   0.8323
+IoU:  0.7127
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9935206
+FP: 1839865
+FN: 2164233
+TN: 39275928
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 2/5
+
+=== Época 12/40 ===
+Train Loss: 0.0571
+Val Loss:   0.2201
+
+--- MÉTRICAS ---
+Acc:  0.9264
+Prec: 0.8509
+Rec:  0.8202
+F1:   0.8353
+IoU:  0.7171
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9923971
+FP: 1738887
+FN: 2175468
+TN: 39376906
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.7171)
+
+=== Época 13/40 ===
+Train Loss: 0.0531
+Val Loss:   0.2463
+
+--- MÉTRICAS ---
+Acc:  0.9202
+Prec: 0.8469
+Rec:  0.7924
+F1:   0.8188
+IoU:  0.6932
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9587784
+FP: 1732727
+FN: 2511655
+TN: 39383066
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 1/5
+
+=== Época 14/40 ===
+Train Loss: 0.0514
+Val Loss:   0.2218
+
+--- MÉTRICAS ---
+Acc:  0.9273
+Prec: 0.8479
+Rec:  0.8289
+F1:   0.8383
+IoU:  0.7216
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10029044
+FP: 1798978
+FN: 2070395
+TN: 39316815
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.7216)
+
+=== Época 15/40 ===
+Train Loss: 0.0514
+Val Loss:   0.2229
+
+--- MÉTRICAS ---
+Acc:  0.9264
+Prec: 0.8431
+Rec:  0.8309
+F1:   0.8369
+IoU:  0.7196
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10052961
+FP: 1870561
+FN: 2046478
+TN: 39245232
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 1/5
+
+=== Época 16/40 ===
+Train Loss: 0.0457
+Val Loss:   0.2200
+
+--- MÉTRICAS ---
+Acc:  0.9274
+Prec: 0.8340
+Rec:  0.8500
+F1:   0.8419
+IoU:  0.7269
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10284121
+FP: 2047548
+FN: 1815318
+TN: 39068245
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.7269)
+
+=== Época 17/40 ===
+Train Loss: 0.0461
+Val Loss:   0.2188
+
+--- MÉTRICAS ---
+Acc:  0.9272
+Prec: 0.8312
+Rec:  0.8533
+F1:   0.8421
+IoU:  0.7273
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10324749
+FP: 2096774
+FN: 1774690
+TN: 39019019
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.7273)
+
+=== Época 18/40 ===
+Train Loss: 0.0440
+Val Loss:   0.2338
+
+--- MÉTRICAS ---
+Acc:  0.9262
+Prec: 0.8513
+Rec:  0.8182
+F1:   0.8344
+IoU:  0.7158
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9899378
+FP: 1729637
+FN: 2200061
+TN: 39386156
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 1/5
+
+=== Época 19/40 ===
+Train Loss: 0.0411
+Val Loss:   0.2339
+
+--- MÉTRICAS ---
+Acc:  0.9259
+Prec: 0.8485
+Rec:  0.8205
+F1:   0.8343
+IoU:  0.7157
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 9927688
+FP: 1772697
+FN: 2171751
+TN: 39343096
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 2/5
+
+=== Época 20/40 ===
+Train Loss: 0.0411
+Val Loss:   0.2314
+
+--- MÉTRICAS ---
+Acc:  0.9261
+Prec: 0.8331
+Rec:  0.8438
+F1:   0.8385
+IoU:  0.7218
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10209952
+FP: 2044878
+FN: 1889487
+TN: 39070915
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 3/5
+
+=== Época 21/40 ===
+Train Loss: 0.0388
+Val Loss:   0.2339
+
+--- MÉTRICAS ---
+Acc:  0.9271
+Prec: 0.8376
+Rec:  0.8428
+F1:   0.8402
+IoU:  0.7244
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10197190
+FP: 1977795
+FN: 1902249
+TN: 39137998
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 4/5
+
+=== Época 22/40 ===
+Train Loss: 0.0381
+Val Loss:   0.2307
+
+--- MÉTRICAS ---
+Acc:  0.9272
+Prec: 0.8325
+Rec:  0.8510
+F1:   0.8416
+IoU:  0.7265
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10296189
+FP: 2072136
+FN: 1803250
+TN: 39043657
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+Sem melhora: 5/5
+
+Early Stopping ativado
+CSV salvo em: /home/paulomaciel/proj/unet_metrics_512_semAug.csv
+
+Treinamento finalizado!
+Melhor IoU: 0.7272889607953896
+Modelo salvo em: /home/paulomaciel/proj/lab_2026/runs/20261101_185936_512semAug/checkpoint_best.pth
+Modelo legado treinado com split espacial: tree_segmentation_resnet_26_512semAug.py
+[train] ended_at=2026-11-01T21:06:51.270509+00:00
+[train] elapsed_s=2251.943
+
+[test] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/evaluate_unet_binary_test.py", "--images", "/home/paulomaciel/proj/imagens", "--masks", "/home/paulomaciel/proj/masks", "--split", "/home/paulomaciel/proj/unet_spatial_split", "--checkpoint", "/home/paulomaciel/proj/lab_2026/runs/20261101_185936_512semAug/checkpoint_best.pth", "--threshold", "/home/paulomaciel/proj/lab_2026/runs/20261101_185936_512semAug/frozen_threshold.json", "--output", "/home/paulomaciel/proj/lab_2026/runs/20261101_185936_512semAug/test_eval", "--img-size", "512"]
+[test] started_at=2026-11-01T21:06:51.270697+00:00
+Teste avaliado uma unica vez: 204 tiles, threshold=0.5000
+[test] ended_at=2026-11-01T21:07:18.870336+00:00
+[test] elapsed_s=27.600

@@ -1,0 +1,36 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_binary_training.py", "--script", "/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/masks", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "20261101_184405_512semAug2", "--smoke"]
+[train] started_at=2026-11-01T18:49:43.965718+00:00
+Imagens: 1018
+Máscaras: 1018
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:163: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:212: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:244: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/1 ===
+Train Loss: 0.4191
+Val Loss:   0.3291
+
+--- MÉTRICAS ---
+Acc:  0.8956
+Prec: 0.7150
+Rec:  0.8991
+F1:   0.7966
+IoU:  0.6619
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10878529
+FP: 4335193
+FN: 1220910
+TN: 36780600
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6619)
+Modelo legado treinado com split espacial: tree_segmentation_resnet_26_512semAug2.py
+[train] ended_at=2026-11-01T18:51:49.079499+00:00
+[train] elapsed_s=125.114

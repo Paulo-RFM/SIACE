@@ -1,0 +1,45 @@
+{
+  "run_id": "treino_20261101_203446_512softAug4",
+  "seed": 42,
+  "configuration": {
+    "seed": 42,
+    "img_size": [
+      512,
+      512
+    ],
+    "batch_size": 6,
+    "learning_rate": 0.0001,
+    "optimizer": "AdamW",
+    "scheduler": "ReduceLROnPlateau(mode=max, patience=3, factor=0.5)",
+    "loss": "0.5 BCEWithLogits + 0.5 Dice",
+    "epochs_max": 40,
+    "patience": 5,
+    "weight_decay": 0.0001,
+    "model": "Unet_resnet34"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "vram_total_mb": 4038.62,
+    "cuda": "12.1",
+    "cudnn": 90100
+  },
+  "environment": {
+    "pytorch": "2.5.1+cu121",
+    "python": "3.10.19",
+    "os": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+    "host": "Godel",
+    "segmentation_models_pytorch": "0.5.0"
+  },
+  "split_path": "/home/paulomaciel/proj/unet_spatial_split",
+  "test_hash": "7d84e538ae19d25bbcdafc01121d11d2caf9e8c62338b6c65c1b02174b5c718f",
+  "process_rss_mb": 2068.67,
+  "gpu_mem_alloc_mb": 1859.09,
+  "gpu_mem_reserved_mb": 2320.0,
+  "split_hash": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+  "split_manifest_hash": "5093fbbd87e119d9e43827e4cd68aca91b18dc6d3909ef4ac3c30205b3278a04",
+  "positive_fraction_by_split": {
+    "train": 0.23600191474320614,
+    "val": 0.22736803070115363,
+    "test": 0.18824708211286628
+  }
+}

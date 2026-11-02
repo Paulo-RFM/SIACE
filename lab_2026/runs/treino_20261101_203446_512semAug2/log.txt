@@ -1,0 +1,681 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python3", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_binary_training.py", "--script", "/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/masks", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "treino_20261101_203446_512semAug2"]
+[train] started_at=2026-11-01T23:34:46.912275+00:00
+Imagens: 1018
+Máscaras: 1018
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:163: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:212: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:244: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/40 ===
+Train Loss: 0.4539
+Val Loss:   0.3508
+
+--- MÉTRICAS ---
+Acc:  0.9060
+Prec: 0.7723
+Rec:  0.8319
+F1:   0.8010
+IoU:  0.6680
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10065183
+FP: 2967815
+FN: 2034256
+TN: 38147978
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6680)
+
+=== Época 2/40 ===
+Train Loss: 0.3460
+Val Loss:   0.3678
+
+--- MÉTRICAS ---
+Acc:  0.8943
+Prec: 0.7152
+Rec:  0.8889
+F1:   0.7926
+IoU:  0.6565
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10754954
+FP: 4282802
+FN: 1344485
+TN: 36832991
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 1/7
+
+=== Época 3/40 ===
+Train Loss: 0.2936
+Val Loss:   0.2709
+
+--- MÉTRICAS ---
+Acc:  0.9058
+Prec: 0.7454
+Rec:  0.8894
+F1:   0.8111
+IoU:  0.6822
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10760840
+FP: 3674647
+FN: 1338599
+TN: 37441146
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6822)
+
+=== Época 4/40 ===
+Train Loss: 0.2729
+Val Loss:   0.2644
+
+--- MÉTRICAS ---
+Acc:  0.9130
+Prec: 0.7864
+Rec:  0.8477
+F1:   0.8159
+IoU:  0.6890
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10257234
+FP: 2786854
+FN: 1842205
+TN: 38328939
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6890)
+
+=== Época 5/40 ===
+Train Loss: 0.2532
+Val Loss:   0.2540
+
+--- MÉTRICAS ---
+Acc:  0.9204
+Prec: 0.7996
+Rec:  0.8674
+F1:   0.8321
+IoU:  0.7125
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10494683
+FP: 2630792
+FN: 1604756
+TN: 38485001
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7125)
+
+=== Época 6/40 ===
+Train Loss: 0.2320
+Val Loss:   0.2310
+
+--- MÉTRICAS ---
+Acc:  0.9188
+Prec: 0.8056
+Rec:  0.8477
+F1:   0.8261
+IoU:  0.7037
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10256277
+FP: 2475605
+FN: 1843162
+TN: 38640188
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 1/7
+
+=== Época 7/40 ===
+Train Loss: 0.2179
+Val Loss:   0.2676
+
+--- MÉTRICAS ---
+Acc:  0.9063
+Prec: 0.8564
+Rec:  0.7063
+F1:   0.7741
+IoU:  0.6315
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 8545952
+FP: 1433523
+FN: 3553487
+TN: 39682270
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 2/7
+
+=== Época 8/40 ===
+Train Loss: 0.2145
+Val Loss:   0.2607
+
+--- MÉTRICAS ---
+Acc:  0.9121
+Prec: 0.7763
+Rec:  0.8621
+F1:   0.8169
+IoU:  0.6905
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10431061
+FP: 3006672
+FN: 1668378
+TN: 38109121
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 3/7
+
+=== Época 9/40 ===
+Train Loss: 0.2007
+Val Loss:   0.2386
+
+--- MÉTRICAS ---
+Acc:  0.9151
+Prec: 0.7964
+Rec:  0.8414
+F1:   0.8183
+IoU:  0.6925
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10180853
+FP: 2601947
+FN: 1918586
+TN: 38513846
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 4/7
+
+=== Época 10/40 ===
+Train Loss: 0.1897
+Val Loss:   0.2586
+
+--- MÉTRICAS ---
+Acc:  0.9082
+Prec: 0.7570
+Rec:  0.8778
+F1:   0.8130
+IoU:  0.6849
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10621142
+FP: 3408660
+FN: 1478297
+TN: 37707133
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 5/7
+
+=== Época 11/40 ===
+Train Loss: 0.1859
+Val Loss:   0.2166
+
+--- MÉTRICAS ---
+Acc:  0.9227
+Prec: 0.8104
+Rec:  0.8617
+F1:   0.8353
+IoU:  0.7171
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10425755
+FP: 2438462
+FN: 1673684
+TN: 38677331
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7171)
+
+=== Época 12/40 ===
+Train Loss: 0.1754
+Val Loss:   0.2698
+
+--- MÉTRICAS ---
+Acc:  0.9077
+Prec: 0.7506
+Rec:  0.8897
+F1:   0.8143
+IoU:  0.6867
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10765159
+FP: 3576841
+FN: 1334280
+TN: 37538952
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 1/7
+
+=== Época 13/40 ===
+Train Loss: 0.1898
+Val Loss:   0.2076
+
+--- MÉTRICAS ---
+Acc:  0.9265
+Prec: 0.8418
+Rec:  0.8336
+F1:   0.8377
+IoU:  0.7207
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10086444
+FP: 1895716
+FN: 2012995
+TN: 39220077
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7207)
+
+=== Época 14/40 ===
+Train Loss: 0.1828
+Val Loss:   0.2097
+
+--- MÉTRICAS ---
+Acc:  0.9216
+Prec: 0.7937
+Rec:  0.8850
+F1:   0.8369
+IoU:  0.7195
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10707944
+FP: 2782496
+FN: 1391495
+TN: 38333297
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 1/7
+
+=== Época 15/40 ===
+Train Loss: 0.1691
+Val Loss:   0.2159
+
+--- MÉTRICAS ---
+Acc:  0.9205
+Prec: 0.7929
+Rec:  0.8804
+F1:   0.8343
+IoU:  0.7158
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10652117
+FP: 2783001
+FN: 1447322
+TN: 38332792
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 2/7
+
+=== Época 16/40 ===
+Train Loss: 0.1608
+Val Loss:   0.2305
+
+--- MÉTRICAS ---
+Acc:  0.9214
+Prec: 0.8018
+Rec:  0.8695
+F1:   0.8342
+IoU:  0.7156
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10520012
+FP: 2600853
+FN: 1579427
+TN: 38514940
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 3/7
+
+=== Época 17/40 ===
+Train Loss: 0.1713
+Val Loss:   0.2075
+
+--- MÉTRICAS ---
+Acc:  0.9228
+Prec: 0.8074
+Rec:  0.8675
+F1:   0.8364
+IoU:  0.7188
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10496783
+FP: 2503348
+FN: 1602656
+TN: 38612445
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 4/7
+
+=== Época 18/40 ===
+Train Loss: 0.1658
+Val Loss:   0.2234
+
+--- MÉTRICAS ---
+Acc:  0.9200
+Prec: 0.8229
+Rec:  0.8256
+F1:   0.8243
+IoU:  0.7011
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9989860
+FP: 2150020
+FN: 2109579
+TN: 38965773
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 5/7
+
+=== Época 19/40 ===
+Train Loss: 0.1527
+Val Loss:   0.2069
+
+--- MÉTRICAS ---
+Acc:  0.9288
+Prec: 0.8260
+Rec:  0.8701
+F1:   0.8475
+IoU:  0.7353
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10528142
+FP: 2218098
+FN: 1571297
+TN: 38897695
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7353)
+
+=== Época 20/40 ===
+Train Loss: 0.1474
+Val Loss:   0.2414
+
+--- MÉTRICAS ---
+Acc:  0.9223
+Prec: 0.8560
+Rec:  0.7912
+F1:   0.8223
+IoU:  0.6983
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9572748
+FP: 1610022
+FN: 2526691
+TN: 39505771
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 1/7
+
+=== Época 21/40 ===
+Train Loss: 0.1459
+Val Loss:   0.2107
+
+--- MÉTRICAS ---
+Acc:  0.9264
+Prec: 0.8185
+Rec:  0.8688
+F1:   0.8429
+IoU:  0.7285
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10511946
+FP: 2330837
+FN: 1587493
+TN: 38784956
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 2/7
+
+=== Época 22/40 ===
+Train Loss: 0.1465
+Val Loss:   0.2389
+
+--- MÉTRICAS ---
+Acc:  0.9217
+Prec: 0.8148
+Rec:  0.8482
+F1:   0.8312
+IoU:  0.7111
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10263043
+FP: 2332469
+FN: 1836396
+TN: 38783324
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 3/7
+
+=== Época 23/40 ===
+Train Loss: 0.1355
+Val Loss:   0.2120
+
+--- MÉTRICAS ---
+Acc:  0.9278
+Prec: 0.8396
+Rec:  0.8435
+F1:   0.8416
+IoU:  0.7264
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10205415
+FP: 1948991
+FN: 1894024
+TN: 39166802
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 4/7
+
+=== Época 24/40 ===
+Train Loss: 0.1370
+Val Loss:   0.2032
+
+--- MÉTRICAS ---
+Acc:  0.9307
+Prec: 0.8328
+Rec:  0.8700
+F1:   0.8510
+IoU:  0.7406
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10526313
+FP: 2112970
+FN: 1573126
+TN: 39002823
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7406)
+
+=== Época 25/40 ===
+Train Loss: 0.1384
+Val Loss:   0.2130
+
+--- MÉTRICAS ---
+Acc:  0.9272
+Prec: 0.8148
+Rec:  0.8797
+F1:   0.8460
+IoU:  0.7331
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10643751
+FP: 2419051
+FN: 1455688
+TN: 38696742
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 1/7
+
+=== Época 26/40 ===
+Train Loss: 0.1332
+Val Loss:   0.2111
+
+--- MÉTRICAS ---
+Acc:  0.9261
+Prec: 0.7974
+Rec:  0.9050
+F1:   0.8478
+IoU:  0.7358
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10949504
+FP: 2781545
+FN: 1149935
+TN: 38334248
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 2/7
+
+=== Época 27/40 ===
+Train Loss: 0.1467
+Val Loss:   0.2228
+
+--- MÉTRICAS ---
+Acc:  0.9174
+Prec: 0.7800
+Rec:  0.8868
+F1:   0.8300
+IoU:  0.7094
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10729944
+FP: 3026132
+FN: 1369495
+TN: 38089661
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 3/7
+
+=== Época 28/40 ===
+Train Loss: 0.1405
+Val Loss:   0.2093
+
+--- MÉTRICAS ---
+Acc:  0.9262
+Prec: 0.8159
+Rec:  0.8723
+F1:   0.8431
+IoU:  0.7288
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10553874
+FP: 2381773
+FN: 1545565
+TN: 38734020
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 4/7
+
+=== Época 29/40 ===
+Train Loss: 0.1384
+Val Loss:   0.2705
+
+--- MÉTRICAS ---
+Acc:  0.9032
+Prec: 0.7601
+Rec:  0.8389
+F1:   0.7976
+IoU:  0.6633
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10150651
+FP: 3203637
+FN: 1948788
+TN: 37912156
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 5/7
+
+=== Época 30/40 ===
+Train Loss: 0.1412
+Val Loss:   0.2372
+
+--- MÉTRICAS ---
+Acc:  0.9212
+Prec: 0.8610
+Rec:  0.7793
+F1:   0.8181
+IoU:  0.6922
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9429307
+FP: 1522876
+FN: 2670132
+TN: 39592917
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 6/7
+
+=== Época 31/40 ===
+Train Loss: 0.1397
+Val Loss:   0.2501
+
+--- MÉTRICAS ---
+Acc:  0.9168
+Prec: 0.8448
+Rec:  0.7766
+F1:   0.8093
+IoU:  0.6797
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9396857
+FP: 1725951
+FN: 2702582
+TN: 39389842
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 7/7
+
+🛑 Early Stopping ativado
+Modelo legado treinado com split espacial: tree_segmentation_resnet_26_512semAug2.py
+[train] ended_at=2026-11-02T00:36:56.144058+00:00
+[train] elapsed_s=3729.232
+
+[test] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python3", "-u", "/home/paulomaciel/proj/lab_2026/evaluate_unet_binary_test.py", "--images", "/home/paulomaciel/proj/imagens", "--masks", "/home/paulomaciel/proj/masks", "--split", "/home/paulomaciel/proj/unet_spatial_split", "--checkpoint", "/home/paulomaciel/proj/lab_2026/runs/treino_20261101_203446_512semAug2/checkpoint_best.pth", "--threshold", "/home/paulomaciel/proj/lab_2026/runs/treino_20261101_203446_512semAug2/frozen_threshold.json", "--output", "/home/paulomaciel/proj/lab_2026/runs/treino_20261101_203446_512semAug2/test_eval", "--img-size", "512"]
+[test] started_at=2026-11-02T00:36:56.144259+00:00
+Teste avaliado uma unica vez: 204 tiles, threshold=0.5000
+[test] ended_at=2026-11-02T00:37:23.797882+00:00
+[test] elapsed_s=27.654

@@ -1,0 +1,10 @@
+{
+  "run_id": "treino_20261101_203446",
+  "scripts": [
+    "tree_segmentation_resnet_26_512semAug2.py",
+    "tree_segmentation_resnet_26_512softAug2.py",
+    "tree_segmentation_resnet_26_512softAug4.py"
+  ],
+  "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+  "ended_at": "2026-11-02T01:38:22.650941+00:00"
+}
