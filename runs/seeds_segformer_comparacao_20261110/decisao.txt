@@ -1,0 +1,4 @@
+sementes SegFormer completas: True
+dif. media IoU validacao (SegFormer - U-Net): +0.0231
+dif. media IoU teste (SegFormer - U-Net): +0.0166
+criterio (ambas > 0, 4 sementes): SegFormer substitui a U-Net

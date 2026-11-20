@@ -1,0 +1,352 @@
+[train] command=/home/paulomaciel/anaconda3/envs/siace/bin/python -u tree_segmentation_resnet_26_512softAug4.py
+[train] git_commit=99fca9524538a86cf1b581d02e6fa85bcc98662b
+[train] started_at=2026-11-06T01:03:42+00:00
+Imagens: 1018
+Pretos integralmente excluidos: 0
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug4.py:241: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug4.py:293: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug4.py:319: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/40 ===
+Train Loss: 0.4610
+Val Loss:   0.3754
+
+--- MÉTRICAS ---
+Acc:  0.8995
+Prec: 0.7552
+Rec:  0.8254
+F1:   0.7887
+IoU:  0.6512
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9987062
+FP: 3238009
+FN: 2112373
+TN: 37877755
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6512)
+
+=== Época 2/40 ===
+Train Loss: 0.3591
+Val Loss:   0.3128
+
+--- MÉTRICAS ---
+Acc:  0.9137
+Prec: 0.8041
+Rec:  0.8201
+F1:   0.8121
+IoU:  0.6836
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9923088
+FP: 2416814
+FN: 2176347
+TN: 38698950
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6836)
+
+=== Época 3/40 ===
+Train Loss: 0.3091
+Val Loss:   0.3134
+
+--- MÉTRICAS ---
+Acc:  0.9079
+Prec: 0.7382
+Rec:  0.9221
+F1:   0.8200
+IoU:  0.6948
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11157084
+FP: 3957440
+FN: 942351
+TN: 37158324
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6948)
+
+=== Época 4/40 ===
+Train Loss: 0.2793
+Val Loss:   0.2643
+
+--- MÉTRICAS ---
+Acc:  0.9211
+Prec: 0.8426
+Rec:  0.8030
+F1:   0.8223
+IoU:  0.6982
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9715713
+FP: 1815592
+FN: 2383722
+TN: 39300172
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6982)
+
+=== Época 5/40 ===
+Train Loss: 0.2396
+Val Loss:   0.2754
+
+--- MÉTRICAS ---
+Acc:  0.9089
+Prec: 0.8079
+Rec:  0.7865
+F1:   0.7971
+IoU:  0.6626
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9515745
+FP: 2262025
+FN: 2583690
+TN: 38853739
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 1/5
+
+=== Época 6/40 ===
+Train Loss: 0.2094
+Val Loss:   0.2523
+
+--- MÉTRICAS ---
+Acc:  0.9198
+Prec: 0.8378
+Rec:  0.8028
+F1:   0.8199
+IoU:  0.6948
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9713097
+FP: 1880701
+FN: 2386338
+TN: 39235063
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 2/5
+
+=== Época 7/40 ===
+Train Loss: 0.1885
+Val Loss:   0.2525
+
+--- MÉTRICAS ---
+Acc:  0.9150
+Prec: 0.8538
+Rec:  0.7557
+F1:   0.8017
+IoU:  0.6691
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9143104
+FP: 1565593
+FN: 2956331
+TN: 39550171
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 3/5
+
+=== Época 8/40 ===
+Train Loss: 0.1786
+Val Loss:   0.2531
+
+--- MÉTRICAS ---
+Acc:  0.9097
+Prec: 0.7360
+Rec:  0.9401
+F1:   0.8256
+IoU:  0.7030
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11374259
+FP: 4080304
+FN: 725176
+TN: 37035460
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7030)
+
+=== Época 9/40 ===
+Train Loss: 0.1743
+Val Loss:   0.2383
+
+--- MÉTRICAS ---
+Acc:  0.9093
+Prec: 0.7754
+Rec:  0.8461
+F1:   0.8092
+IoU:  0.6795
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10236948
+FP: 2965800
+FN: 1862487
+TN: 38149964
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 1/5
+
+=== Época 10/40 ===
+Train Loss: 0.1510
+Val Loss:   0.1916
+
+--- MÉTRICAS ---
+Acc:  0.9331
+Prec: 0.8400
+Rec:  0.8719
+F1:   0.8557
+IoU:  0.7478
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10549746
+FP: 2009194
+FN: 1549689
+TN: 39106570
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7478)
+
+=== Época 11/40 ===
+Train Loss: 0.1479
+Val Loss:   0.2433
+
+--- MÉTRICAS ---
+Acc:  0.9220
+Prec: 0.7953
+Rec:  0.8848
+F1:   0.8377
+IoU:  0.7207
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10705698
+FP: 2755866
+FN: 1393737
+TN: 38359898
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 1/5
+
+=== Época 12/40 ===
+Train Loss: 0.1362
+Val Loss:   0.2416
+
+--- MÉTRICAS ---
+Acc:  0.9154
+Prec: 0.8531
+Rec:  0.7587
+F1:   0.8031
+IoU:  0.6710
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9179333
+FP: 1580568
+FN: 2920102
+TN: 39535196
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 2/5
+
+=== Época 13/40 ===
+Train Loss: 0.1287
+Val Loss:   0.2194
+
+--- MÉTRICAS ---
+Acc:  0.9180
+Prec: 0.7758
+Rec:  0.8992
+F1:   0.8330
+IoU:  0.7138
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10879852
+FP: 3143303
+FN: 1219583
+TN: 37972461
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 3/5
+
+=== Época 14/40 ===
+Train Loss: 0.1245
+Val Loss:   0.2182
+
+--- MÉTRICAS ---
+Acc:  0.9196
+Prec: 0.7959
+Rec:  0.8693
+F1:   0.8310
+IoU:  0.7108
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10517749
+FP: 2697646
+FN: 1581686
+TN: 38418118
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 4/5
+
+=== Época 15/40 ===
+Train Loss: 0.1051
+Val Loss:   0.2018
+
+--- MÉTRICAS ---
+Acc:  0.9279
+Prec: 0.8311
+Rec:  0.8572
+F1:   0.8440
+IoU:  0.7301
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10371779
+FP: 2107347
+FN: 1727656
+TN: 39008417
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/alinhado_20261105_2215_softAug4/unet_metrics_512_softAug2_alinhado_20261105_2215_softAug4.csv
+Sem melhora: 5/5
+
+🛑 Early Stopping ativado
+Limiar congelado pela validacao: 0.40
+Curva salva em: runs/alinhado_20261105_2215_softAug4/threshold_iou_curve.csv
+[train] ended_at=2026-11-06T01:28:42+00:00 rc=0

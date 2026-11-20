@@ -1,0 +1,374 @@
+[train] command=/home/paulomaciel/anaconda3/envs/siace/bin/python -u tree_segmentation_arquiteturas.py --arch DeepLabV3Plus --encoder resnet34
+[train] git_commit=81ebf1db3242dd20a888b63020ed41407f16512a
+[train] started_at=2026-11-10T18:28:37+00:00
+Imagens: 1018
+Pretos integralmente excluidos: 0
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:256: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:308: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:334: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/40 ===
+Train Loss: 0.4093
+Val Loss:   0.2822
+
+--- MÉTRICAS ---
+Acc:  0.9113
+Prec: 0.8067
+Rec:  0.8023
+F1:   0.8045
+IoU:  0.6729
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9707119
+FP: 2326252
+FN: 2392316
+TN: 38789512
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6729)
+
+=== Época 2/40 ===
+Train Loss: 0.2817
+Val Loss:   0.4390
+
+--- MÉTRICAS ---
+Acc:  0.8308
+Prec: 0.5748
+Rec:  0.9823
+F1:   0.7253
+IoU:  0.5689
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11885207
+FP: 8790445
+FN: 214228
+TN: 32325319
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 1/5
+
+=== Época 3/40 ===
+Train Loss: 0.2414
+Val Loss:   0.2616
+
+--- MÉTRICAS ---
+Acc:  0.8996
+Prec: 0.7118
+Rec:  0.9386
+F1:   0.8096
+IoU:  0.6801
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11356260
+FP: 4597470
+FN: 743175
+TN: 36518294
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6801)
+
+=== Época 4/40 ===
+Train Loss: 0.1977
+Val Loss:   0.2129
+
+--- MÉTRICAS ---
+Acc:  0.9196
+Prec: 0.7952
+Rec:  0.8706
+F1:   0.8312
+IoU:  0.7112
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10533919
+FP: 2712638
+FN: 1565516
+TN: 38403126
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7112)
+
+=== Época 5/40 ===
+Train Loss: 0.1789
+Val Loss:   0.2103
+
+--- MÉTRICAS ---
+Acc:  0.9208
+Prec: 0.8337
+Rec:  0.8141
+F1:   0.8238
+IoU:  0.7004
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9850630
+FP: 1965458
+FN: 2248805
+TN: 39150306
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 1/5
+
+=== Época 6/40 ===
+Train Loss: 0.1670
+Val Loss:   0.2222
+
+--- MÉTRICAS ---
+Acc:  0.9205
+Prec: 0.7973
+Rec:  0.8718
+F1:   0.8329
+IoU:  0.7137
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10548870
+FP: 2681611
+FN: 1550565
+TN: 38434153
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7137)
+
+=== Época 7/40 ===
+Train Loss: 0.1563
+Val Loss:   0.2972
+
+--- MÉTRICAS ---
+Acc:  0.9002
+Prec: 0.7356
+Rec:  0.8755
+F1:   0.7995
+IoU:  0.6660
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10592605
+FP: 3806501
+FN: 1506830
+TN: 37309263
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 1/5
+
+=== Época 8/40 ===
+Train Loss: 0.1524
+Val Loss:   0.1987
+
+--- MÉTRICAS ---
+Acc:  0.9262
+Prec: 0.8434
+Rec:  0.8293
+F1:   0.8363
+IoU:  0.7187
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10033945
+FP: 1862587
+FN: 2065490
+TN: 39253177
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7187)
+
+=== Época 9/40 ===
+Train Loss: 0.1211
+Val Loss:   0.2456
+
+--- MÉTRICAS ---
+Acc:  0.9095
+Prec: 0.7428
+Rec:  0.9204
+F1:   0.8221
+IoU:  0.6980
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11136285
+FP: 3855101
+FN: 963150
+TN: 37260663
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 1/5
+
+=== Época 10/40 ===
+Train Loss: 0.1372
+Val Loss:   0.2030
+
+--- MÉTRICAS ---
+Acc:  0.9227
+Prec: 0.8181
+Rec:  0.8489
+F1:   0.8332
+IoU:  0.7142
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10271750
+FP: 2283588
+FN: 1827685
+TN: 38832176
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 2/5
+
+=== Época 11/40 ===
+Train Loss: 0.1178
+Val Loss:   0.1944
+
+--- MÉTRICAS ---
+Acc:  0.9293
+Prec: 0.8199
+Rec:  0.8828
+F1:   0.8502
+IoU:  0.7394
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10681177
+FP: 2346540
+FN: 1418258
+TN: 38769224
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7394)
+
+=== Época 12/40 ===
+Train Loss: 0.1126
+Val Loss:   0.2081
+
+--- MÉTRICAS ---
+Acc:  0.9210
+Prec: 0.8012
+Rec:  0.8677
+F1:   0.8331
+IoU:  0.7140
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10498607
+FP: 2604190
+FN: 1600828
+TN: 38511574
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 1/5
+
+=== Época 13/40 ===
+Train Loss: 0.1032
+Val Loss:   0.2037
+
+--- MÉTRICAS ---
+Acc:  0.9291
+Prec: 0.8569
+Rec:  0.8263
+F1:   0.8413
+IoU:  0.7261
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9998058
+FP: 1669349
+FN: 2101377
+TN: 39446415
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 2/5
+
+=== Época 14/40 ===
+Train Loss: 0.0997
+Val Loss:   0.1999
+
+--- MÉTRICAS ---
+Acc:  0.9241
+Prec: 0.7803
+Rec:  0.9273
+F1:   0.8475
+IoU:  0.7353
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11219487
+FP: 3158220
+FN: 879948
+TN: 37957544
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 3/5
+
+=== Época 15/40 ===
+Train Loss: 0.0871
+Val Loss:   0.2073
+
+--- MÉTRICAS ---
+Acc:  0.9234
+Prec: 0.7891
+Rec:  0.9049
+F1:   0.8430
+IoU:  0.7287
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10948200
+FP: 2925781
+FN: 1151235
+TN: 38189983
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 4/5
+
+=== Época 16/40 ===
+Train Loss: 0.0791
+Val Loss:   0.1920
+
+--- MÉTRICAS ---
+Acc:  0.9302
+Prec: 0.8337
+Rec:  0.8656
+F1:   0.8494
+IoU:  0.7382
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10473127
+FP: 2088764
+FN: 1626308
+TN: 39027000
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_deeplabv3plus_resnet34_20261110/seg_metrics_512_DeepLabV3Plus_resnet34_arq_deeplabv3plus_resnet34_20261110.csv
+Sem melhora: 5/5
+
+🛑 Early Stopping ativado
+Limiar congelado pela validacao: 0.55
+Curva salva em: runs/arq_deeplabv3plus_resnet34_20261110/threshold_iou_curve.csv
+[train] ended_at=2026-11-10T19:15:10+00:00 rc=0

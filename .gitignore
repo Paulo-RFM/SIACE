@@ -1,0 +1,6 @@
+modelos/*.pth
+*.pth
+__pycache__/
+*.pyc
+*.out
+*.pid

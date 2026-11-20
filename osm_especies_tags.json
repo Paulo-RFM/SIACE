@@ -1,0 +1,11 @@
+{
+  "_leia": "Tags OSM acrescentadas a natural=tree quando a especie for indicada. Nomes cientificos confirmados pelo autor em 2026-11-05: bananeira = Musa spp. (so o genero, ha varias especies e hibridos); mangueira = Mangifera indica; palmeira = familia Arecaceae (nao se distingue palmeira de coqueiro); jabuticabeira = Plinia cauliflora (sin. Myrciaria cauliflora). Somente as classes em classes_com_especie de limiares_osm.json recebem estas tags.",
+  "confirmado_pelo_autor": true,
+  "confirmado_em": "2026-11-05",
+  "classes": {
+    "2": {"nome": "palmeira", "tags": {"taxon:family": "Arecaceae"}},
+    "4": {"nome": "mangueira", "tags": {"genus": "Mangifera", "species": "Mangifera indica"}},
+    "5": {"nome": "bananeira", "tags": {"genus": "Musa"}},
+    "6": {"nome": "jabuticabeira", "tags": {"genus": "Plinia", "species": "Plinia cauliflora"}}
+  }
+}

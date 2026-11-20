@@ -1,0 +1,13 @@
+{
+ "method": "watershed_hmax",
+ "h_m": 0.75,
+ "min_area": 3000,
+ "cleaning": {"closing_disk_radius": 5, "remove_small_holes_area": 32, "remove_small_objects_min_size": 32},
+ "criterion": "max F1 deteccao (IoU>=0.5) na validacao, mascaras PREDITAS pela SegFormer MiT-B1 (resultado.csv)",
+ "segmentation_run": "runs/arq_segformer_mit_b1_20261110",
+ "f1_val": 0.679340937896071,
+ "f1_val_componentes_conexas": 0.6740638002773925,
+ "decisao": "calibrar_individualizacao_val.py congelou componentes conexas por padrao e sinalizou (rc=3) que o h-maxima a superou; o autor decidiu em 2026-11-11 aplicar o criterio de maior F1 na validacao e adotar o h-maxima.",
+ "selected_on": "val (203 tiles, 399 arvores)",
+ "frozen_at": "2026-11-11"
+}

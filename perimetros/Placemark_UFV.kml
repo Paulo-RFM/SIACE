@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ex="http://earth.google.com/kml/ext">
+<Document id="13qhyBJowQ_mmaL5kCKpoLxBFZ3KQjmSS">
+	<ex:extension>base64;Co4BCoEBCn8KAggBEnkKdwokCiAKAwjQDxoHCNLtZRD_ASEAAAAAAADwPykAAAAAAAAAABgAEg8KCAitgO8HEP8BEKAfGAAaGgoHCP___wcQQBIICK2A7wcQ_wEYoB8gACgAIgkIARIFCP___wcqFwgBEggI____BxD_ARkAAAAAAADwPyAAEgQIARAAGgIIAA</ex:extension>
+	<name>Placemark.kml</name>
+	<gx:CascadingStyle kml:id="__managed_style_0897F15AA84321E048A0_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0897F15AA84321E048A0_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0897F15AA84321E048A0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0897F15AA84321E048A0_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0897F15AA84321E048A0_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0C46492AEA4321E04880">
+		<name>Polígono sem título</name>
+		<LookAt>
+			<longitude>-46.22167517834292</longitude>
+			<latitude>-19.21805327836104</latitude>
+			<altitude>1141.490283502528</altitude>
+			<heading>1.61350666362283</heading>
+			<tilt>6.947784303796046</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1577.850862629712</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0897F15AA84321E048A0</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-46.22398877411349,-19.21561736757978,0 -46.22429261372557,-19.21586392188955,0 -46.22452528153995,-19.2160931388557,0 -46.22454896032015,-19.21641062086233,0 -46.22437349726408,-19.21684131031497,0 -46.22445718204374,-19.2171548976144,0 -46.22472472645089,-19.21767549027228,0 -46.22492710891824,-19.21790665965844,0 -46.22532536036828,-19.2181077345769,0 -46.225294092007,-19.21842449660755,0 -46.22552727162765,-19.2186600322026,0 -46.22551178667991,-19.21901157381642,0 -46.22562565629364,-19.21940575593107,0 -46.22549516100881,-19.21985348719872,0 -46.22536006007433,-19.22005225950595,0 -46.22511944236975,-19.22039404798062,0 -46.22474315985594,-19.22058937079724,0 -46.22425556891261,-19.2206229425148,0 -46.22372365723675,-19.2204735462381,0 -46.22310338585667,-19.22131731605845,0 -46.22281517650211,-19.22137266472617,0 -46.22236741725587,-19.22116941754108,0 -46.22172263170128,-19.22174164447956,0 -46.22100069668507,-19.22125350450281,0 -46.22093353856795,-19.22107182637909,0 -46.22152402002123,-19.22042882764519,0 -46.22125343385797,-19.22007080491757,0 -46.22159811444552,-19.21958709173478,0 -46.22201226184921,-19.21928615710679,0 -46.2212129631008,-19.21824879592026,0 -46.22147775151301,-19.2176596249519,0 -46.22343329798477,-19.21544709817359,0 -46.22358848600836,-19.2152795824172,0 -46.22398877411349,-19.21561736757978,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+</Document>
+</kml>

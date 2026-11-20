@@ -1,0 +1,240 @@
+[train] command=/home/paulomaciel/anaconda3/envs/siace/bin/python -u tree_segmentation_arquiteturas.py --arch UnetPlusPlus --encoder resnet34
+[train] git_commit=81ebf1db3242dd20a888b63020ed41407f16512a
+[train] started_at=2026-11-10T21:30:46+00:00
+Imagens: 1018
+Pretos integralmente excluidos: 0
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:256: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:308: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:334: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/40 ===
+Train Loss: 0.3670
+Val Loss:   0.2953
+
+--- MÉTRICAS ---
+Acc:  0.9047
+Prec: 0.8097
+Rec:  0.7592
+F1:   0.7836
+IoU:  0.6443
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9185744
+FP: 2158424
+FN: 2913691
+TN: 38957340
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6443)
+
+=== Época 2/40 ===
+Train Loss: 0.2808
+Val Loss:   0.2752
+
+--- MÉTRICAS ---
+Acc:  0.9109
+Prec: 0.7941
+Rec:  0.8209
+F1:   0.8073
+IoU:  0.6768
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9932158
+FP: 2575342
+FN: 2167277
+TN: 38540422
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6768)
+
+=== Época 3/40 ===
+Train Loss: 0.2408
+Val Loss:   0.2612
+
+--- MÉTRICAS ---
+Acc:  0.9119
+Prec: 0.8702
+Rec:  0.7201
+F1:   0.7881
+IoU:  0.6503
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 8712759
+FP: 1299527
+FN: 3386676
+TN: 39816237
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+Sem melhora: 1/5
+
+=== Época 4/40 ===
+Train Loss: 0.2006
+Val Loss:   0.2224
+
+--- MÉTRICAS ---
+Acc:  0.9179
+Prec: 0.7941
+Rec:  0.8623
+F1:   0.8268
+IoU:  0.7047
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10432870
+FP: 2704717
+FN: 1666565
+TN: 38411047
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7047)
+
+=== Época 5/40 ===
+Train Loss: 0.1827
+Val Loss:   0.2092
+
+--- MÉTRICAS ---
+Acc:  0.9252
+Prec: 0.8135
+Rec:  0.8706
+F1:   0.8411
+IoU:  0.7257
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10533493
+FP: 2414961
+FN: 1565942
+TN: 38700803
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7257)
+
+=== Época 6/40 ===
+Train Loss: 0.1774
+Val Loss:   0.3655
+
+--- MÉTRICAS ---
+Acc:  0.8445
+Prec: 0.5963
+Rec:  0.9791
+F1:   0.7412
+IoU:  0.5888
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11846105
+FP: 8020277
+FN: 253330
+TN: 33095487
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+Sem melhora: 1/5
+
+=== Época 7/40 ===
+Train Loss: 0.1763
+Val Loss:   0.2039
+
+--- MÉTRICAS ---
+Acc:  0.9274
+Prec: 0.8402
+Rec:  0.8405
+F1:   0.8403
+IoU:  0.7247
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10169157
+FP: 1933709
+FN: 1930278
+TN: 39182055
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+Sem melhora: 2/5
+
+=== Época 8/40 ===
+Train Loss: 0.1605
+Val Loss:   0.2187
+
+--- MÉTRICAS ---
+Acc:  0.9184
+Prec: 0.8096
+Rec:  0.8381
+F1:   0.8236
+IoU:  0.7002
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10140752
+FP: 2384228
+FN: 1958683
+TN: 38731536
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+Sem melhora: 3/5
+
+=== Época 9/40 ===
+Train Loss: 0.1344
+Val Loss:   0.2164
+
+--- MÉTRICAS ---
+Acc:  0.9173
+Prec: 0.7831
+Rec:  0.8800
+F1:   0.8287
+IoU:  0.7076
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10648088
+FP: 2949618
+FN: 1451347
+TN: 38166146
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+Sem melhora: 4/5
+
+=== Época 10/40 ===
+Train Loss: 0.1197
+Val Loss:   0.2082
+
+--- MÉTRICAS ---
+Acc:  0.9256
+Prec: 0.8544
+Rec:  0.8108
+F1:   0.8321
+IoU:  0.7124
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9810667
+FP: 1671593
+FN: 2288768
+TN: 39444171
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_unetplusplus_resnet34_20261110/seg_metrics_512_UnetPlusPlus_resnet34_arq_unetplusplus_resnet34_20261110.csv
+Sem melhora: 5/5
+
+🛑 Early Stopping ativado
+Limiar congelado pela validacao: 0.45
+Curva salva em: runs/arq_unetplusplus_resnet34_20261110/threshold_iou_curve.csv
+[train] ended_at=2026-11-10T22:08:29+00:00 rc=0

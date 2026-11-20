@@ -1,0 +1,37 @@
+run_id=classif_20261102_163825_efficientnet_anotados device=cuda
+epoch 1/40 lr=1.00e-04 train_loss=1.3295 train_f1=0.5230 val_loss=1.5515 val_f1=0.2661 val_acc=0.2180 (127.5s)
+  -> novo melhor val_f1_macro=0.2661
+epoch 2/40 lr=9.76e-05 train_loss=0.6955 train_f1=0.7435 val_loss=1.0978 val_f1=0.4348 val_acc=0.5313 (127.0s)
+  -> novo melhor val_f1_macro=0.4348
+epoch 3/40 lr=9.05e-05 train_loss=0.5956 train_f1=0.7762 val_loss=1.0808 val_f1=0.4367 val_acc=0.6040 (127.0s)
+  -> novo melhor val_f1_macro=0.4367
+epoch 4/40 lr=7.94e-05 train_loss=0.4808 train_f1=0.8313 val_loss=0.9472 val_f1=0.4765 val_acc=0.6566 (127.2s)
+  -> novo melhor val_f1_macro=0.4765
+epoch 5/40 lr=6.55e-05 train_loss=0.4512 train_f1=0.8449 val_loss=0.7938 val_f1=0.5399 val_acc=0.7368 (127.3s)
+  -> novo melhor val_f1_macro=0.5399
+epoch 6/40 lr=5.00e-05 train_loss=0.3863 train_f1=0.8676 val_loss=0.6812 val_f1=0.5681 val_acc=0.7744 (127.3s)
+  -> novo melhor val_f1_macro=0.5681
+epoch 7/40 lr=3.45e-05 train_loss=0.3394 train_f1=0.8884 val_loss=0.7063 val_f1=0.5412 val_acc=0.7594 (127.2s)
+epoch 8/40 lr=2.06e-05 train_loss=0.3520 train_f1=0.8795 val_loss=0.7490 val_f1=0.5552 val_acc=0.7644 (127.3s)
+epoch 9/40 lr=9.55e-06 train_loss=0.3104 train_f1=0.8930 val_loss=0.7073 val_f1=0.5490 val_acc=0.7694 (127.3s)
+epoch 10/40 lr=2.45e-06 train_loss=0.3134 train_f1=0.8992 val_loss=0.6894 val_f1=0.5629 val_acc=0.7820 (127.2s)
+epoch 11/40 lr=0.00e+00 train_loss=0.3250 train_f1=0.8991 val_loss=0.6798 val_f1=0.5688 val_acc=0.7845 (127.2s)
+  -> novo melhor val_f1_macro=0.5688
+epoch 12/40 lr=2.45e-06 train_loss=0.3231 train_f1=0.8970 val_loss=0.6703 val_f1=0.5579 val_acc=0.7820 (127.2s)
+epoch 13/40 lr=9.55e-06 train_loss=0.3427 train_f1=0.8935 val_loss=0.6734 val_f1=0.5626 val_acc=0.7820 (127.2s)
+epoch 14/40 lr=2.06e-05 train_loss=0.3264 train_f1=0.8859 val_loss=0.6813 val_f1=0.5787 val_acc=0.7895 (127.3s)
+  -> novo melhor val_f1_macro=0.5787
+epoch 15/40 lr=3.45e-05 train_loss=0.2930 train_f1=0.9049 val_loss=0.7037 val_f1=0.5673 val_acc=0.7845 (127.2s)
+epoch 16/40 lr=5.00e-05 train_loss=0.2810 train_f1=0.9080 val_loss=0.7381 val_f1=0.5833 val_acc=0.7895 (127.2s)
+  -> novo melhor val_f1_macro=0.5833
+epoch 17/40 lr=6.55e-05 train_loss=0.2976 train_f1=0.9052 val_loss=0.6622 val_f1=0.5981 val_acc=0.8045 (127.2s)
+  -> novo melhor val_f1_macro=0.5981
+epoch 18/40 lr=7.94e-05 train_loss=0.2681 train_f1=0.9159 val_loss=0.6868 val_f1=0.5925 val_acc=0.8020 (127.2s)
+epoch 19/40 lr=9.05e-05 train_loss=0.2676 train_f1=0.9061 val_loss=0.6621 val_f1=0.5740 val_acc=0.8020 (127.3s)
+epoch 20/40 lr=9.76e-05 train_loss=0.2586 train_f1=0.9201 val_loss=0.6389 val_f1=0.5775 val_acc=0.8246 (127.3s)
+epoch 21/40 lr=1.00e-04 train_loss=0.2466 train_f1=0.9158 val_loss=0.6245 val_f1=0.5219 val_acc=0.8195 (127.2s)
+epoch 22/40 lr=9.76e-05 train_loss=0.1963 train_f1=0.9323 val_loss=0.7101 val_f1=0.5469 val_acc=0.8271 (127.2s)
+Early stopping apos 5 epocas sem melhora.
+[val] {"accuracy": 0.8045112781954887, "balanced_accuracy": 0.6680413154097363, "f1_macro": 0.5981114498644986, "f1_weighted": 0.8205681887645945, "number_of_samples": 399}
+[test] {"accuracy": 0.8349282296650717, "balanced_accuracy": 0.740616940902982, "f1_macro": 0.6388746064960898, "f1_weighted": 0.8526350307507689, "number_of_samples": 418}
+Run salvo em /home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_efficientnet_anotados

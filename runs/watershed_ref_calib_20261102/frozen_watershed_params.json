@@ -1,0 +1,1 @@
+{"peak_footprint": 251, "min_area": 1000, "criterion": "max F1 deteccao (IoU>=0.5) na validacao, mascaras de referencia", "selected_on": "val (203 tiles)", "frozen_at": "2026-11-02"}

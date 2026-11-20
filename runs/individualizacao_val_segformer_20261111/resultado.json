@@ -1,0 +1,46 @@
+{
+ "n_val_tiles": 203,
+ "n_gt": 399,
+ "seg_run": "runs/arq_segformer_mit_b1_20261110",
+ "melhor_por_metodo": {
+  "cc": {
+   "metodo": "cc",
+   "peak_footprint": NaN,
+   "h_m": NaN,
+   "min_area": 3000,
+   "instancias": 322,
+   "tp": 243,
+   "precisao": 0.7546583850931677,
+   "recall": 0.6090225563909775,
+   "f1": 0.6740638002773925,
+   "instancias_por_arvore": 0.8070175438596491,
+   "mae_contagem": 0.7044334975369458
+  },
+  "watershed": {
+   "metodo": "watershed",
+   "peak_footprint": 251.0,
+   "h_m": NaN,
+   "min_area": 3000,
+   "instancias": 377,
+   "tp": 257,
+   "precisao": 0.6816976127320955,
+   "recall": 0.6441102756892231,
+   "f1": 0.6623711340206186,
+   "instancias_por_arvore": 0.9448621553884712,
+   "mae_contagem": 0.7684729064039408
+  },
+  "hmax": {
+   "metodo": "hmax",
+   "peak_footprint": NaN,
+   "h_m": 0.75,
+   "min_area": 3000,
+   "instancias": 390,
+   "tp": 268,
+   "precisao": 0.6871794871794872,
+   "recall": 0.6716791979949874,
+   "f1": 0.679340937896071,
+   "instancias_por_arvore": 0.9774436090225563,
+   "mae_contagem": 0.7536945812807881
+  }
+ }
+}
