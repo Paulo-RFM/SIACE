@@ -1,0 +1,81 @@
+{
+  "run_id": "classif_smoke_20261102_161629_unet_mc_ce",
+  "script": "resnet2.py",
+  "adapter": "run_legacy_multiclass_training.py",
+  "task": "classificacao multiclasse por pixel (segmentacao de especies)",
+  "architecture": "U-Net",
+  "encoder": "resnet34",
+  "num_classes": 7,
+  "class_names": [
+    "fundo",
+    "arvore_sem_identificacao",
+    "palmeira",
+    "arvore_seca",
+    "mangueira",
+    "bananeira",
+    "jabuticabeira"
+  ],
+  "color_to_class": {
+    "(0, 0, 0)": 0,
+    "(128, 128, 128)": 1,
+    "(0, 255, 0)": 2,
+    "(0, 0, 255)": 3,
+    "(255, 255, 0)": 4,
+    "(0, 255, 255)": 5,
+    "(255, 0, 255)": 6
+  },
+  "normalize": "none",
+  "img_size": [
+    512,
+    512
+  ],
+  "batch_size": 6,
+  "epochs_max": 1,
+  "patience": 5,
+  "selection_metric": "val_loss",
+  "loss": "CrossEntropyLoss (sem pesos)",
+  "optimizer": "Adam",
+  "class_weights": null,
+  "seed": 42,
+  "smoke": true,
+  "split": {
+    "split_path": "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+    "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+    "tiles_per_split": {
+      "train": 611,
+      "val": 203,
+      "test": 204
+    },
+    "tiles_in_multiple_splits": 0,
+    "tiles_used": {
+      "train": 611,
+      "val": 203,
+      "test": 204,
+      "fora_do_split": 0
+    }
+  },
+  "masks_dir": "/home/paulomaciel/proj/lab_2026/masks_distin2",
+  "images_dir": "/home/paulomaciel/proj/imagens",
+  "init": null,
+  "total_parameters": 24437239,
+  "epochs_completed": 1,
+  "effective_epoch": 1,
+  "started_at": "2026-11-02T19:20:09.820801+00:00",
+  "ended_at": "2026-11-02T19:20:17.527592+00:00",
+  "train_duration_s": 7.706806157948449,
+  "mean_epoch_duration_s": 7.036818981170654,
+  "peak_gpu_memory_allocated_mb": 2750.1875,
+  "checkpoint_best_sha256": "e543cd632b33802d8a1c04bd0b0ca00bea1084c935a3b1bd31b65ba9247eb1d3",
+  "checkpoint_saves": 1,
+  "environment": {
+    "python": "3.10.19",
+    "pytorch": "2.5.1+cu121",
+    "segmentation_models_pytorch": "0.5.0",
+    "host": "Godel",
+    "os": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "vram_total_mb": 4038.62,
+    "cuda": "12.1"
+  },
+  "note": "Metricas por epoca sao de validacao; teste em test_eval/ (evaluate_multiclass_test.py)."
+}

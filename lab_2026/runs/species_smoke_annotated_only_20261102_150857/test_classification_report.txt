@@ -1,0 +1,12 @@
+              precision    recall  f1-score   support
+
+   especie_1     0.9091    0.1042    0.1869        96
+   especie_2     0.0857    0.3750    0.1395         8
+   especie_3     0.0000    0.0000    0.0000         0
+   especie_4     0.0000    0.0000    0.0000         5
+   especie_5     0.4000    0.6000    0.4800        10
+   especie_6     0.0000    0.0000    0.0000         1
+
+    accuracy                         0.1583       120
+   macro avg     0.2325    0.1799    0.1344       120
+weighted avg     0.7663    0.1583    0.1988       120

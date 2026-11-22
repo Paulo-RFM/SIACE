@@ -1,0 +1,97 @@
+{
+  "run_id": "unet_mc_ce_dice_initbin_corrigido_20261106",
+  "script": "resnet3.py",
+  "adapter": "run_legacy_multiclass_training.py",
+  "task": "classificacao multiclasse por pixel (segmentacao de especies)",
+  "architecture": "U-Net",
+  "encoder": "resnet34",
+  "num_classes": 7,
+  "class_names": [
+    "fundo",
+    "arvore_sem_identificacao",
+    "palmeira",
+    "arvore_seca",
+    "mangueira",
+    "bananeira",
+    "jabuticabeira"
+  ],
+  "color_to_class": {
+    "(0, 0, 0)": 0,
+    "(128, 128, 128)": 1,
+    "(0, 255, 0)": 2,
+    "(0, 0, 255)": 3,
+    "(255, 255, 0)": 4,
+    "(0, 255, 255)": 5,
+    "(255, 0, 255)": 6
+  },
+  "normalize": "imagenet",
+  "img_size": [
+    512,
+    512
+  ],
+  "batch_size": 6,
+  "epochs_max": 50,
+  "patience": 5,
+  "selection_metric": "iou",
+  "loss": "0.3 CrossEntropy(pesos 1/freq do treino) + 0.7 Dice multiclasse",
+  "optimizer": "AdamW",
+  "class_weights": [
+    0.006312102543590027,
+    0.024684291691408927,
+    0.4222238889406373,
+    1.6867076283563747,
+    0.3964665441052943,
+    0.37052562521707194,
+    4.093079919145624
+  ],
+  "seed": 42,
+  "smoke": false,
+  "split": {
+    "split_path": "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+    "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+    "tiles_per_split": {
+      "train": 611,
+      "val": 203,
+      "test": 204
+    },
+    "tiles_in_multiple_splits": 0,
+    "tiles_used": {
+      "train": 611,
+      "val": 203,
+      "test": 204,
+      "fora_do_split": 0
+    }
+  },
+  "masks_dir": "/home/paulomaciel/proj/lab_2026/masks_distin2",
+  "images_dir": "/home/paulomaciel/proj/imagens",
+  "init": {
+    "init_checkpoint": "/home/paulomaciel/proj/lab_2026/runs/alinhado_20261105_2215_softAug4/checkpoint_best.pth",
+    "init_checkpoint_sha256": "a9b8c8f9358cc0c3f6166cb11fb7089ae3c1f904d3f4db98e299c99b698e1b4c",
+    "loaded_tensors": 276,
+    "not_loaded": [
+      "segmentation_head.0.bias",
+      "segmentation_head.0.weight"
+    ]
+  },
+  "total_parameters": 24437239,
+  "epochs_completed": 10,
+  "effective_epoch": 5,
+  "started_at": "2026-11-06T17:35:39.158309+00:00",
+  "ended_at": "2026-11-06T17:59:41.604425+00:00",
+  "train_duration_s": 1442.4461323529977,
+  "mean_epoch_duration_s": 141.48130729198456,
+  "peak_gpu_memory_allocated_mb": 1859.84814453125,
+  "checkpoint_best_sha256": "8f11015b9b3c4bbd33636f7269c701d9b32d5b862b04f64a3c2070ad8d311ca6",
+  "checkpoint_saves": 3,
+  "environment": {
+    "python": "3.10.19",
+    "pytorch": "2.5.1+cu121",
+    "segmentation_models_pytorch": "0.5.0",
+    "host": "Godel",
+    "os": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "vram_total_mb": 4038.62,
+    "cuda": "12.1"
+  },
+  "note": "Metricas por epoca sao de validacao; teste em test_eval/ (evaluate_multiclass_test.py)."
+}

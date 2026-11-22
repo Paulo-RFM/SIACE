@@ -1,0 +1,48 @@
+{
+ "n_val_tiles": 203,
+ "n_gt": 399,
+ "melhor_por_metodo": {
+  "cc": {
+   "metodo": "cc",
+   "peak_footprint": NaN,
+   "h_m": NaN,
+   "h_px": NaN,
+   "min_area": 3000,
+   "instancias": 328,
+   "tp": 239,
+   "precisao": 0.7286585365853658,
+   "recall": 0.5989974937343359,
+   "f1": 0.657496561210454,
+   "instancias_por_arvore": 0.8220551378446115,
+   "mae_contagem": 0.6354679802955665
+  },
+  "watershed": {
+   "metodo": "watershed",
+   "peak_footprint": 251.0,
+   "h_m": NaN,
+   "h_px": NaN,
+   "min_area": 3000,
+   "instancias": 376,
+   "tp": 237,
+   "precisao": 0.6303191489361702,
+   "recall": 0.5939849624060151,
+   "f1": 0.6116129032258064,
+   "instancias_por_arvore": 0.9423558897243107,
+   "mae_contagem": 0.7241379310344828
+  },
+  "hmax": {
+   "metodo": "hmax",
+   "peak_footprint": NaN,
+   "h_m": 1.0,
+   "h_px": 31.0,
+   "min_area": 2000,
+   "instancias": 375,
+   "tp": 245,
+   "precisao": 0.6533333333333333,
+   "recall": 0.6140350877192983,
+   "f1": 0.6330749354005167,
+   "instancias_por_arvore": 0.9398496240601504,
+   "mae_contagem": 0.7192118226600985
+  }
+ }
+}

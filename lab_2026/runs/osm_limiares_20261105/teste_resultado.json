@@ -1,0 +1,8 @@
+{
+  "copas_detectadas": 301,
+  "copas_aprovadas": 80,
+  "precisao_arvore": 0.9875,
+  "precisao_arvore_sem_filtro": 0.8471760797342193,
+  "fracao_das_copas_sobre_arvore_mantidas": 0.30980392156862746,
+  "especies": []
+}

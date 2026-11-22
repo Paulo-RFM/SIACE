@@ -1,0 +1,11 @@
+arquitetura,codificador,lado_imagem,lote,deterministico,parametros,estado,pico_alocado_mib,pico_reservado_mib,gpu_total_mib
+Unet,resnet34,512,6,True,24436369,ok,1837,2320,4038
+Unet,resnet34,512,6,False,24436369,ok,1837,2320,4038
+UnetPlusPlus,resnet34,512,6,True,26078609,ok,3638,3890,4038
+UnetPlusPlus,resnet34,512,6,False,26078609,ok,3638,3890,4038
+DeepLabV3Plus,resnet34,512,6,True,22437457,ok,1731,1836,4038
+DeepLabV3Plus,resnet34,512,6,False,22437457,ok,1538,1608,4038
+Segformer,mit_b2,512,6,True,,sem_memoria,,,4038
+Segformer,mit_b2,512,6,False,,sem_memoria,,,4038
+Segformer,mit_b1,512,6,True,13677505,ok,3001,3656,4038
+Segformer,mit_b1,512,6,False,13677505,ok,3148,3748,4038

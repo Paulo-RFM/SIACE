@@ -1,0 +1,99 @@
+
+[augment] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/augment_rare_species.py", "--manifest", "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--out-dir", "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_efficientnet_aug_treino/train_augmented", "--target", "300"]
+[augment] started_at=2026-11-02T20:25:37.092457+00:00
+Antes:
+ split    train  val  test
+species                  
+1         1012  308   322
+2          128   20    20
+3           22    6     3
+4           28   21    19
+5           94   38    48
+6           12    6     6 
+Depois:
+ split    train  val  test
+species                  
+1         1012  308   322
+2          300   20    20
+3          300    6     3
+4          300   21    19
+5          300   38    48
+6          300    6     6
+{
+  "imbalance_ratio_before": {
+    "train": 84.33333333333333,
+    "val": 51.333333333333336,
+    "test": 107.33333333333333
+  },
+  "imbalance_ratio_after": {
+    "train": 3.3733333333333335,
+    "val": 51.333333333333336,
+    "test": 107.33333333333333
+  }
+}
+CSV: /home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_efficientnet_aug_treino/train_augmented/train_augmented.csv
+[augment] ended_at=2026-11-02T20:28:11.019587+00:00
+[augment] elapsed_s=153.927
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/train_species_efficientnet.py", "--manifest", "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json", "--runs-dir", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "classif_20261102_163825_efficientnet_aug_treino", "--augmented-manifest", "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_efficientnet_aug_treino/train_augmented/train_augmented.csv"]
+[train] started_at=2026-11-02T20:28:11.019653+00:00
+[split] /home/paulomaciel/proj/unet_spatial_split/tiles_split.csv
+        sha256=8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658
+        tiles por particao={'train': 611, 'val': 203, 'test': 204} | tiles em >1 particao=0
+
+[auditoria] amostras por especie e particao (todas as origens):
+split    train  val  test  total
+species                         
+1         1012  308   322   1642
+2          300   20    20    340
+3          300    6     3    309
+4          300   21    19    340
+5          300   38    48    386
+6          300    6     6    312
+
+[auditoria] por particao e origem:
+species             1    2    3    4    5    6
+split origin                                  
+test  anotado     322   20    3   19   48    6
+train anotado    1012  128   22   28   94   12
+      aumentado     0  172  278  272  206  288
+val   anotado     308   20    6   21   38    6
+
+[auditoria] razao maior/menor classe: {'train': 3.3733333333333335, 'val': 51.333333333333336, 'test': 107.33333333333333}
+[auditoria] vazamento: {"tiles_shared": {"train&val": 0, "train&test": 0, "val&test": 0}, "instances_shared": {"train&val": 0, "train&test": 0, "val&test": 0}, "tiles_per_split": {"train": 610, "val": 203, "test": 202}}
+AVISO: especie 3 tem 3 amostras no teste (< 10); metricas por classe dessa especie nao sao estatisticamente estaveis.
+AVISO: especie 6 tem 6 amostras no teste (< 10); metricas por classe dessa especie nao sao estatisticamente estaveis.
+[auditoria] especies com >= 10 amostras no teste: [1, 2, 4, 5] (4)
+run_id=classif_20261102_163825_efficientnet_aug_treino device=cuda
+Loaded pretrained weights for efficientnet-b0
+epoch 1/40 lr=1.00e-04 train_loss=1.0549 train_f1=0.5976 val_loss=1.0795 val_f1=0.4093 val_acc=0.5589 (237.5s)
+  -> novo melhor val_f1_macro=0.4093
+epoch 2/40 lr=9.76e-05 train_loss=0.5630 train_f1=0.7999 val_loss=0.9042 val_f1=0.5112 val_acc=0.6617 (237.4s)
+  -> novo melhor val_f1_macro=0.5112
+epoch 3/40 lr=9.05e-05 train_loss=0.4424 train_f1=0.8479 val_loss=0.7073 val_f1=0.5276 val_acc=0.7644 (237.4s)
+  -> novo melhor val_f1_macro=0.5276
+epoch 4/40 lr=7.94e-05 train_loss=0.3513 train_f1=0.8817 val_loss=0.8041 val_f1=0.5126 val_acc=0.7218 (237.3s)
+epoch 5/40 lr=6.55e-05 train_loss=0.2973 train_f1=0.8991 val_loss=0.6724 val_f1=0.5475 val_acc=0.7820 (237.3s)
+  -> novo melhor val_f1_macro=0.5475
+epoch 6/40 lr=5.00e-05 train_loss=0.2545 train_f1=0.9189 val_loss=0.5825 val_f1=0.5425 val_acc=0.8346 (237.2s)
+epoch 7/40 lr=3.45e-05 train_loss=0.2144 train_f1=0.9340 val_loss=0.6399 val_f1=0.5802 val_acc=0.8221 (237.2s)
+  -> novo melhor val_f1_macro=0.5802
+epoch 8/40 lr=2.06e-05 train_loss=0.2036 train_f1=0.9347 val_loss=0.6041 val_f1=0.5904 val_acc=0.8496 (237.2s)
+  -> novo melhor val_f1_macro=0.5904
+epoch 9/40 lr=9.55e-06 train_loss=0.1891 train_f1=0.9367 val_loss=0.6031 val_f1=0.5822 val_acc=0.8396 (237.3s)
+epoch 10/40 lr=2.45e-06 train_loss=0.2155 train_f1=0.9327 val_loss=0.5964 val_f1=0.5767 val_acc=0.8346 (237.2s)
+epoch 11/40 lr=0.00e+00 train_loss=0.1798 train_f1=0.9485 val_loss=0.6003 val_f1=0.5821 val_acc=0.8346 (237.2s)
+epoch 12/40 lr=2.45e-06 train_loss=0.1828 train_f1=0.9377 val_loss=0.5972 val_f1=0.5843 val_acc=0.8371 (237.2s)
+epoch 13/40 lr=9.55e-06 train_loss=0.1764 train_f1=0.9449 val_loss=0.6027 val_f1=0.5932 val_acc=0.8371 (237.1s)
+  -> novo melhor val_f1_macro=0.5932
+epoch 14/40 lr=2.06e-05 train_loss=0.2129 train_f1=0.9365 val_loss=0.5903 val_f1=0.5518 val_acc=0.8446 (237.3s)
+epoch 15/40 lr=3.45e-05 train_loss=0.1713 train_f1=0.9399 val_loss=0.6706 val_f1=0.5735 val_acc=0.8296 (237.3s)
+epoch 16/40 lr=5.00e-05 train_loss=0.1646 train_f1=0.9449 val_loss=0.6688 val_f1=0.5593 val_acc=0.8371 (237.2s)
+epoch 17/40 lr=6.55e-05 train_loss=0.1785 train_f1=0.9432 val_loss=0.7099 val_f1=0.5556 val_acc=0.8421 (237.3s)
+epoch 18/40 lr=7.94e-05 train_loss=0.1592 train_f1=0.9478 val_loss=0.8034 val_f1=0.5700 val_acc=0.7995 (237.2s)
+Early stopping apos 5 epocas sem melhora.
+[val] {"accuracy": 0.8370927318295739, "balanced_accuracy": 0.6104655578339788, "f1_macro": 0.5931798740395553, "f1_weighted": 0.8397560880074323, "number_of_samples": 399}
+[test] {"accuracy": 0.8708133971291866, "balanced_accuracy": 0.6339426464712505, "f1_macro": 0.602791900730045, "f1_weighted": 0.8756484725532226, "number_of_samples": 418}
+Run salvo em /home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_efficientnet_aug_treino
+[train] ended_at=2026-11-02T21:39:52.679388+00:00
+[train] elapsed_s=4301.660

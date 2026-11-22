@@ -1,0 +1,102 @@
+[train] command=/home/paulomaciel/anaconda3/envs/siace/bin/python -u run_legacy_binary_training.py --script /home/paulomaciel/proj/lab_2026/tree_segmentation_resnet.py
+[train] git_commit=99fca9524538a86cf1b581d02e6fa85bcc98662b
+[train] started_at=2026-11-06T02:23:08+00:00
+Imagens: 1018
+Máscaras: 1018
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet.py:164: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet.py:210: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet.py:232: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+
+=== Época 1/40 ===
+Train Loss: 0.4664
+Val Loss:   0.3941
+Acc: 0.8720  Prec: 0.6535  Rec: 0.9302  F1: 0.7677  IoU: 0.6229
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 2/40 ===
+Train Loss: 0.3236
+Val Loss:   0.3116
+Acc: 0.9058  Prec: 0.7481  Rec: 0.8831  F1: 0.8100  IoU: 0.6807
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 3/40 ===
+Train Loss: 0.2843
+Val Loss:   0.3736
+Acc: 0.8362  Prec: 0.5846  Rec: 0.9656  F1: 0.7283  IoU: 0.5727
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+
+=== Época 4/40 ===
+Train Loss: 0.2586
+Val Loss:   0.3671
+Acc: 0.8599  Prec: 0.6235  Rec: 0.9682  F1: 0.7585  IoU: 0.6110
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+
+=== Época 5/40 ===
+Train Loss: 0.2431
+Val Loss:   0.2489
+Acc: 0.9038  Prec: 0.7244  Rec: 0.9312  F1: 0.8149  IoU: 0.6876
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 6/40 ===
+Train Loss: 0.2282
+Val Loss:   0.2389
+Acc: 0.9070  Prec: 0.7411  Rec: 0.9082  F1: 0.8162  IoU: 0.6894
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 7/40 ===
+Train Loss: 0.2198
+Val Loss:   0.2185
+Acc: 0.9231  Prec: 0.8310  Rec: 0.8309  F1: 0.8310  IoU: 0.7108
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 8/40 ===
+Train Loss: 0.2093
+Val Loss:   0.2065
+Acc: 0.9233  Prec: 0.8119  Rec: 0.8625  F1: 0.8364  IoU: 0.7188
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+✔ Modelo salvo (melhor IoU)
+
+=== Época 9/40 ===
+Train Loss: 0.2050
+Val Loss:   0.2456
+Acc: 0.9027  Prec: 0.7268  Rec: 0.9168  F1: 0.8108  IoU: 0.6818
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+
+=== Época 10/40 ===
+Train Loss: 0.2006
+Val Loss:   0.2230
+Acc: 0.9176  Prec: 0.8295  Rec: 0.8022  F1: 0.8157  IoU: 0.6887
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+
+=== Época 11/40 ===
+Train Loss: 0.1914
+Val Loss:   0.2346
+Acc: 0.9152  Prec: 0.8014  Rec: 0.8335  F1: 0.8172  IoU: 0.6908
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+
+=== Época 12/40 ===
+Train Loss: 0.2058
+Val Loss:   0.2319
+Acc: 0.9158  Prec: 0.8628  Rec: 0.7486  F1: 0.8016  IoU: 0.6690
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+
+=== Época 13/40 ===
+Train Loss: 0.1678
+Val Loss:   0.2092
+Acc: 0.9242  Prec: 0.8341  Rec: 0.8319  F1: 0.8330  IoU: 0.7138
+CSV atualizado: runs/alinhado_20261105_2215_base/unet_metrics.csv
+⛔ Early Stopping
+
+Treinamento finalizado!
+Melhor IoU: 0.7187970137153221
+Modelo salvo em: runs/alinhado_20261105_2215_base/checkpoint_best.pth
+Modelo legado treinado com split espacial: tree_segmentation_resnet.py
+[train] ended_at=2026-11-06T02:46:50+00:00 rc=0

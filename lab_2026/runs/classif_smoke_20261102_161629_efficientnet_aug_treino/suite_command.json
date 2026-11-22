@@ -1,0 +1,49 @@
+{
+  "suite": "run_classification_suite.py",
+  "suite_run_id": "classif_smoke_20261102_161629",
+  "experiment": "efficientnet_aug_treino",
+  "description": "EfficientNet-B0, anotados + aumento offline apenas do treino",
+  "split": {
+    "split_path": "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+    "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+    "tiles_per_split": {
+      "train": 611,
+      "val": 203,
+      "test": 204
+    },
+    "tiles_in_multiple_splits": 0
+  },
+  "commands": {
+    "augment": [
+      "/home/paulomaciel/anaconda3/envs/siace/bin/python",
+      "-u",
+      "/home/paulomaciel/proj/lab_2026/augment_rare_species.py",
+      "--manifest",
+      "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv",
+      "--split",
+      "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+      "--out-dir",
+      "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_efficientnet_aug_treino/train_augmented",
+      "--target",
+      "300"
+    ],
+    "train": [
+      "/home/paulomaciel/anaconda3/envs/siace/bin/python",
+      "-u",
+      "/home/paulomaciel/proj/lab_2026/train_species_efficientnet.py",
+      "--manifest",
+      "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv",
+      "--split",
+      "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+      "--species-names",
+      "/home/paulomaciel/proj/lab_2026/species_names.json",
+      "--runs-dir",
+      "/home/paulomaciel/proj/lab_2026/runs",
+      "--run-id",
+      "classif_smoke_20261102_161629_efficientnet_aug_treino",
+      "--augmented-manifest",
+      "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_efficientnet_aug_treino/train_augmented/train_augmented.csv",
+      "--smoke"
+    ]
+  }
+}

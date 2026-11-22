@@ -1,0 +1,8 @@
+{
+  "threshold": 0.6000000000000002,
+  "criterion": "validation_iou",
+  "validation_iou": 0.72161089748143,
+  "checkpoint": "/home/paulomaciel/proj/lab_2026/runs/alinhado_20261105_2215_26/checkpoint_best.pth",
+  "selected_on": "val (203 tiles)",
+  "frozen_at": "2026-11-06"
+}

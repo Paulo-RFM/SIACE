@@ -1,0 +1,10 @@
+{
+  "runs": [
+    "classif_20261104_235839_efficientnet_binaria_palmeira",
+    "classif_20261104_235839_efficientnet_binaria_mangueira"
+  ],
+  "targets": [
+    2,
+    4
+  ]
+}

@@ -1,0 +1,8 @@
+,pred:fundo,pred:arvore_sem_identificacao,pred:palmeira,pred:arvore_seca,pred:mangueira,pred:bananeira,pred:jabuticabeira
+true:fundo,1584629,31953,105730,31737,54314,505123,27
+true:arvore_sem_identificacao,197357,3971,17173,2188,6529,71865,1
+true:palmeira,3327,30,100,41,67,994,0
+true:arvore_seca,0,0,0,0,0,0,0
+true:mangueira,0,0,0,0,0,0,0
+true:bananeira,0,0,0,0,0,0,0
+true:jabuticabeira,2719,88,510,70,179,718,0

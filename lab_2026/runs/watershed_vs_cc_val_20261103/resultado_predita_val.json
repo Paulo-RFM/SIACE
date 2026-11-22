@@ -1,0 +1,105 @@
+{
+ "n_val_tiles": 203,
+ "n_gt": 399,
+ "melhor": {
+  "metodo": "cc",
+  "peak_footprint": NaN,
+  "min_area": 2000,
+  "instancias": 348,
+  "tp": 245,
+  "precisao": 0.7040229885057471,
+  "recall": 0.6140350877192983,
+  "f1": 0.6559571619812584,
+  "mae_contagem": 0.6551724137931034
+ },
+ "configs": [
+  {
+   "metodo": "cc",
+   "peak_footprint": null,
+   "min_area": 500,
+   "instancias": 375,
+   "tp": 245,
+   "precisao": 0.6533333333333333,
+   "recall": 0.6140350877192983,
+   "f1": 0.6330749354005167,
+   "mae_contagem": 0.6699507389162561
+  },
+  {
+   "metodo": "cc",
+   "peak_footprint": null,
+   "min_area": 1000,
+   "instancias": 365,
+   "tp": 245,
+   "precisao": 0.6712328767123288,
+   "recall": 0.6140350877192983,
+   "f1": 0.6413612565445026,
+   "mae_contagem": 0.6502463054187192
+  },
+  {
+   "metodo": "cc",
+   "peak_footprint": null,
+   "min_area": 2000,
+   "instancias": 348,
+   "tp": 245,
+   "precisao": 0.7040229885057471,
+   "recall": 0.6140350877192983,
+   "f1": 0.6559571619812584,
+   "mae_contagem": 0.6551724137931034
+  },
+  {
+   "metodo": "watershed",
+   "peak_footprint": 41,
+   "min_area": 1000,
+   "instancias": 579,
+   "tp": 255,
+   "precisao": 0.44041450777202074,
+   "recall": 0.6390977443609023,
+   "f1": 0.5214723926380368,
+   "mae_contagem": 1.2019704433497538
+  },
+  {
+   "metodo": "watershed",
+   "peak_footprint": 75,
+   "min_area": 1000,
+   "instancias": 529,
+   "tp": 260,
+   "precisao": 0.4914933837429111,
+   "recall": 0.6516290726817042,
+   "f1": 0.5603448275862069,
+   "mae_contagem": 0.9950738916256158
+  },
+  {
+   "metodo": "watershed",
+   "peak_footprint": 121,
+   "min_area": 1000,
+   "instancias": 495,
+   "tp": 261,
+   "precisao": 0.5272727272727272,
+   "recall": 0.6541353383458647,
+   "f1": 0.5838926174496645,
+   "mae_contagem": 0.9064039408866995
+  },
+  {
+   "metodo": "watershed",
+   "peak_footprint": 201,
+   "min_area": 1000,
+   "instancias": 433,
+   "tp": 245,
+   "precisao": 0.5658198614318707,
+   "recall": 0.6140350877192983,
+   "f1": 0.5889423076923077,
+   "mae_contagem": 0.8177339901477833
+  },
+  {
+   "metodo": "watershed",
+   "peak_footprint": 251,
+   "min_area": 1000,
+   "instancias": 404,
+   "tp": 242,
+   "precisao": 0.599009900990099,
+   "recall": 0.606516290726817,
+   "f1": 0.6027397260273972,
+   "mae_contagem": 0.7536945812807881
+  }
+ ]
+}

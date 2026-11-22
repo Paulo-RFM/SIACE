@@ -1,0 +1,17 @@
+# Contexto do docker build = lab_2026/. Só entra o necessário para a inferência (lista de permissão).
+*
+!pipeline_cidade.py
+!tree_georef.py
+!separate_tree_crowns_whatershed.py
+!species_data.py
+!docker/requirements.txt
+!docker/slicer.py
+!docker/preparar_ortomosaico.py
+!docker/siace.sh
+!runs/arq_segformer_mit_b1_20261110/checkpoint_best.pth
+!runs/arq_segformer_mit_b1_20261110/frozen_threshold.json
+!runs/res_segformer_8cm_20261121/checkpoint_best.pth
+!runs/res_segformer_8cm_20261121/frozen_threshold.json
+!runs/classif_20261102_163825_efficientnet_anotados/checkpoint_best.pth
+!runs/classif_20261102_163825_efficientnet_anotados/config.json
+!runs/individualizacao_val_segformer_20261111/frozen_instance_params_hmax.json

@@ -1,0 +1,5 @@
+modelo,saidas,codificador,demais_camadas,total,runs
+U-Net ResNet-34 (binária),1,21284672,3151697,24436369,alinhado_20261105_2215_softAug4
+U-Net ResNet-34 (multiclasse),7,21284672,3152567,24437239,classif_20261102_163825_unet_mc_ce;unet_mc_ce_dice_corrigido_20261106;unet_mc_ce_dice_initbin_corrigido_20261106
+EfficientNet-B0 (6 classes),6,4007548,7686,4015234,classif_20261102_163825_efficientnet_anotados
+EfficientNet-B0 (binária),2,4007548,2562,4010110,classif_20261103_115814_efficientnet_binaria_bananeira;classif_20261104_235839_efficientnet_binaria_mangueira;classif_20261104_235839_efficientnet_binaria_palmeira

@@ -1,0 +1,2 @@
+accuracy,balanced_accuracy,f1_macro,f1_weighted,precision_macro,recall_macro,f1_macro_present_classes,cohen_kappa,number_of_samples,number_of_classes,number_of_classes_present,loss,inference_total_s,split,checkpoint,best_epoch
+0.9545454545454546,0.7756892230576441,0.7563429973922381,0.9561226624273104,0.7398989898989898,0.7756892230576441,0.7563429973922381,0.5128205128205128,418,2,2,0.19967427027259138,10.346313238143921,test,checkpoint_best.pth,6

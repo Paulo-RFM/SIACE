@@ -1,0 +1,12 @@
+{
+ "n_arvores_perimetro": 4854,
+ "por_classe": {
+  "arvore_sem_identificacao": 3705,
+  "palmeira": 468,
+  "mangueira": 280,
+  "arvore_seca": 116,
+  "bananeira": 183,
+  "jabuticabeira": 102
+ },
+ "area_ha_perimetro": 344.43
+}

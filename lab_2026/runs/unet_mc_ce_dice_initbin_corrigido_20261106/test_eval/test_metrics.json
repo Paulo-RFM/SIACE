@@ -1,0 +1,26 @@
+{
+  "pixel_accuracy": 0.8243498334697649,
+  "miou_foreground_present": 0.1980374661627576,
+  "f1_macro_foreground_present": 0.28021032788956596,
+  "precision_macro_foreground_present": 0.21716947150079824,
+  "recall_macro_foreground_present": 0.5165816054228537,
+  "miou_all_classes": 0.28746717860767573,
+  "n_test_tiles": 204,
+  "classes_present": [
+    "fundo",
+    "arvore_sem_identificacao",
+    "palmeira",
+    "arvore_seca",
+    "mangueira",
+    "bananeira",
+    "jabuticabeira"
+  ],
+  "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+  "test_hash": "0342cd4fc76dc76476c9321ce46f5422eee887124f4aeec82fcb9951167e11ad",
+  "checkpoint": "runs/unet_mc_ce_dice_initbin_corrigido_20261106/checkpoint_best.pth",
+  "checkpoint_sha256": "8f11015b9b3c4bbd33636f7269c701d9b32d5b862b04f64a3c2070ad8d311ca6",
+  "normalize": "imagenet",
+  "inference_total_s": 9.830647623995901,
+  "inference_per_tile_s": 0.04818944913723481,
+  "smoke_max_tiles": null
+}

@@ -1,0 +1,5 @@
+{
+  "threshold": 0.40000000000000013,
+  "criterion": "validation_iou",
+  "validation_iou": 0.7649268658635793
+}

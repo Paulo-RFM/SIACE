@@ -1,0 +1,2 @@
+epoch,lr,train_loss,train_accuracy,train_f1_macro,val_loss,val_accuracy,val_precision_macro,val_recall_macro,val_f1_macro,epoch_time_s,val_f1_class_especie_1,val_f1_class_especie_2,val_f1_class_especie_3,val_f1_class_especie_4,val_f1_class_especie_5,val_f1_class_especie_6
+1,0.0001,1.752623236179352,0.23333333333333334,0.22421902217727988,1.8257995069026947,0.14166666666666666,0.27727727727727725,0.4024943310657596,0.21333727772545422,15.27290940284729,0.14953271028037382,0.18604651162790697,0.5,0.0,0.4444444444444444,0.0

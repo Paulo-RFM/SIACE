@@ -1,0 +1,19 @@
+especie,comparacao,metrica,diferenca,ic95_inf,ic95_sup,distinguivel
+palmeira,Binário - Multiclasse (argmax),f1,-0.029598308668076112,-0.1507477456450499,0.08334505941213255,False
+palmeira,Binário - Multiclasse (argmax),auc_roc,0.027261306532663454,-0.030218499175371186,0.12919005135807696,False
+palmeira,Binário - Multiclasse (argmax),ap,0.023549776465796035,-0.1385415715814932,0.17886505114002843,False
+palmeira,Binário - Multiclasse (limiar da validação),f1,-0.008207934336525335,-0.15770121951219512,0.14994884136878908,False
+palmeira,Binário - Multiclasse (limiar da validação),auc_roc,0.027261306532663454,-0.030218499175371186,0.12919005135807696,False
+palmeira,Binário - Multiclasse (limiar da validação),ap,0.023549776465796035,-0.1385415715814932,0.17886505114002843,False
+mangueira,Binário - Multiclasse (argmax),f1,0.04383174266525275,-0.16151684263448965,0.2232146223874165,False
+mangueira,Binário - Multiclasse (argmax),auc_roc,-0.00039572615749894346,-0.016536298364689804,0.013507372104380749,False
+mangueira,Binário - Multiclasse (argmax),ap,0.0032715266246203245,-0.11521732863436651,0.0942032690622752,False
+mangueira,Binário - Multiclasse (limiar da validação),f1,-0.008869179600886845,-0.16433354897450644,0.1189246564820737,False
+mangueira,Binário - Multiclasse (limiar da validação),auc_roc,-0.00039572615749894346,-0.016536298364689804,0.013507372104380749,False
+mangueira,Binário - Multiclasse (limiar da validação),ap,0.0032715266246203245,-0.11521732863436651,0.0942032690622752,False
+bananeira,Binário - Multiclasse (argmax),f1,0.052148518982060854,-0.0014028972916664856,0.11111221581493995,False
+bananeira,Binário - Multiclasse (argmax),auc_roc,0.001013513513513642,-0.019788603356259336,0.028702141243259666,False
+bananeira,Binário - Multiclasse (argmax),ap,0.0254710050311443,-0.06251163578821226,0.08019351528706099,False
+bananeira,Binário - Multiclasse (limiar da validação),f1,0.026004728132387744,-0.018974806761996577,0.0741879356001059,False
+bananeira,Binário - Multiclasse (limiar da validação),auc_roc,0.001013513513513642,-0.019788603356259336,0.028702141243259666,False
+bananeira,Binário - Multiclasse (limiar da validação),ap,0.0254710050311443,-0.06251163578821226,0.08019351528706099,False

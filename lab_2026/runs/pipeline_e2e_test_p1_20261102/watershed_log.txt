@@ -1,0 +1,412 @@
+Encontradas 204 máscaras binárias.
+Processando: OrtoRP-3cm_007_027.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_008_004.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_009_003.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_009_004.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_009_032.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_009_034.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_009_035.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_009_036.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_009_037.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_009_038.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_009_057.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_009_058.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_010_027.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_010_028.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_010_029.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_010_058.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_011_021.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_011_028.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_011_029.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_011_030.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_011_059.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_011_062.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_011_063.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_011_064.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_011_065.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_012_028.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_012_030.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_012_031.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_012_101.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_013_031.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_013_040.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_014_028.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_014_031.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_014_040.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_014_099.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_014_113.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_014_114.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_016_057.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_017_042.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_017_054.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_018_053.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_018_054.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_019_056.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_019_057.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_019_058.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_020_011.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_020_012.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_020_026.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_020_039.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_020_040.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_020_041.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_020_056.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_020_057.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_020_110.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_020_111.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_021_039.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_021_040.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_021_042.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_021_057.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_021_064.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_021_109.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_021_110.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_021_111.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_022_039.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_022_040.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_022_041.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_022_042.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_022_043.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_022_055.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_022_056.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_022_057.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_022_058.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_022_060.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_022_109.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_023_037.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_023_038.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_023_041.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_023_042.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_023_054.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_023_057.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_023_058.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_023_062.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_023_109.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_023_113.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_023_114.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_023_121.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_024_054.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_024_055.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_024_057.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_024_058.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_024_113.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_025_033.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_025_035.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_025_036.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_025_037.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_025_038.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_025_054.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_025_055.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_025_056.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_025_068.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_027_047.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_027_095.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_045_028.png
+ → 0 copas detectadas.
+Processando: OrtoRP-3cm_045_029.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_045_043.png
+ → 0 copas detectadas.
+Processando: OrtoRP-3cm_045_049.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_045_050.png
+ → 5 copas detectadas.
+Processando: OrtoRP-3cm_045_051.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_045_070.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_047_033.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_047_039.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_047_040.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_047_087.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_047_088.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_047_089.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_047_090.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_047_101.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_047_102.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_048_089.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_048_102.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_048_104.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_048_105.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_049_020.png
+ → 5 copas detectadas.
+Processando: OrtoRP-3cm_049_021.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_049_022.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_049_023.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_049_024.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_049_096.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_050_022.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_050_023.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_050_024.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_050_079.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_050_089.png
+ → 0 copas detectadas.
+Processando: OrtoRP-3cm_051_064.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_051_065.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_051_066.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_051_075.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_051_076.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_051_078.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_051_079.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_051_080.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_051_088.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_051_089.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_051_090.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_052_032.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_052_065.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_052_079.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_052_086.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_052_087.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_052_088.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_052_090.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_052_091.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_053_079.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_053_090.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_054_043.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_054_055.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_054_056.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_054_065.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_054_079.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_054_091.png
+ → 5 copas detectadas.
+Processando: OrtoRP-3cm_054_092.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_054_093.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_055_065.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_055_066.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_055_093.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_056_020.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_056_099.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_072_036.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_072_039.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_072_040.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_072_068.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_072_114.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_072_115.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_072_116.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_072_117.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_073_056.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_073_083.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_073_084.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_073_117.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_074_042.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_074_109.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_075_042.png
+ → 0 copas detectadas.
+Processando: OrtoRP-3cm_075_043.png
+ → 0 copas detectadas.
+Processando: OrtoRP-3cm_075_070.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_076_026.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_076_038.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_076_123.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_076_124.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_077_100.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_077_101.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_077_108.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_077_125.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_078_087.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_078_101.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_081_045.png
+ → 1 copas detectadas.
+Processando: OrtoRP-3cm_081_088.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_081_089.png
+ → 4 copas detectadas.
+Processando: OrtoRP-3cm_081_110.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_081_126.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_081_127.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_082_013.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_082_014.png
+ → 2 copas detectadas.
+Processando: OrtoRP-3cm_082_015.png
+ → 3 copas detectadas.
+Processando: OrtoRP-3cm_082_046.png
+ → 1 copas detectadas.
+
+ Finalizado!
+Máscaras de instância salvas em: runs/pipeline_e2e_test_p1_20261102/out

@@ -1,0 +1,32 @@
+Indice de classificacao: /home/paulomaciel/proj/lab_2026/index_classification.csv (11 runs)
+{
+  "run_id": "classif_20261102_163825",
+  "experiments": {
+    "efficientnet_anotados": {
+      "run_dir": "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_efficientnet_anotados",
+      "status": "ok"
+    },
+    "efficientnet_aug_treino": {
+      "run_dir": "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_efficientnet_aug_treino",
+      "status": "ok"
+    },
+    "unet_mc_ce": {
+      "run_dir": "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce",
+      "status": "ok"
+    },
+    "unet_mc_ce_dice": {
+      "run_dir": "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce_dice",
+      "status": "ok"
+    },
+    "unet_mc_ce_dice_initP1": {
+      "run_dir": "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce_dice_initP1",
+      "status": "ok"
+    }
+  },
+  "disabled": {
+    "efficientnet_pseudo": "Sem CSV de pseudorrotulos com proveniencia valida (dataset_auto/* rejeitados).",
+    "catboost_final.py": "Script de outro problema (features f0..f523, alvo 'attack'); nao classifica especies."
+  },
+  "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+  "ended_at": "2026-11-02T23:45:56.671974+00:00"
+}

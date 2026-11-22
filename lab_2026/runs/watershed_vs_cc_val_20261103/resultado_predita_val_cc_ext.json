@@ -1,0 +1,61 @@
+{
+ "n_val_tiles": 203,
+ "n_gt": 399,
+ "melhor": {
+  "metodo": "cc",
+  "peak_footprint": null,
+  "min_area": 3000,
+  "instancias": 328,
+  "tp": 239,
+  "precisao": 0.7286585365853658,
+  "recall": 0.5989974937343359,
+  "f1": 0.657496561210454,
+  "mae_contagem": 0.6354679802955665
+ },
+ "configs": [
+  {
+   "metodo": "cc",
+   "peak_footprint": null,
+   "min_area": 2000,
+   "instancias": 348,
+   "tp": 245,
+   "precisao": 0.7040229885057471,
+   "recall": 0.6140350877192983,
+   "f1": 0.6559571619812584,
+   "mae_contagem": 0.6551724137931034
+  },
+  {
+   "metodo": "cc",
+   "peak_footprint": null,
+   "min_area": 3000,
+   "instancias": 328,
+   "tp": 239,
+   "precisao": 0.7286585365853658,
+   "recall": 0.5989974937343359,
+   "f1": 0.657496561210454,
+   "mae_contagem": 0.6354679802955665
+  },
+  {
+   "metodo": "cc",
+   "peak_footprint": null,
+   "min_area": 4000,
+   "instancias": 313,
+   "tp": 231,
+   "precisao": 0.7380191693290735,
+   "recall": 0.5789473684210527,
+   "f1": 0.6488764044943821,
+   "mae_contagem": 0.6600985221674877
+  },
+  {
+   "metodo": "cc",
+   "peak_footprint": null,
+   "min_area": 6000,
+   "instancias": 290,
+   "tp": 223,
+   "precisao": 0.7689655172413793,
+   "recall": 0.5588972431077694,
+   "f1": 0.6473149492017417,
+   "mae_contagem": 0.7142857142857143
+  }
+ ]
+}

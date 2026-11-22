@@ -1,0 +1,40 @@
+{
+  "script": "pipeline_cidade.py",
+  "tiles_dir": "/home/paulomaciel/Datasets/drone_rp_v01/tiles512",
+  "partition": null,
+  "n_tiles": 61426,
+  "tile_list_sha256": "ab3dc8d0afc62968ff1d28b906f5f5b6cd5b99dbcda1241b29a679acc1bdecab",
+  "segmentation_run": "/home/paulomaciel/proj/lab_2026/runs/p1_20261101_140519",
+  "segmentation_checkpoint_sha256": "a5f78fe432b3887aac0fb1bd71e2ee848145d48d5ed82199c1b51ae44ca2b616",
+  "segmentation_threshold": 0.6500000000000001,
+  "threshold_criterion": "validation_iou",
+  "watershed_params": {
+    "method": "componentes_conexas",
+    "min_area": 3000
+  },
+  "watershed_params_file": "/home/paulomaciel/proj/lab_2026/runs/watershed_vs_cc_val_20261103/frozen_instance_params.json",
+  "classifier_run": "runs/classif_20261102_163825_efficientnet_anotados",
+  "classifier_checkpoint_sha256": "e4fd4f7790120e5af845ba75d9d3ed1025d30f5b225568c6506c26d48225df07",
+  "classifier_selection": "best_val_f1_macro=0.5981114498644986",
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "class_names": [
+    "arvore_sem_identificacao",
+    "palmeira",
+    "arvore_seca",
+    "mangueira",
+    "bananeira",
+    "jabuticabeira"
+  ],
+  "crop_pad_px": 20,
+  "cls_batch_size": 8,
+  "crop_size": 512,
+  "device": "cuda",
+  "border_merge_rule": "uma_parte_por_tile"
+}

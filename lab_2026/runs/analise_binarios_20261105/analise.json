@@ -1,0 +1,60 @@
+{
+  "B": 2000,
+  "seed": 42,
+  "especies": {
+    "palmeira": {
+      "run_binario": "classif_20261104_235839_efficientnet_binaria_palmeira",
+      "val_f1_macro_binario": 0.7672790901137359,
+      "epoca_binario": 8,
+      "positivos_teste": 20,
+      "limiar_multiclasse_val": 0.85,
+      "f1_val_multiclasse_no_limiar": 0.5882352941176471,
+      "mcnemar_A_vs_C": {
+        "so_1_acerta": 3,
+        "so_2_acerta": 2,
+        "p_valor": 1.0
+      },
+      "mcnemar_B_vs_C": {
+        "so_1_acerta": 6,
+        "so_2_acerta": 3,
+        "p_valor": 0.5078125
+      }
+    },
+    "mangueira": {
+      "run_binario": "classif_20261104_235839_efficientnet_binaria_mangueira",
+      "val_f1_macro_binario": 0.7814543931436673,
+      "epoca_binario": 6,
+      "positivos_teste": 19,
+      "limiar_multiclasse_val": 0.85,
+      "f1_val_multiclasse_no_limiar": 0.6222222222222222,
+      "mcnemar_A_vs_C": {
+        "so_1_acerta": 7,
+        "so_2_acerta": 23,
+        "p_valor": 0.005222879350185395
+      },
+      "mcnemar_B_vs_C": {
+        "so_1_acerta": 5,
+        "so_2_acerta": 6,
+        "p_valor": 1.0
+      }
+    },
+    "bananeira": {
+      "run_binario": "classif_20261103_115814_efficientnet_binaria_bananeira",
+      "val_f1_macro_binario": 0.8648540460647863,
+      "epoca_binario": 6,
+      "positivos_teste": 48,
+      "limiar_multiclasse_val": 0.55,
+      "f1_val_multiclasse_no_limiar": 0.7619047619047619,
+      "mcnemar_A_vs_C": {
+        "so_1_acerta": 1,
+        "so_2_acerta": 7,
+        "p_valor": 0.0703125
+      },
+      "mcnemar_B_vs_C": {
+        "so_1_acerta": 1,
+        "so_2_acerta": 4,
+        "p_valor": 0.375
+      }
+    }
+  }
+}

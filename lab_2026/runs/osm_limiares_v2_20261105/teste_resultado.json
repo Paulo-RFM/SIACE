@@ -1,0 +1,31 @@
+{
+  "copas_detectadas": 301,
+  "copas_aprovadas": 80,
+  "precisao_arvore": 0.9875,
+  "precisao_arvore_sem_filtro": 0.8471760797342193,
+  "fracao_das_copas_sobre_arvore_mantidas": 0.30980392156862746,
+  "especies_no_conjunto_enviado": [
+    {
+      "classe": 5,
+      "suporte": 3,
+      "precisao": 1.0,
+      "acertos": 3
+    }
+  ],
+  "especies_em_todas_as_copas": [
+    {
+      "classe": 5,
+      "suporte": 14,
+      "precisao": 0.9285714285714286,
+      "acertos": 13
+    }
+  ],
+  "vies_de_especie_seg_prob_mean_val": {
+    "1": 0.915,
+    "2": 0.898,
+    "3": 0.825,
+    "4": 0.955,
+    "5": 0.907,
+    "6": 0.883
+  }
+}

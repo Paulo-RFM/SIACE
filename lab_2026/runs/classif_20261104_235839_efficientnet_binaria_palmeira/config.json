@@ -1,0 +1,251 @@
+{
+  "run_id": "classif_20261104_235839_efficientnet_binaria_palmeira",
+  "script": "train_species_efficientnet.py",
+  "command": [
+    "/home/paulomaciel/anaconda3/envs/siace/bin/python",
+    "train_species_efficientnet.py",
+    "--binary-target",
+    "2",
+    "--species-names",
+    "species_names.json",
+    "--run-id",
+    "classif_20261104_235839_efficientnet_binaria_palmeira"
+  ],
+  "variant": "annotated_only",
+  "smoke": false,
+  "binary_target": 2,
+  "seed": 42,
+  "random_seed": 42,
+  "numpy_seed": 42,
+  "torch_manual_seed": 42,
+  "python_seed": 42,
+  "worker_init_fn": "seed_worker: torch.initial_seed() -> numpy/random por worker",
+  "deterministic": "cudnn.deterministic=True, benchmark=False, use_deterministic_algorithms(warn_only=True)",
+  "task": "classificacao de especies por recorte de copa",
+  "architecture": "EfficientNet-B0 (classificador)",
+  "backbone": "efficientnet-b0",
+  "pretrained": "ImageNet (efficientnet_pytorch.from_pretrained)",
+  "input_resolution": [
+    512,
+    512
+  ],
+  "batch_size": 6,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "optimizer": "AdamW",
+  "scheduler": "CosineAnnealingLR(T_max=10) step por epoca",
+  "loss": "CrossEntropyLoss",
+  "sampler": "WeightedRandomSampler(1/freq da classe no treino)",
+  "train_augmentation": "Compose(\n    Resize(size=(512, 512), interpolation=bilinear, max_size=None, antialias=True)\n    RandomHorizontalFlip(p=0.5)\n    RandomVerticalFlip(p=0.5)\n    RandomRotation(degrees=[-30.0, 30.0], interpolation=nearest, expand=False, fill=0)\n    ColorJitter(brightness=(0.7, 1.3), contrast=(0.7, 1.3), saturation=(0.7, 1.3), hue=None)\n    RandomResizedCrop(size=(512, 512), scale=(0.7, 1.0), ratio=(0.75, 1.3333), interpolation=bilinear, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])\n)",
+  "epochs_max": 40,
+  "patience": 5,
+  "selection_criterion": "max val_f1_macro",
+  "total_parameters": 4010110,
+  "trainable_parameters": 4010110,
+  "class_ids": [
+    0,
+    2
+  ],
+  "class_names": [
+    "outras",
+    "palmeira"
+  ],
+  "class_names_from_file": true,
+  "split": {
+    "split_path": "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+    "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+    "tiles_per_split": {
+      "train": 611,
+      "val": 203,
+      "test": 204
+    },
+    "tiles_in_multiple_splits": 0
+  },
+  "data_sources": {
+    "manifest": "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv",
+    "manifest_sha256": "48b3b88310f742baad5e8b6313c0a7c7daeb99e424f8be3b93c6319800d44948"
+  },
+  "test_list_sha256": "eb8f635085059391e0dd208b261fe64a62252a4575238d15c9bd725207db2712",
+  "audit": {
+    "counts_species_by_split": {
+      "1": {
+        "train": 1012,
+        "val": 308,
+        "test": 322
+      },
+      "2": {
+        "train": 128,
+        "val": 20,
+        "test": 20
+      },
+      "3": {
+        "train": 22,
+        "val": 6,
+        "test": 3
+      },
+      "4": {
+        "train": 28,
+        "val": 21,
+        "test": 19
+      },
+      "5": {
+        "train": 94,
+        "val": 38,
+        "test": 48
+      },
+      "6": {
+        "train": 12,
+        "val": 6,
+        "test": 6
+      }
+    },
+    "counts_by_split_origin_species": {
+      "test|anotado": {
+        "1": 322,
+        "2": 20,
+        "3": 3,
+        "4": 19,
+        "5": 48,
+        "6": 6
+      },
+      "train|anotado": {
+        "1": 1012,
+        "2": 128,
+        "3": 22,
+        "4": 28,
+        "5": 94,
+        "6": 12
+      },
+      "val|anotado": {
+        "1": 308,
+        "2": 20,
+        "3": 6,
+        "4": 21,
+        "5": 38,
+        "6": 6
+      }
+    },
+    "imbalance_ratio": {
+      "train": 84.33333333333333,
+      "val": 51.333333333333336,
+      "test": 107.33333333333333
+    },
+    "samples_per_split": {
+      "train": 1296,
+      "test": 418,
+      "val": 399
+    },
+    "leakage": {
+      "tiles_shared": {
+        "train&val": 0,
+        "train&test": 0,
+        "val&test": 0
+      },
+      "instances_shared": {
+        "train&val": 0,
+        "train&test": 0,
+        "val&test": 0
+      },
+      "tiles_per_split": {
+        "train": 610,
+        "val": 203,
+        "test": 202
+      }
+    },
+    "test_eligibility": {
+      "min_samples": 10,
+      "test_counts": {
+        "1": 322,
+        "2": 20,
+        "3": 3,
+        "4": 19,
+        "5": 48,
+        "6": 6
+      },
+      "eligible_species": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "below_min": [
+        3,
+        6
+      ],
+      "n_eligible": 4,
+      "meaningful_test": true
+    }
+  },
+  "mask_provenance": [
+    "manual_polygon_labelme"
+  ],
+  "segmentation_checkpoint": null,
+  "segmentation_checkpoint_sha256": null,
+  "watershed_parameters": null,
+  "segmentation_note": "Recortes de treino/val/teste vem de poligonos manuais (LabelMe); nao dependem de mascara predita nem de watershed.",
+  "environment": {
+    "python": "3.10.19",
+    "pytorch": "2.5.1+cu121",
+    "torchvision": "0.20.1+cu121",
+    "host": "Godel",
+    "os": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+    "cuda_available": true,
+    "efficientnet_pytorch": "0.7.1",
+    "scikit_learn": "1.7.2",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "vram_total_mb": 4038.62,
+    "cuda": "12.1",
+    "cudnn": 90100
+  },
+  "started_at": "2026-11-05T02:59:21.343836+00:00",
+  "ended_at": "2026-11-05T03:27:28.049734+00:00",
+  "effective_epoch": 8,
+  "epochs_completed": 13,
+  "best_val_f1_macro": 0.7672790901137359,
+  "train_duration_s": 1662.2052924633026,
+  "mean_epoch_duration_s": 127.79654752291165,
+  "peak_gpu_memory_allocated_mb": 2855.16064453125,
+  "peak_process_rss_mb": 1418.70703125,
+  "checkpoint_best_sha256": "55a2b258648c1e170c69eea4d7517da1d69ca726347676617808f61d18e5bee1",
+  "results": {
+    "val": {
+      "accuracy": 0.9598997493734336,
+      "balanced_accuracy": 0.7420844327176781,
+      "f1_macro": 0.7672790901137359,
+      "f1_weighted": 0.9577772076736021,
+      "precision_macro": 0.7994451697127938,
+      "recall_macro": 0.7420844327176781,
+      "f1_macro_present_classes": 0.7672790901137359,
+      "cohen_kappa": 0.5348294957738269,
+      "number_of_samples": 399,
+      "number_of_classes": 2,
+      "number_of_classes_present": 2,
+      "loss": 0.16661126740299573,
+      "inference_total_s": 9.785857677459717,
+      "split": "val",
+      "checkpoint": "checkpoint_best.pth",
+      "best_epoch": 8,
+      "ece": 0.024755427413118175
+    },
+    "test": {
+      "accuracy": 0.9688995215311005,
+      "balanced_accuracy": 0.8649497487437185,
+      "f1_macro": 0.8406404879908502,
+      "f1_weighted": 0.9699255937994226,
+      "precision_macro": 0.8197578425976886,
+      "recall_macro": 0.8649497487437185,
+      "f1_macro_present_classes": 0.8406404879908502,
+      "cohen_kappa": 0.6813650756420782,
+      "number_of_samples": 418,
+      "number_of_classes": 2,
+      "number_of_classes_present": 2,
+      "loss": 0.08263232849057069,
+      "inference_total_s": 11.21608591079712,
+      "split": "test",
+      "checkpoint": "checkpoint_best.pth",
+      "best_epoch": 8,
+      "ece": 0.017337236393011334
+    }
+  },
+  "pseudo_threshold_note": "O corte de confianca usado para pseudorrotulos (ex.: 0,5) e uma regra operativa; confianca do softmax nao garante que o rotulo esteja correto."
+}

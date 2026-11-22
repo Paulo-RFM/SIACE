@@ -1,0 +1,27 @@
+run_id=classif_seeds_20261120_efficientnet_anotados_s3 device=cuda
+epoch 1/40 lr=1.00e-04 train_loss=1.3275 train_f1=0.5131 val_loss=1.5281 val_f1=0.3411 val_acc=0.2907 (127.9s)
+  -> novo melhor val_f1_macro=0.3411
+epoch 2/40 lr=9.76e-05 train_loss=0.7410 train_f1=0.7083 val_loss=1.3010 val_f1=0.4164 val_acc=0.4561 (127.2s)
+  -> novo melhor val_f1_macro=0.4164
+epoch 3/40 lr=9.05e-05 train_loss=0.6113 train_f1=0.7858 val_loss=1.0727 val_f1=0.4736 val_acc=0.5614 (127.3s)
+  -> novo melhor val_f1_macro=0.4736
+epoch 4/40 lr=7.94e-05 train_loss=0.4770 train_f1=0.8301 val_loss=0.8091 val_f1=0.5521 val_acc=0.7218 (127.3s)
+  -> novo melhor val_f1_macro=0.5521
+epoch 5/40 lr=6.55e-05 train_loss=0.4201 train_f1=0.8582 val_loss=0.8475 val_f1=0.4960 val_acc=0.6742 (127.3s)
+epoch 6/40 lr=5.00e-05 train_loss=0.3948 train_f1=0.8588 val_loss=0.8585 val_f1=0.5397 val_acc=0.7118 (127.3s)
+epoch 7/40 lr=3.45e-05 train_loss=0.3636 train_f1=0.8649 val_loss=0.7695 val_f1=0.5761 val_acc=0.7569 (127.3s)
+  -> novo melhor val_f1_macro=0.5761
+epoch 8/40 lr=2.06e-05 train_loss=0.3536 train_f1=0.8896 val_loss=0.6934 val_f1=0.5824 val_acc=0.7669 (127.3s)
+  -> novo melhor val_f1_macro=0.5824
+epoch 9/40 lr=9.55e-06 train_loss=0.3746 train_f1=0.8750 val_loss=0.6896 val_f1=0.5785 val_acc=0.7669 (127.3s)
+epoch 10/40 lr=2.45e-06 train_loss=0.3130 train_f1=0.9043 val_loss=0.6935 val_f1=0.5882 val_acc=0.7744 (127.3s)
+  -> novo melhor val_f1_macro=0.5882
+epoch 11/40 lr=0.00e+00 train_loss=0.3109 train_f1=0.8959 val_loss=0.7025 val_f1=0.5700 val_acc=0.7594 (127.3s)
+epoch 12/40 lr=2.45e-06 train_loss=0.3000 train_f1=0.8986 val_loss=0.6659 val_f1=0.5824 val_acc=0.7794 (127.3s)
+epoch 13/40 lr=9.55e-06 train_loss=0.3109 train_f1=0.9052 val_loss=0.6904 val_f1=0.5783 val_acc=0.7744 (127.3s)
+epoch 14/40 lr=2.06e-05 train_loss=0.2808 train_f1=0.9070 val_loss=0.6396 val_f1=0.5738 val_acc=0.7769 (127.3s)
+epoch 15/40 lr=3.45e-05 train_loss=0.2911 train_f1=0.9053 val_loss=0.7595 val_f1=0.5499 val_acc=0.7343 (127.3s)
+Early stopping apos 5 epocas sem melhora.
+[val] {"accuracy": 0.7744360902255639, "balanced_accuracy": 0.7234164957849168, "f1_macro": 0.5882006999463498, "f1_weighted": 0.8008841215913024, "number_of_samples": 399}
+[test] {"accuracy": 0.8181818181818182, "balanced_accuracy": 0.7861224619519814, "f1_macro": 0.6339272460172536, "f1_weighted": 0.8446902353584494, "number_of_samples": 418}
+Run salvo em /home/paulomaciel/proj/lab_2026/runs/classif_seeds_20261120_efficientnet_anotados_s3

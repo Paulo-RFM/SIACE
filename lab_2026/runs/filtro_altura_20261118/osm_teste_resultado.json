@@ -1,0 +1,37 @@
+{
+  "meta": 0.95,
+  "area_max_m2": 217.3924945722511,
+  "val_sem_altura": {
+    "h_m": NaN,
+    "s": 0.91,
+    "aprovadas": 245.0,
+    "precisao": 0.9510204081632653,
+    "arvores_mantidas": 0.6893491124260355
+  },
+  "val_escolhido": {
+    "h_m": 2.5,
+    "s": 0.87,
+    "aprovadas": 264.0,
+    "precisao": 0.9545454545454546,
+    "arvores_mantidas": 0.7455621301775148
+  },
+  "altura_adotada": true,
+  "teste_atual": {
+    "s": 0.91,
+    "h_m": null,
+    "aprovadas": 233,
+    "precisao": 0.9699570815450643,
+    "aprovadas_sem_bananeira": 220,
+    "precisao_sem_bananeira": 0.9727272727272728,
+    "arvores_mantidas": 0.7243589743589743
+  },
+  "teste_escolhido": {
+    "s": 0.87,
+    "h_m": 2.5,
+    "aprovadas": 276,
+    "precisao": 0.9311594202898551,
+    "aprovadas_sem_bananeira": 257,
+    "precisao_sem_bananeira": 0.9377431906614786,
+    "arvores_mantidas": 0.8237179487179487
+  }
+}

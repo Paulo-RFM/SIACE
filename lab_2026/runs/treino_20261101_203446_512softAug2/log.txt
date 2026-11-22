@@ -1,0 +1,365 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python3", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_binary_training.py", "--script", "/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug2.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/masks", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "treino_20261101_203446_512softAug2"]
+[train] started_at=2026-11-02T00:37:23.799075+00:00
+Imagens: 1018
+Máscaras: 1018
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug2.py:163: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug2.py:212: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug2.py:244: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/40 ===
+Train Loss: 0.5140
+Val Loss:   0.4818
+
+--- MÉTRICAS ---
+Acc:  0.8854
+Prec: 0.6922
+Rec:  0.8934
+F1:   0.7800
+IoU:  0.6394
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10809335
+FP: 4806641
+FN: 1290104
+TN: 36309152
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6394)
+
+=== Época 2/40 ===
+Train Loss: 0.3931
+Val Loss:   0.3443
+
+--- MÉTRICAS ---
+Acc:  0.9162
+Prec: 0.8115
+Rec:  0.8223
+F1:   0.8168
+IoU:  0.6904
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9948903
+FP: 2311452
+FN: 2150536
+TN: 38804341
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6904)
+
+=== Época 3/40 ===
+Train Loss: 0.3381
+Val Loss:   0.3396
+
+--- MÉTRICAS ---
+Acc:  0.9131
+Prec: 0.7674
+Rec:  0.8864
+F1:   0.8226
+IoU:  0.6987
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10725262
+FP: 3250528
+FN: 1374177
+TN: 37865265
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6987)
+
+=== Época 4/40 ===
+Train Loss: 0.2978
+Val Loss:   0.3579
+
+--- MÉTRICAS ---
+Acc:  0.9018
+Prec: 0.7222
+Rec:  0.9233
+F1:   0.8105
+IoU:  0.6813
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11171525
+FP: 4297535
+FN: 927914
+TN: 36818258
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 1/5
+
+=== Época 5/40 ===
+Train Loss: 0.2746
+Val Loss:   0.2789
+
+--- MÉTRICAS ---
+Acc:  0.9152
+Prec: 0.7834
+Rec:  0.8668
+F1:   0.8230
+IoU:  0.6992
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10487524
+FP: 2899836
+FN: 1611915
+TN: 38215957
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6992)
+
+=== Época 6/40 ===
+Train Loss: 0.2492
+Val Loss:   0.2470
+
+--- MÉTRICAS ---
+Acc:  0.9147
+Prec: 0.7769
+Rec:  0.8765
+F1:   0.8237
+IoU:  0.7002
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10605572
+FP: 3046312
+FN: 1493867
+TN: 38069481
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7002)
+
+=== Época 7/40 ===
+Train Loss: 0.2343
+Val Loss:   0.2645
+
+--- MÉTRICAS ---
+Acc:  0.9128
+Prec: 0.8270
+Rec:  0.7796
+F1:   0.8026
+IoU:  0.6703
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9433314
+FP: 1972827
+FN: 2666125
+TN: 39142966
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 1/5
+
+=== Época 8/40 ===
+Train Loss: 0.2315
+Val Loss:   0.2243
+
+--- MÉTRICAS ---
+Acc:  0.9189
+Prec: 0.7888
+Rec:  0.8784
+F1:   0.8312
+IoU:  0.7111
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10627851
+FP: 2845285
+FN: 1471588
+TN: 38270508
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7111)
+
+=== Época 9/40 ===
+Train Loss: 0.2053
+Val Loss:   0.2501
+
+--- MÉTRICAS ---
+Acc:  0.9135
+Prec: 0.8082
+Rec:  0.8123
+F1:   0.8102
+IoU:  0.6810
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9828444
+FP: 2332440
+FN: 2270995
+TN: 38783353
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 1/5
+
+=== Época 10/40 ===
+Train Loss: 0.2054
+Val Loss:   0.2764
+
+--- MÉTRICAS ---
+Acc:  0.9083
+Prec: 0.7520
+Rec:  0.8901
+F1:   0.8152
+IoU:  0.6881
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10769731
+FP: 3552035
+FN: 1329708
+TN: 37563758
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 2/5
+
+=== Época 11/40 ===
+Train Loss: 0.1891
+Val Loss:   0.2289
+
+--- MÉTRICAS ---
+Acc:  0.9233
+Prec: 0.8127
+Rec:  0.8612
+F1:   0.8362
+IoU:  0.7185
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10419817
+FP: 2402133
+FN: 1679622
+TN: 38713660
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7185)
+
+=== Época 12/40 ===
+Train Loss: 0.1894
+Val Loss:   0.2619
+
+--- MÉTRICAS ---
+Acc:  0.9104
+Prec: 0.8269
+Rec:  0.7661
+F1:   0.7954
+IoU:  0.6603
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9269922
+FP: 1940251
+FN: 2829517
+TN: 39175542
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 1/5
+
+=== Época 13/40 ===
+Train Loss: 0.1695
+Val Loss:   0.2397
+
+--- MÉTRICAS ---
+Acc:  0.9131
+Prec: 0.7760
+Rec:  0.8685
+F1:   0.8196
+IoU:  0.6944
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10508013
+FP: 3033154
+FN: 1591426
+TN: 38082639
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 2/5
+
+=== Época 14/40 ===
+Train Loss: 0.1830
+Val Loss:   0.2436
+
+--- MÉTRICAS ---
+Acc:  0.9148
+Prec: 0.7677
+Rec:  0.8967
+F1:   0.8272
+IoU:  0.7054
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10850101
+FP: 3282989
+FN: 1249338
+TN: 37832804
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 3/5
+
+=== Época 15/40 ===
+Train Loss: 0.1676
+Val Loss:   0.2588
+
+--- MÉTRICAS ---
+Acc:  0.9102
+Prec: 0.8427
+Rec:  0.7438
+F1:   0.7902
+IoU:  0.6532
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9000094
+FP: 1679930
+FN: 3099345
+TN: 39435863
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 4/5
+
+=== Época 16/40 ===
+Train Loss: 0.1680
+Val Loss:   0.2549
+
+--- MÉTRICAS ---
+Acc:  0.9152
+Prec: 0.8409
+Rec:  0.7736
+F1:   0.8058
+IoU:  0.6748
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9359897
+FP: 1770756
+FN: 2739542
+TN: 39345037
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_softAug_run1.csv
+Sem melhora: 5/5
+
+🛑 Early Stopping ativado
+Modelo legado treinado com split espacial: tree_segmentation_resnet_26_512softAug2.py
+[train] ended_at=2026-11-02T01:09:33.927055+00:00
+[train] elapsed_s=1930.128
+
+[test] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python3", "-u", "/home/paulomaciel/proj/lab_2026/evaluate_unet_binary_test.py", "--images", "/home/paulomaciel/proj/imagens", "--masks", "/home/paulomaciel/proj/masks", "--split", "/home/paulomaciel/proj/unet_spatial_split", "--checkpoint", "/home/paulomaciel/proj/lab_2026/runs/treino_20261101_203446_512softAug2/checkpoint_best.pth", "--threshold", "/home/paulomaciel/proj/lab_2026/runs/treino_20261101_203446_512softAug2/frozen_threshold.json", "--output", "/home/paulomaciel/proj/lab_2026/runs/treino_20261101_203446_512softAug2/test_eval", "--img-size", "512"]
+[test] started_at=2026-11-02T01:09:33.927226+00:00
+Teste avaliado uma unica vez: 204 tiles, threshold=0.5000
+[test] ended_at=2026-11-02T01:10:01.409943+00:00
+[test] elapsed_s=27.483

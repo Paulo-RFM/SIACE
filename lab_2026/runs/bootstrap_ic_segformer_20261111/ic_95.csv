@@ -1,0 +1,17 @@
+grupo,metrica,estimativa,ic95_inf,ic95_sup,n_tiles,obs
+segmentacao validacao: SegFormer MiT-B1,IoU,0.7649269203913974,0.7312582296606207,0.7946725853263531,203,
+segmentacao validacao: U-Net ResNet-34,IoU,0.7481725832707238,0.7161887799220559,0.7758562110439554,203,
+segmentacao validacao: SegFormer - U-Net,dif. IoU (pareada),0.016754337120673646,-0.008885254648047894,0.041681232480677045,203,
+"deteccao e2e teste: h-maxima (SegFormer, sistema)",F1,0.6709677419354839,0.6230671296296296,0.7192531282291093,204,
+"deteccao e2e teste: h-maxima (SegFormer, sistema)",instancias por arvore,0.8452380952380952,0.7726064902347944,0.9280343371281673,204,
+deteccao e2e teste: componentes conexas (SegFormer),F1,0.6620879120879121,0.6112528664932841,0.7121712577445418,204,
+deteccao e2e teste: componentes conexas (SegFormer),instancias por arvore,0.7333333333333333,0.6666666666666666,0.8055678001679261,204,
+deteccao e2e teste: watershed janela (SegFormer),F1,0.6590909090909091,0.6122412666134069,0.7058859706244122,204,
+deteccao e2e teste: watershed janela (SegFormer),instancias por arvore,0.8857142857142857,0.8089838251636005,0.9754311470251524,204,
+"deteccao e2e teste: componentes conexas (U-Net, sistema anterior)",F1,0.6657681940700808,0.6151712551948122,0.7167452637317705,204,
+"deteccao e2e teste: componentes conexas (U-Net, sistema anterior)",instancias por arvore,0.7666666666666667,0.6982327041903238,0.8398950131233596,204,
+"deteccao e2e teste: h-maxima (SegFormer, sistema) - componentes conexas (SegFormer)",dif. F1 (pareada),0.008879829847571852,-0.02145324075926157,0.0396567890349792,204,
+"deteccao e2e teste: h-maxima (SegFormer, sistema) - watershed janela (SegFormer)",dif. F1 (pareada),0.011876832844574858,-0.011130219721825391,0.0368773558427334,204,
+"deteccao e2e teste: h-maxima (SegFormer, sistema) - componentes conexas (U-Net, sistema anterior)",dif. F1 (pareada),0.005199547865403109,-0.03895162105879732,0.05244691375912149,204,
+"classificacao e2e teste (h-maxima, SegFormer)",F1-macro,0.5755937863907016,0.48260164675720246,0.7646566939635154,174,tiles com >=1 arvore casada
+"classificacao e2e teste (h-maxima, SegFormer)",acuracia,0.823076923076923,0.7755022939408321,0.8664185750636133,174,tiles com >=1 arvore casada

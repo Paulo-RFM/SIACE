@@ -1,0 +1,30 @@
+{
+  "n_tiles": 204,
+  "n_grupos": 78,
+  "limiar": 0.40000000000000013,
+  "iou_pixels_agregado_conferencia": 0.7732633199498637,
+  "vies_relativo": 0.059963156538025864,
+  "cob_pred_total": 19.95349713654267,
+  "cob_ref_total": 18.82470821128663,
+  "vies_relativo_ic95": [
+    0.01698837148654972,
+    0.10896239509806174
+  ],
+  "por_tile": {
+    "erro_medio_pp": 1.1287846586874877,
+    "erro_medio_pp_ic95": [
+      0.3186478449643908,
+      2.017125421957145
+    ],
+    "erro_absoluto_medio_pp": 3.2882412986762333,
+    "pearson_r": 0.9342994374493137
+  },
+  "por_grupo": {
+    "erro_medio_pp": 1.031548390728911,
+    "erro_absoluto_medio_pp": 3.3127846882975507,
+    "erro_absoluto_medio_pp_grupos_ge_9_tiles": 1.5530846632411488,
+    "n_grupos_ge_9_tiles": 4,
+    "pearson_r": 0.9406946950518756
+  },
+  "criterio": "criterio.md"
+}

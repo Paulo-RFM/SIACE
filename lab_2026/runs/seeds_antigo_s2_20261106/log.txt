@@ -1,0 +1,262 @@
+[train] command=/home/paulomaciel/anaconda3/envs/siace/bin/python -u tree_segmentation_resnet_26_512softAug4_codigo_antigo.py --seed 2
+[train] git_commit=a03baba8330067df2438d6584eaf89bef10121a5
+[train] started_at=2026-11-06T11:45:39+00:00
+Imagens: 1018
+Pretos integralmente excluidos: 0
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug4_codigo_antigo.py:252: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug4_codigo_antigo.py:304: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug4_codigo_antigo.py:330: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/40 ===
+Train Loss: 0.4353
+Val Loss:   0.3460
+
+--- MÉTRICAS ---
+Acc:  0.8813
+Prec: 0.6743
+Rec:  0.9242
+F1:   0.7797
+IoU:  0.6390
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11181704
+FP: 5399803
+FN: 917731
+TN: 35715961
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6390)
+
+=== Época 2/40 ===
+Train Loss: 0.3426
+Val Loss:   0.3161
+
+--- MÉTRICAS ---
+Acc:  0.8777
+Prec: 0.6607
+Rec:  0.9497
+F1:   0.7793
+IoU:  0.6384
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11490886
+FP: 5900847
+FN: 608549
+TN: 35214917
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+Sem melhora: 1/5
+
+=== Época 3/40 ===
+Train Loss: 0.2835
+Val Loss:   0.2678
+
+--- MÉTRICAS ---
+Acc:  0.9010
+Prec: 0.7159
+Rec:  0.9358
+F1:   0.8112
+IoU:  0.6824
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11322840
+FP: 4493587
+FN: 776595
+TN: 36622177
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6824)
+
+=== Época 4/40 ===
+Train Loss: 0.2632
+Val Loss:   0.3213
+
+--- MÉTRICAS ---
+Acc:  0.8912
+Prec: 0.8454
+Rec:  0.6383
+F1:   0.7274
+IoU:  0.5716
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 7722667
+FP: 1411899
+FN: 4376768
+TN: 39703865
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+Sem melhora: 1/5
+
+=== Época 5/40 ===
+Train Loss: 0.2507
+Val Loss:   0.2569
+
+--- MÉTRICAS ---
+Acc:  0.9082
+Prec: 0.7437
+Rec:  0.9099
+F1:   0.8184
+IoU:  0.6927
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11008965
+FP: 3794105
+FN: 1090470
+TN: 37321659
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6927)
+
+=== Época 6/40 ===
+Train Loss: 0.2219
+Val Loss:   0.2250
+
+--- MÉTRICAS ---
+Acc:  0.9139
+Prec: 0.7592
+Rec:  0.9103
+F1:   0.8279
+IoU:  0.7063
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11013993
+FP: 3494089
+FN: 1085442
+TN: 37621675
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7063)
+
+=== Época 7/40 ===
+Train Loss: 0.2090
+Val Loss:   0.2362
+
+--- MÉTRICAS ---
+Acc:  0.9137
+Prec: 0.8134
+Rec:  0.8054
+F1:   0.8094
+IoU:  0.6798
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9744400
+FP: 2235607
+FN: 2355035
+TN: 38880157
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+Sem melhora: 1/5
+
+=== Época 8/40 ===
+Train Loss: 0.2000
+Val Loss:   0.2325
+
+--- MÉTRICAS ---
+Acc:  0.9131
+Prec: 0.7616
+Rec:  0.8993
+F1:   0.8247
+IoU:  0.7017
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10881018
+FP: 3406705
+FN: 1218417
+TN: 37709059
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+Sem melhora: 2/5
+
+=== Época 9/40 ===
+Train Loss: 0.2027
+Val Loss:   0.2268
+
+--- MÉTRICAS ---
+Acc:  0.9192
+Prec: 0.8268
+Rec:  0.8155
+F1:   0.8211
+IoU:  0.6965
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9867260
+FP: 2067403
+FN: 2232175
+TN: 39048361
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+Sem melhora: 3/5
+
+=== Época 10/40 ===
+Train Loss: 0.1897
+Val Loss:   0.2244
+
+--- MÉTRICAS ---
+Acc:  0.9164
+Prec: 0.7977
+Rec:  0.8471
+F1:   0.8217
+IoU:  0.6973
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10249035
+FP: 2598711
+FN: 1850400
+TN: 38517053
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+Sem melhora: 4/5
+
+=== Época 11/40 ===
+Train Loss: 0.1800
+Val Loss:   0.2212
+
+--- MÉTRICAS ---
+Acc:  0.9242
+Prec: 0.8613
+Rec:  0.7948
+F1:   0.8267
+IoU:  0.7046
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9616364
+FP: 1548227
+FN: 2483071
+TN: 39567537
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/seeds_antigo_s2_20261106/unet_metrics_512_softAug2_seeds_antigo_s2_20261106.csv
+Sem melhora: 5/5
+
+🛑 Early Stopping ativado
+Limiar congelado pela validacao: 0.60
+Curva salva em: runs/seeds_antigo_s2_20261106/threshold_iou_curve.csv
+[train] ended_at=2026-11-06T12:04:08+00:00 rc=0

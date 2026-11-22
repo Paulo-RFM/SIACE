@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+      outras     0.9913    0.9474    0.9688       361
+   bananeira     0.6481    0.9211    0.7609        38
+
+    accuracy                         0.9449       399
+   macro avg     0.8197    0.9342    0.8649       399
+weighted avg     0.9586    0.9449    0.9490       399

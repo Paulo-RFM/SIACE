@@ -1,0 +1,4 @@
+modelo,tiles,copas_nos_tiles,arvores,area_copa_total_ha,area_mediana_m2,minutos,classe_arvore_seca,classe_arvore_sem_identificacao,classe_bananeira,classe_jabuticabeira,classe_mangueira,classe_palmeira
+SegFormer 3 cm (sistema),14554,9511,5110,43.83,25.4,31.7,15,4068,191,39,162,635
+SegFormer 8 cm,14554,10549,5773,46.4,22.1,33.3,31,4651,200,48,183,660
+SegFormer 15 cm,14554,10320,5217,52.55,23.7,32.9,29,4277,150,55,144,562

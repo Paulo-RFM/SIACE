@@ -1,0 +1,16 @@
+{
+ "method": "componentes_conexas",
+ "min_area": 3000,
+ "connectivity": 4,
+ "cleaning": {
+  "closing_disk_radius": 5,
+  "remove_small_holes_area": 32,
+  "remove_small_objects_min_size": 32
+ },
+ "criterion": "max F1 deteccao (IoU>=0.5) na validacao, mascaras PREDITAS pelo modelo de segmentacao",
+ "segmentation_run": "runs/alinhado_20261105_2215_softAug4",
+ "f1_val": 0.6639004149377593,
+ "watershed_superou_cc": [],
+ "selected_on": "val (203 tiles, 399 arvores)",
+ "frozen_at": "2026-11-06"
+}

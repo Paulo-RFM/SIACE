@@ -1,0 +1,10 @@
+especie,modelo,classe_1,classe_5,classe_6
+palmeira,Multiclasse (argmax),7,1.0,0.0
+palmeira,Multiclasse (limiar da validação),2,0.0,0.0
+palmeira,Binário,7,1.0,0.0
+mangueira,Multiclasse (argmax),31,1.0,1.0
+mangueira,Multiclasse (limiar da validação),12,1.0,0.0
+mangueira,Binário,11,0.0,0.0
+bananeira,Multiclasse (argmax),9,0.0,1.0
+bananeira,Multiclasse (limiar da validação),6,0.0,1.0
+bananeira,Binário,2,0.0,1.0

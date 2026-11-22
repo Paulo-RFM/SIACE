@@ -1,0 +1,41 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_multiclass_training.py", "--script", "/home/paulomaciel/proj/lab_2026/resnet3.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/lab_2026/masks_distin2", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "classif_smoke_20261102_161629_unet_mc_ce_dice", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json", "--smoke"]
+[train] started_at=2026-11-02T19:20:26.009649+00:00
+Imagens: 1018
+Máscaras: 1018
+
+Calculando pesos das classes...
+Pesos usados: [0.006312102543590027, 0.024684291691408927, 0.4222238889406373, 1.6867076283563747, 0.3964665441052943, 0.37052562521707194, 4.093079919145624]
+/home/paulomaciel/proj/lab_2026/resnet3.py:292: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/resnet3.py:308: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/paulomaciel/proj/lab_2026/resnet3.py:326: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+
+=== Época 1/1 ===
+Train Loss: 0.8947 | Val Loss: 0.7731
+Accuracy: 0.1766
+Precision: 0.0767
+Recall: 0.2630
+F1: 0.0992
+IoU: 0.0593
+✔ Modelo atualizado (melhor IoU).
+
+Treinamento finalizado!
+Melhor IoU: 0.05933237300823102
+Modelo salvo em: /home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce_dice/checkpoint_best.pth
+Modelo multiclasse treinado com split espacial: resnet3.py -> /home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce_dice
+[train] ended_at=2026-11-02T19:21:05.318732+00:00
+[train] elapsed_s=39.309
+
+[test] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/evaluate_multiclass_test.py", "--images", "/home/paulomaciel/proj/imagens", "--masks", "/home/paulomaciel/proj/lab_2026/masks_distin2", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--checkpoint", "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce_dice/checkpoint_best.pth", "--output", "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce_dice/test_eval", "--normalize", "imagenet", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json", "--max-tiles", "10"]
+[test] started_at=2026-11-02T19:21:05.318852+00:00
+Teste avaliado uma unica vez: 10 tiles
+{
+  "pixel_accuracy": 0.144732666015625,
+  "miou_foreground_present": 0.03280447448628807,
+  "f1_macro_foreground_present": 0.060201443217731125
+}
+[test] ended_at=2026-11-02T19:21:12.817176+00:00
+[test] elapsed_s=7.498

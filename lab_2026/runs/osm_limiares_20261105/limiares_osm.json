@@ -1,0 +1,14 @@
+{
+  "area_max_m2": 217.3924945722511,
+  "area_max_origem": "percentil 99 de 1296 poligonos do treino",
+  "limiar_seg_prob_mean": 0.94,
+  "precisao_arvore_alvo": 0.95,
+  "precisao_arvore_val": 0.9512195121951219,
+  "copas_val_aprovadas": 82,
+  "conf_especie": 0.7,
+  "precisao_especie_alvo": 0.8,
+  "min_suporte": 10,
+  "classes_com_especie": [],
+  "selecionado_em": "validacao",
+  "congelado_em": "2026-11-05"
+}

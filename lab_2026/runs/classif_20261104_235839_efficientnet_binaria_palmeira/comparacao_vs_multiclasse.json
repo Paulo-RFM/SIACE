@@ -1,0 +1,37 @@
+{
+  "classe_alvo": {
+    "id": 2,
+    "nome": "palmeira"
+  },
+  "binary_run": "runs/classif_20261104_235839_efficientnet_binaria_palmeira",
+  "multiclass_run": "runs/classif_20261102_163825_efficientnet_anotados",
+  "multiclasse_um_contra_todos": {
+    "n": 418,
+    "positivos": 20,
+    "precision": 0.6666666666666666,
+    "recall": 0.8,
+    "f1": 0.7272727272727273,
+    "accuracy": 0.9712918660287081,
+    "balanced_accuracy": 0.8899497487437187,
+    "auc_roc": 0.9472361809045226,
+    "average_precision": 0.7550663802175989,
+    "tp": 16,
+    "fp": 8,
+    "fn": 4
+  },
+  "binario": {
+    "n": 418,
+    "positivos": 20,
+    "precision": 0.6521739130434783,
+    "recall": 0.75,
+    "f1": 0.6976744186046512,
+    "accuracy": 0.9688995215311005,
+    "balanced_accuracy": 0.8649497487437185,
+    "auc_roc": 0.974497487437186,
+    "average_precision": 0.7786161566833949,
+    "tp": 15,
+    "fp": 8,
+    "fn": 5
+  },
+  "selecao_binario": "best_val_f1_macro=0.7672790901137359 (epoca 8)"
+}

@@ -1,0 +1,313 @@
+{
+ "B": 2000,
+ "seed": 42,
+ "metodo": "bootstrap percentil por tile",
+ "resultados": [
+  {
+   "grupo": "segmentacao teste: principal (softAug4)",
+   "metrica": "IoU",
+   "estimativa": 0.7230351636917757,
+   "ic95_inf": 0.6905437377003468,
+   "ic95_sup": 0.7556576255850543,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: principal (softAug4)",
+   "metrica": "F1",
+   "estimativa": 0.8392575832783358,
+   "ic95_inf": 0.8169486802210139,
+   "ic95_sup": 0.8608257264846295,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: base",
+   "metrica": "IoU",
+   "estimativa": 0.6952051668015932,
+   "ic95_inf": 0.6585607738878926,
+   "ic95_sup": 0.7284518930619545,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: base",
+   "metrica": "F1",
+   "estimativa": 0.8202018026092531,
+   "ic95_inf": 0.7941352335280659,
+   "ic95_sup": 0.842895188969463,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: base - principal",
+   "metrica": "dif. IoU (pareada)",
+   "estimativa": -0.027829996890182507,
+   "ic95_inf": -0.04798327272941581,
+   "ic95_sup": -0.00639172092412946,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 26",
+   "metrica": "IoU",
+   "estimativa": 0.7113459925314402,
+   "ic95_inf": 0.6770998498390688,
+   "ic95_sup": 0.7418982340977214,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 26",
+   "metrica": "F1",
+   "estimativa": 0.8313292526886513,
+   "ic95_inf": 0.8074651605962071,
+   "ic95_sup": 0.8518272990441585,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 26 - principal",
+   "metrica": "dif. IoU (pareada)",
+   "estimativa": -0.01168917116033552,
+   "ic95_inf": -0.029713024237109885,
+   "ic95_sup": 0.0064123295451313745,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512semAug",
+   "metrica": "IoU",
+   "estimativa": 0.7368777391432791,
+   "ic95_inf": 0.7025862220580779,
+   "ic95_sup": 0.7703033395620624,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512semAug",
+   "metrica": "F1",
+   "estimativa": 0.8485084730336248,
+   "ic95_inf": 0.8253164658566134,
+   "ic95_sup": 0.8702501117654711,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512semAug - principal",
+   "metrica": "dif. IoU (pareada)",
+   "estimativa": 0.01384257545150347,
+   "ic95_inf": -0.005273193829262312,
+   "ic95_sup": 0.03353646022920881,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512semAug2",
+   "metrica": "IoU",
+   "estimativa": 0.7029655685578289,
+   "ic95_inf": 0.6665559622113516,
+   "ic95_sup": 0.7356889367921355,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512semAug2",
+   "metrica": "F1",
+   "estimativa": 0.8255781344459493,
+   "ic95_inf": 0.7999202874424356,
+   "ic95_sup": 0.8477197967866072,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512semAug2 - principal",
+   "metrica": "dif. IoU (pareada)",
+   "estimativa": -0.020069595133946794,
+   "ic95_inf": -0.04084894948277483,
+   "ic95_sup": -1.3302662149825915e-05,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512softAug2",
+   "metrica": "IoU",
+   "estimativa": 0.6814759390741741,
+   "ic95_inf": 0.6384053556877733,
+   "ic95_sup": 0.723475452336088,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512softAug2",
+   "metrica": "F1",
+   "estimativa": 0.8105687666864825,
+   "ic95_inf": 0.7793008626665554,
+   "ic95_sup": 0.8395541130045499,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao teste: 512softAug2 - principal",
+   "metrica": "dif. IoU (pareada)",
+   "estimativa": -0.04155922461760153,
+   "ic95_inf": -0.08025763768124837,
+   "ic95_sup": -0.006775895926192414,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao validacao: principal (softAug4)",
+   "metrica": "IoU",
+   "estimativa": 0.7263631236449999,
+   "ic95_inf": 0.6948691391514591,
+   "ic95_sup": 0.7543057668209291,
+   "n_tiles": 203,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao validacao: 512semAug",
+   "metrica": "IoU",
+   "estimativa": 0.728045383326373,
+   "ic95_inf": 0.6961045071045557,
+   "ic95_sup": 0.7580821281441177,
+   "n_tiles": 203,
+   "obs": ""
+  },
+  {
+   "grupo": "segmentacao validacao: 512semAug - principal",
+   "metrica": "dif. IoU (pareada)",
+   "estimativa": 0.0016822596813731439,
+   "ic95_inf": -0.016179870171963068,
+   "ic95_sup": 0.01911889751291619,
+   "n_tiles": 203,
+   "obs": ""
+  },
+  {
+   "grupo": "classificador teste: EfficientNet anotados",
+   "metrica": "F1-macro",
+   "estimativa": 0.6388746064960898,
+   "ic95_inf": 0.5205578163226994,
+   "ic95_sup": 0.7304974440656611,
+   "n_tiles": 202,
+   "obs": ""
+  },
+  {
+   "grupo": "classificador teste: EfficientNet anotados",
+   "metrica": "acuracia balanceada",
+   "estimativa": 0.740616940902982,
+   "ic95_inf": 0.6036802717008422,
+   "ic95_sup": 0.8619072667802918,
+   "n_tiles": 202,
+   "obs": ""
+  },
+  {
+   "grupo": "classificador teste: EfficientNet + aumento offline",
+   "metrica": "F1-macro",
+   "estimativa": 0.602791900730045,
+   "ic95_inf": 0.49535934253656455,
+   "ic95_sup": 0.7121320478522235,
+   "n_tiles": 202,
+   "obs": ""
+  },
+  {
+   "grupo": "classificador teste: EfficientNet + aumento offline",
+   "metrica": "acuracia balanceada",
+   "estimativa": 0.6339426464712505,
+   "ic95_inf": 0.5263362308169841,
+   "ic95_sup": 0.7731665039753274,
+   "n_tiles": 202,
+   "obs": ""
+  },
+  {
+   "grupo": "classificador teste: anotados - aumento offline",
+   "metrica": "dif. F1-macro (pareada)",
+   "estimativa": 0.03608270576604489,
+   "ic95_inf": -0.06001448098356045,
+   "ic95_sup": 0.13915061305325424,
+   "n_tiles": 202,
+   "obs": ""
+  },
+  {
+   "grupo": "bananeira teste: multiclasse (um-contra-todos)",
+   "metrica": "F1",
+   "estimativa": 0.8627450980392157,
+   "ic95_inf": 0.7878787878787878,
+   "ic95_sup": 0.9333333333333333,
+   "n_tiles": 202,
+   "obs": ""
+  },
+  {
+   "grupo": "bananeira teste: binario",
+   "metrica": "F1",
+   "estimativa": 0.9148936170212766,
+   "ic95_inf": 0.8571428571428571,
+   "ic95_sup": 0.967032967032967,
+   "n_tiles": 202,
+   "obs": ""
+  },
+  {
+   "grupo": "bananeira teste: binario - multiclasse",
+   "metrica": "dif. F1 (pareada)",
+   "estimativa": 0.052148518982060854,
+   "ic95_inf": -0.0014028972916664856,
+   "ic95_sup": 0.11111221581493995,
+   "n_tiles": 202,
+   "obs": ""
+  },
+  {
+   "grupo": "deteccao e2e teste: componentes conexas",
+   "metrica": "F1",
+   "estimativa": 0.631432545201669,
+   "ic95_inf": 0.5804637446805438,
+   "ic95_sup": 0.6845877406063587,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "deteccao e2e teste: watershed",
+   "metrica": "F1",
+   "estimativa": 0.6264441591784339,
+   "ic95_inf": 0.5788803812379525,
+   "ic95_sup": 0.6779671314125666,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "deteccao e2e teste: CC - watershed",
+   "metrica": "dif. F1 (pareada)",
+   "estimativa": 0.004988386023235147,
+   "ic95_inf": -0.034398499827086634,
+   "ic95_sup": 0.042527978491338964,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "deteccao e2e teste: componentes conexas",
+   "metrica": "instancias por arvore",
+   "estimativa": 0.7200956937799043,
+   "ic95_inf": 0.6548428903094488,
+   "ic95_sup": 0.7898836155265628,
+   "n_tiles": 204,
+   "obs": ""
+  },
+  {
+   "grupo": "classificacao e2e teste (CC)",
+   "metrica": "F1-macro",
+   "estimativa": 0.5136416565499661,
+   "ic95_inf": 0.40092932303097556,
+   "ic95_sup": 0.6897579619328755,
+   "n_tiles": 170,
+   "obs": "tiles com >=1 arvore casada"
+  },
+  {
+   "grupo": "classificacao e2e teste (CC)",
+   "metrica": "acuracia",
+   "estimativa": 0.8061674008810573,
+   "ic95_inf": 0.7531680084339658,
+   "ic95_sup": 0.8533362068965518,
+   "n_tiles": 170,
+   "obs": "tiles com >=1 arvore casada"
+  }
+ ]
+}

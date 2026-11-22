@@ -1,0 +1,2 @@
+epoch,val_f1_class_arvore_sem_identificacao,val_f1_class_palmeira,val_f1_class_arvore_seca,val_f1_class_mangueira,val_f1_class_bananeira,val_f1_class_jabuticabeira
+1,0.18018018018018017,0.2,0.2857142857142857,0.0,0.25,0.0

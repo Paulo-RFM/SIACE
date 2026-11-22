@@ -1,0 +1,315 @@
+[train] command=/home/paulomaciel/anaconda3/envs/siace/bin/python -u run_legacy_binary_training.py --script /home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py
+[train] git_commit=99fca9524538a86cf1b581d02e6fa85bcc98662b
+[train] started_at=2026-11-06T02:46:50+00:00
+Imagens: 1018
+Máscaras: 1018
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:160: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:209: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512semAug2.py:241: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/40 ===
+Train Loss: 0.4914
+Val Loss:   0.3851
+
+--- MÉTRICAS ---
+Acc:  0.9085
+Prec: 0.7721
+Rec:  0.8481
+F1:   0.8083
+IoU:  0.6783
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10262039
+FP: 3029812
+FN: 1837400
+TN: 38085981
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6783)
+
+=== Época 2/40 ===
+Train Loss: 0.3535
+Val Loss:   0.3199
+
+--- MÉTRICAS ---
+Acc:  0.9168
+Prec: 0.8023
+Rec:  0.8415
+F1:   0.8215
+IoU:  0.6970
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10182079
+FP: 2508492
+FN: 1917360
+TN: 38607301
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6970)
+
+=== Época 3/40 ===
+Train Loss: 0.2982
+Val Loss:   0.3894
+
+--- MÉTRICAS ---
+Acc:  0.8965
+Prec: 0.7069
+Rec:  0.9305
+F1:   0.8034
+IoU:  0.6715
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11258239
+FP: 4667334
+FN: 841200
+TN: 36448459
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 1/7
+
+=== Época 4/40 ===
+Train Loss: 0.2589
+Val Loss:   0.2641
+
+--- MÉTRICAS ---
+Acc:  0.9181
+Prec: 0.8008
+Rec:  0.8519
+F1:   0.8255
+IoU:  0.7029
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10307428
+FP: 2564493
+FN: 1792011
+TN: 38551300
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7029)
+
+=== Época 5/40 ===
+Train Loss: 0.2237
+Val Loss:   0.2320
+
+--- MÉTRICAS ---
+Acc:  0.9225
+Prec: 0.8091
+Rec:  0.8624
+F1:   0.8349
+IoU:  0.7166
+Threshold escolhido: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10435107
+FP: 2461792
+FN: 1664332
+TN: 38654001
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7166)
+
+=== Época 6/40 ===
+Train Loss: 0.2016
+Val Loss:   0.2571
+
+--- MÉTRICAS ---
+Acc:  0.9209
+Prec: 0.7891
+Rec:  0.8899
+F1:   0.8365
+IoU:  0.7189
+Threshold escolhido: 0.70
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10766739
+FP: 2877423
+FN: 1332700
+TN: 38238370
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7189)
+
+=== Época 7/40 ===
+Train Loss: 0.1867
+Val Loss:   0.2162
+
+--- MÉTRICAS ---
+Acc:  0.9269
+Prec: 0.8234
+Rec:  0.8639
+F1:   0.8432
+IoU:  0.7289
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10452988
+FP: 2242045
+FN: 1646451
+TN: 38873748
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7289)
+
+=== Época 8/40 ===
+Train Loss: 0.1676
+Val Loss:   0.2628
+
+--- MÉTRICAS ---
+Acc:  0.9107
+Prec: 0.8351
+Rec:  0.7567
+F1:   0.7940
+IoU:  0.6583
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9155283
+FP: 1807748
+FN: 2944156
+TN: 39308045
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 1/7
+
+=== Época 9/40 ===
+Train Loss: 0.1622
+Val Loss:   0.2335
+
+--- MÉTRICAS ---
+Acc:  0.9200
+Prec: 0.7919
+Rec:  0.8794
+F1:   0.8333
+IoU:  0.7143
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10639810
+FP: 2795857
+FN: 1459629
+TN: 38319936
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 2/7
+
+=== Época 10/40 ===
+Train Loss: 0.1348
+Val Loss:   0.2697
+
+--- MÉTRICAS ---
+Acc:  0.9072
+Prec: 0.8556
+Rec:  0.7123
+F1:   0.7774
+IoU:  0.6358
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 8617849
+FP: 1454418
+FN: 3481590
+TN: 39661375
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 3/7
+
+=== Época 11/40 ===
+Train Loss: 0.1348
+Val Loss:   0.2255
+
+--- MÉTRICAS ---
+Acc:  0.9200
+Prec: 0.7973
+Rec:  0.8689
+F1:   0.8316
+IoU:  0.7117
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10513746
+FP: 2673417
+FN: 1585693
+TN: 38442376
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 4/7
+
+=== Época 12/40 ===
+Train Loss: 0.1294
+Val Loss:   0.2514
+
+--- MÉTRICAS ---
+Acc:  0.9140
+Prec: 0.8709
+Rec:  0.7299
+F1:   0.7942
+IoU:  0.6587
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 8831949
+FP: 1309026
+FN: 3267490
+TN: 39806767
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 5/7
+
+=== Época 13/40 ===
+Train Loss: 0.1167
+Val Loss:   0.2228
+
+--- MÉTRICAS ---
+Acc:  0.9206
+Prec: 0.8125
+Rec:  0.8458
+F1:   0.8288
+IoU:  0.7077
+Threshold escolhido: 0.40
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10234002
+FP: 2362292
+FN: 1865437
+TN: 38753501
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 6/7
+
+=== Época 14/40 ===
+Train Loss: 0.1103
+Val Loss:   0.2285
+
+--- MÉTRICAS ---
+Acc:  0.9197
+Prec: 0.8035
+Rec:  0.8561
+F1:   0.8290
+IoU:  0.7079
+Threshold escolhido: 0.60
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10358119
+FP: 2532826
+FN: 1741320
+TN: 38582967
+CSV atualizado com sucesso
+CSV salvo em: /home/paulomaciel/proj/lab_2026/unet_metrics_512_semAug.csv
+Sem melhora: 7/7
+
+🛑 Early Stopping ativado
+Modelo legado treinado com split espacial: tree_segmentation_resnet_26_512semAug2.py
+[train] ended_at=2026-11-06T03:15:01+00:00 rc=0

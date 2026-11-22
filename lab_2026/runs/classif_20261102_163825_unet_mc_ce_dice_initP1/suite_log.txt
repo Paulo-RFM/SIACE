@@ -1,0 +1,226 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_multiclass_training.py", "--script", "/home/paulomaciel/proj/lab_2026/resnet3.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/lab_2026/masks_distin2", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "classif_20261102_163825_unet_mc_ce_dice_initP1", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json", "--init-checkpoint", "/home/paulomaciel/proj/lab_2026/runs/p1_20261101_140519/checkpoint_best.pth"]
+[train] started_at=2026-11-02T22:49:50.179137+00:00
+Imagens: 1018
+Máscaras: 1018
+
+Calculando pesos das classes...
+Pesos usados: [0.006312102543590027, 0.024684291691408927, 0.4222238889406373, 1.6867076283563747, 0.3964665441052943, 0.37052562521707194, 4.093079919145624]
+[init] 276 tensores carregados de /home/paulomaciel/proj/lab_2026/runs/p1_20261101_140519/checkpoint_best.pth; nao carregados: ['segmentation_head.0.bias', 'segmentation_head.0.weight']
+/home/paulomaciel/proj/lab_2026/resnet3.py:292: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/resnet3.py:308: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/paulomaciel/proj/lab_2026/resnet3.py:326: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+
+=== Época 1/50 ===
+Train Loss: 0.8330 | Val Loss: 0.7500
+Accuracy: 0.6848
+Precision: 0.1223
+Recall: 0.2612
+F1: 0.1583
+IoU: 0.1005
+✔ Modelo atualizado (melhor IoU).
+
+=== Época 2/50 ===
+Train Loss: 0.6532 | Val Loss: 0.6326
+Accuracy: 0.7795
+Precision: 0.1741
+Recall: 0.4007
+F1: 0.2164
+IoU: 0.1453
+✔ Modelo atualizado (melhor IoU).
+
+=== Época 3/50 ===
+Train Loss: 0.5847 | Val Loss: 0.6802
+Accuracy: 0.5875
+Precision: 0.1452
+Recall: 0.4014
+F1: 0.1904
+IoU: 0.1265
+
+=== Época 4/50 ===
+Train Loss: 0.5851 | Val Loss: 0.5939
+Accuracy: 0.7254
+Precision: 0.2070
+Recall: 0.4355
+F1: 0.2597
+IoU: 0.1701
+✔ Modelo atualizado (melhor IoU).
+
+=== Época 5/50 ===
+Train Loss: 0.5509 | Val Loss: 0.5537
+Accuracy: 0.7705
+Precision: 0.2205
+Recall: 0.4569
+F1: 0.2496
+IoU: 0.1621
+
+=== Época 6/50 ===
+Train Loss: 0.5389 | Val Loss: 0.5756
+Accuracy: 0.7793
+Precision: 0.2126
+Recall: 0.4249
+F1: 0.2499
+IoU: 0.1637
+
+=== Época 7/50 ===
+Train Loss: 0.5120 | Val Loss: 0.6383
+Accuracy: 0.6865
+Precision: 0.2104
+Recall: 0.4944
+F1: 0.2333
+IoU: 0.1425
+
+=== Época 8/50 ===
+Train Loss: 0.5055 | Val Loss: 0.5631
+Accuracy: 0.8067
+Precision: 0.2083
+Recall: 0.4682
+F1: 0.2629
+IoU: 0.1763
+✔ Modelo atualizado (melhor IoU).
+
+=== Época 9/50 ===
+Train Loss: 0.4895 | Val Loss: 0.6505
+Accuracy: 0.7176
+Precision: 0.2385
+Recall: 0.4002
+F1: 0.2386
+IoU: 0.1533
+
+=== Época 10/50 ===
+Train Loss: 0.4851 | Val Loss: 0.5892
+Accuracy: 0.7785
+Precision: 0.2272
+Recall: 0.4713
+F1: 0.2774
+IoU: 0.1859
+✔ Modelo atualizado (melhor IoU).
+
+=== Época 11/50 ===
+Train Loss: 0.4411 | Val Loss: 0.5087
+Accuracy: 0.8079
+Precision: 0.2583
+Recall: 0.5228
+F1: 0.3213
+IoU: 0.2115
+✔ Modelo atualizado (melhor IoU).
+
+=== Época 12/50 ===
+Train Loss: 0.4417 | Val Loss: 0.5119
+Accuracy: 0.7422
+Precision: 0.2148
+Recall: 0.4360
+F1: 0.2672
+IoU: 0.1717
+
+=== Época 13/50 ===
+Train Loss: 0.4442 | Val Loss: 0.4907
+Accuracy: 0.7621
+Precision: 0.2356
+Recall: 0.4978
+F1: 0.3066
+IoU: 0.1985
+
+=== Época 14/50 ===
+Train Loss: 0.4123 | Val Loss: 0.5200
+Accuracy: 0.7891
+Precision: 0.2482
+Recall: 0.5256
+F1: 0.3165
+IoU: 0.2076
+
+=== Época 15/50 ===
+Train Loss: 0.4125 | Val Loss: 0.5664
+Accuracy: 0.8367
+Precision: 0.2884
+Recall: 0.4872
+F1: 0.3500
+IoU: 0.2321
+✔ Modelo atualizado (melhor IoU).
+
+=== Época 16/50 ===
+Train Loss: 0.4072 | Val Loss: 0.5159
+Accuracy: 0.7881
+Precision: 0.2610
+Recall: 0.5758
+F1: 0.3345
+IoU: 0.2181
+
+=== Época 17/50 ===
+Train Loss: 0.4031 | Val Loss: 0.5658
+Accuracy: 0.8038
+Precision: 0.2564
+Recall: 0.5192
+F1: 0.3253
+IoU: 0.2114
+
+=== Época 18/50 ===
+Train Loss: 0.3968 | Val Loss: 0.5096
+Accuracy: 0.8195
+Precision: 0.2888
+Recall: 0.5515
+F1: 0.3680
+IoU: 0.2401
+✔ Modelo atualizado (melhor IoU).
+
+=== Época 19/50 ===
+Train Loss: 0.3725 | Val Loss: 0.6213
+Accuracy: 0.8315
+Precision: 0.2867
+Recall: 0.4903
+F1: 0.3316
+IoU: 0.2217
+
+=== Época 20/50 ===
+Train Loss: 0.3744 | Val Loss: 0.6080
+Accuracy: 0.8424
+Precision: 0.2920
+Recall: 0.4978
+F1: 0.3544
+IoU: 0.2376
+
+=== Época 21/50 ===
+Train Loss: 0.3621 | Val Loss: 0.6237
+Accuracy: 0.8357
+Precision: 0.2873
+Recall: 0.4778
+F1: 0.3452
+IoU: 0.2286
+
+=== Época 22/50 ===
+Train Loss: 0.3531 | Val Loss: 0.5992
+Accuracy: 0.8373
+Precision: 0.2866
+Recall: 0.4978
+F1: 0.3470
+IoU: 0.2315
+
+=== Época 23/50 ===
+Train Loss: 0.3595 | Val Loss: 0.5686
+Accuracy: 0.8291
+Precision: 0.2827
+Recall: 0.5127
+F1: 0.3490
+IoU: 0.2313
+⛔ Early Stopping ativado.
+
+Treinamento finalizado!
+Melhor IoU: 0.24005756534052122
+Modelo salvo em: /home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce_dice_initP1/checkpoint_best.pth
+Modelo multiclasse treinado com split espacial: resnet3.py -> /home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce_dice_initP1
+[train] ended_at=2026-11-02T23:45:40.013726+00:00
+[train] elapsed_s=3349.835
+
+[test] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/evaluate_multiclass_test.py", "--images", "/home/paulomaciel/proj/imagens", "--masks", "/home/paulomaciel/proj/lab_2026/masks_distin2", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--checkpoint", "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce_dice_initP1/checkpoint_best.pth", "--output", "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce_dice_initP1/test_eval", "--normalize", "imagenet", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json"]
+[test] started_at=2026-11-02T23:45:40.013846+00:00
+Teste avaliado uma unica vez: 204 tiles
+{
+  "pixel_accuracy": 0.8516476388071098,
+  "miou_foreground_present": 0.28240767090229707,
+  "f1_macro_foreground_present": 0.41947115884048464
+}
+[test] ended_at=2026-11-02T23:45:56.671522+00:00
+[test] elapsed_s=16.658

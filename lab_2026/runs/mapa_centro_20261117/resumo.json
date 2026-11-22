@@ -1,0 +1,18 @@
+{
+  "kml": "Placemark_centro.kml",
+  "cidade_run": "runs/pipeline_cidade_segformer_20261111",
+  "tiles_intersectam": 1318,
+  "tiles_com_imagem": 1312,
+  "arvores_no_perimetro": 531,
+  "arvores_no_run": 13491,
+  "por_classe": {
+    "arvore_sem_identificacao": 394,
+    "palmeira": 51,
+    "mangueira": 29,
+    "bananeira": 28,
+    "jabuticabeira": 21,
+    "arvore_seca": 8
+  },
+  "detalhe_tiles": "linhas 79-83, colunas 72-79",
+  "arvores_no_detalhe": 40
+}

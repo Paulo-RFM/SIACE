@@ -1,0 +1,36 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_multiclass_training.py", "--script", "/home/paulomaciel/proj/lab_2026/resnet2.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/lab_2026/masks_distin2", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "classif_smoke_20261102_161629_unet_mc_ce", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json", "--smoke"]
+[train] started_at=2026-11-02T19:20:06.253823+00:00
+Imagens: 1018
+Máscaras: 1018
+
+===================================
+ ÉPOCA 1/1 | Tempo: 7.04s | ETA: 0:00:00
+-----------------------------------
+Train Loss: 1.7754 | Val Loss: 1.8341
+-----------------------------------
+Accuracy : 0.4954
+Precision: 0.0564  (macro, sem fundo)
+Recall   : 0.0677     (macro, sem fundo)
+F1-score : 0.0140        (macro, sem fundo)
+Mean IoU : 0.0070       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+Treinamento finalizado!
+✔ Melhor modelo salvo em: /home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce/checkpoint_best.pth
+Modelo multiclasse treinado com split espacial: resnet2.py -> /home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce
+[train] ended_at=2026-11-02T19:20:18.580763+00:00
+[train] elapsed_s=12.327
+
+[test] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/evaluate_multiclass_test.py", "--images", "/home/paulomaciel/proj/imagens", "--masks", "/home/paulomaciel/proj/lab_2026/masks_distin2", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--checkpoint", "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce/checkpoint_best.pth", "--output", "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce/test_eval", "--normalize", "none", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json", "--max-tiles", "10"]
+[test] started_at=2026-11-02T19:20:18.580872+00:00
+Teste avaliado uma unica vez: 10 tiles
+{
+  "pixel_accuracy": 0.6060409545898438,
+  "miou_foreground_present": 0.004257594832233333,
+  "f1_macro_foreground_present": 0.008420056930082126
+}
+[test] ended_at=2026-11-02T19:20:26.009218+00:00
+[test] elapsed_s=7.428

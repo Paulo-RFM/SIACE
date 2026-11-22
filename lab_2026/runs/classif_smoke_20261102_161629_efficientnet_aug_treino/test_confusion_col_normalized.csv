@@ -1,0 +1,7 @@
+,pred:arvore_sem_identificacao,pred:palmeira,pred:arvore_seca,pred:mangueira,pred:bananeira,pred:jabuticabeira
+true:arvore_sem_identificacao,0.8888888888888888,0.782608695652174,0.8,1.0,0.5,0.8148148148148148
+true:palmeira,0.1111111111111111,0.06521739130434782,0.0,0.0,0.0,0.07407407407407407
+true:arvore_seca,0.0,0.0,0.0,0.0,0.0,0.0
+true:mangueira,0.0,0.021739130434782608,0.0,0.0,0.0,0.07407407407407407
+true:bananeira,0.0,0.10869565217391304,0.2,0.0,0.5,0.037037037037037035
+true:jabuticabeira,0.0,0.021739130434782608,0.0,0.0,0.0,0.0

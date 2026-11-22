@@ -1,0 +1,8 @@
+modelo,saidas,codificador,demais_camadas,total,runs
+SegFormer MiT-B1 (binária),1,13151424,526081,13677505,arq_segformer_mit_b1_20261110;seeds_segformer_s1_20261110;seeds_segformer_s2_20261110;seeds_segformer_s3_20261110
+U-Net ResNet-34 (binária),1,21284672,3151697,24436369,alinhado_20261105_2215_softAug4
+U-Net++ ResNet-34 (binária),1,21284672,4793937,26078609,arq_unetplusplus_resnet34_20261110
+DeepLabV3+ ResNet-34 (binária),1,21284672,1152785,22437457,arq_deeplabv3plus_resnet34_20261110
+U-Net ResNet-34 (multiclasse),7,21284672,3152567,24437239,classif_20261102_163825_unet_mc_ce;unet_mc_ce_dice_corrigido_20261106;unet_mc_ce_dice_initbin_corrigido_20261106
+EfficientNet-B0 (6 classes),6,4007548,7686,4015234,classif_20261102_163825_efficientnet_anotados
+EfficientNet-B0 (binária),2,4007548,2562,4010110,classif_20261103_115814_efficientnet_binaria_bananeira;classif_20261104_235839_efficientnet_binaria_mangueira;classif_20261104_235839_efficientnet_binaria_palmeira

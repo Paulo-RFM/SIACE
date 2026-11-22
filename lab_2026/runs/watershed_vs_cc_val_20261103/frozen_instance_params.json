@@ -1,0 +1,6 @@
+{"method": "componentes_conexas", "min_area": 3000, "connectivity": 4,
+ "cleaning": {"closing_disk_radius": 5, "remove_small_holes_area": 32, "remove_small_objects_min_size": 32},
+ "criterion": "max F1 deteccao (IoU>=0.5) na validacao, mascaras PREDITAS pelo P1 (limiar 0,65)",
+ "candidates": "componentes conexas min_area 500-6000; watershed fp 41-251 (resultado_predita_val*.csv)",
+ "selected_on": "val (203 tiles)", "frozen_at": "2026-11-03",
+ "replaces": "runs/watershed_ref_calib_20261102/frozen_watershed_params.json (watershed fp=251, min_area=1000)"}

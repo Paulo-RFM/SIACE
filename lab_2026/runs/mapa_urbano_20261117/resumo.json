@@ -1,0 +1,18 @@
+{
+  "kml": "Placemark.kml",
+  "cidade_run": "runs/pipeline_cidade_segformer_20261111",
+  "tiles_intersectam": 13360,
+  "tiles_com_imagem": 12969,
+  "arvores_no_perimetro": 4696,
+  "arvores_no_run": 13491,
+  "por_classe": {
+    "arvore_sem_identificacao": 3578,
+    "palmeira": 455,
+    "mangueira": 275,
+    "bananeira": 177,
+    "arvore_seca": 110,
+    "jabuticabeira": 101
+  },
+  "detalhe_tiles": "linhas 10-14, colunas 8-15",
+  "arvores_no_detalhe": 57
+}

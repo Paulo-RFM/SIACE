@@ -1,0 +1,8 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug4.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/masks", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "smoke_20261101_132522", "--smoke"]
+[train] started_at=2026-11-01T16:25:22.405671+00:00
+Traceback (most recent call last):
+  File "/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26_512softAug4.py", line 21, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
+[train] failed code=1

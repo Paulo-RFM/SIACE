@@ -1,0 +1,25 @@
+run_id=classif_20261104_235839_efficientnet_binaria_palmeira device=cuda
+epoch 1/40 lr=1.00e-04 train_loss=0.5157 train_f1=0.7505 val_loss=0.5209 val_f1=0.5534 val_acc=0.7594 (136.4s)
+  -> novo melhor val_f1_macro=0.5534
+epoch 2/40 lr=9.76e-05 train_loss=0.3632 train_f1=0.8418 val_loss=0.2439 val_f1=0.6756 val_acc=0.9098 (127.2s)
+  -> novo melhor val_f1_macro=0.6756
+epoch 3/40 lr=9.05e-05 train_loss=0.3097 train_f1=0.8804 val_loss=0.1686 val_f1=0.7237 val_acc=0.9499 (127.3s)
+  -> novo melhor val_f1_macro=0.7237
+epoch 4/40 lr=7.94e-05 train_loss=0.2607 train_f1=0.9033 val_loss=0.1513 val_f1=0.6741 val_acc=0.9424 (127.2s)
+epoch 5/40 lr=6.55e-05 train_loss=0.2415 train_f1=0.9135 val_loss=0.1705 val_f1=0.7308 val_acc=0.9524 (127.1s)
+  -> novo melhor val_f1_macro=0.7308
+epoch 6/40 lr=5.00e-05 train_loss=0.2089 train_f1=0.9282 val_loss=0.1784 val_f1=0.7382 val_acc=0.9549 (127.1s)
+  -> novo melhor val_f1_macro=0.7382
+epoch 7/40 lr=3.45e-05 train_loss=0.1845 train_f1=0.9360 val_loss=0.1752 val_f1=0.7513 val_acc=0.9549 (127.1s)
+  -> novo melhor val_f1_macro=0.7513
+epoch 8/40 lr=2.06e-05 train_loss=0.1709 train_f1=0.9444 val_loss=0.1666 val_f1=0.7673 val_acc=0.9599 (127.0s)
+  -> novo melhor val_f1_macro=0.7673
+epoch 9/40 lr=9.55e-06 train_loss=0.1547 train_f1=0.9467 val_loss=0.1691 val_f1=0.7513 val_acc=0.9549 (127.0s)
+epoch 10/40 lr=2.45e-06 train_loss=0.1606 train_f1=0.9421 val_loss=0.1681 val_f1=0.7382 val_acc=0.9549 (127.0s)
+epoch 11/40 lr=0.00e+00 train_loss=0.1436 train_f1=0.9514 val_loss=0.1693 val_f1=0.7513 val_acc=0.9549 (127.1s)
+epoch 12/40 lr=2.45e-06 train_loss=0.1700 train_f1=0.9398 val_loss=0.1675 val_f1=0.7460 val_acc=0.9574 (127.0s)
+epoch 13/40 lr=9.55e-06 train_loss=0.1524 train_f1=0.9483 val_loss=0.1628 val_f1=0.7513 val_acc=0.9549 (127.0s)
+Early stopping apos 5 epocas sem melhora.
+[val] {"accuracy": 0.9598997493734336, "balanced_accuracy": 0.7420844327176781, "f1_macro": 0.7672790901137359, "f1_weighted": 0.9577772076736021, "number_of_samples": 399}
+[test] {"accuracy": 0.9688995215311005, "balanced_accuracy": 0.8649497487437185, "f1_macro": 0.8406404879908502, "f1_weighted": 0.9699255937994226, "number_of_samples": 418}
+Run salvo em /home/paulomaciel/proj/lab_2026/runs/classif_20261104_235839_efficientnet_binaria_palmeira

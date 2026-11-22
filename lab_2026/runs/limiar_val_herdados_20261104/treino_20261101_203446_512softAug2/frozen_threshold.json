@@ -1,0 +1,8 @@
+{
+  "threshold": 0.30000000000000004,
+  "criterion": "validation_iou",
+  "validation_iou": 0.6780193362800022,
+  "checkpoint": "/home/paulomaciel/proj/lab_2026/runs/treino_20261101_203446_512softAug2/checkpoint_best.pth",
+  "selected_on": "val (203 tiles)",
+  "frozen_at": "2026-11-04"
+}

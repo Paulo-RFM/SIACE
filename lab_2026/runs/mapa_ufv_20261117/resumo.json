@@ -1,0 +1,16 @@
+{
+  "kml": "Placemark_UFV.kml",
+  "cidade_run": "runs/pipeline_cidade_segformer_20261111",
+  "tiles_intersectam": 841,
+  "tiles_com_imagem": 563,
+  "arvores_no_perimetro": 200,
+  "arvores_no_run": 13491,
+  "por_classe": {
+    "arvore_sem_identificacao": 181,
+    "palmeira": 11,
+    "mangueira": 5,
+    "arvore_seca": 3
+  },
+  "detalhe_tiles": "linhas 222-226, colunas 196-203",
+  "arvores_no_detalhe": 41
+}

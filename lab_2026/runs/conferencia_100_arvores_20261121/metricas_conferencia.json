@@ -1,0 +1,102 @@
+{
+  "n_amostra": 100,
+  "B_bootstrap": 2000,
+  "semente": 42,
+  "deteccao": {
+    "excl": {
+      "cidade_ponderada": 0.7337454551847482,
+      "ic95": [
+        0.5848658913264484,
+        0.8666424391347952
+      ]
+    },
+    "pior": {
+      "cidade_ponderada": 0.7233711363130976,
+      "ic95": [
+        0.5757649775776443,
+        0.863841102401601
+      ]
+    },
+    "melhor": {
+      "cidade_ponderada": 0.7362083981913868,
+      "ic95": [
+        0.5848300487361946,
+        0.8688415425098213
+      ]
+    },
+    "amostra_bruta": {
+      "s": 68,
+      "n": 25,
+      "?": 7
+    }
+  },
+  "classe": {
+    "excl": {
+      "cidade_ponderada": 0.6415233612531812,
+      "ic95": [
+        0.4886922796414542,
+        0.7843464392928619
+      ]
+    },
+    "pior": {
+      "cidade_ponderada": 0.635219776147061,
+      "ic95": [
+        0.47839392928619084,
+        0.7755239604180564
+      ]
+    },
+    "melhor": {
+      "cidade_ponderada": 0.6465282410495886,
+      "ic95": [
+        0.4966886489140909,
+        0.7854212530575939
+      ]
+    },
+    "amostra_bruta": {
+      "s": 40,
+      "n": 55,
+      "?": 5
+    },
+    "entre_arvores_confirmadas": {
+      "cidade_ponderada": 0.863868991598589,
+      "ic95": [
+        0.8289957090735386,
+        0.8979387960847823
+      ],
+      "n": 68
+    }
+  },
+  "copas_fundidas": {
+    "marcadas": 22,
+    "s": 14,
+    "n": 8,
+    "area_mediana_m2_s": 38.35301309520507,
+    "area_mediana_m2_n": 13.831756278400315,
+    "por_classe": {
+      "n": {
+        "arvore_seca": 1,
+        "arvore_sem_identificacao": 3,
+        "bananeira": 2,
+        "jabuticabeira": 2,
+        "palmeira": 0
+      },
+      "s": {
+        "arvore_seca": 1,
+        "arvore_sem_identificacao": 6,
+        "bananeira": 6,
+        "jabuticabeira": 0,
+        "palmeira": 1
+      }
+    }
+  },
+  "confianca_mediana": {
+    "s": 0.9382333649167038,
+    "n": 0.652039647102356,
+    "?": 0.5152271073831833
+  },
+  "area_mediana_m2_por_e_arvore": {
+    "s": 17.652627643921956,
+    "n": 12.65981858157082,
+    "?": 9.23588057587156
+  }
+}

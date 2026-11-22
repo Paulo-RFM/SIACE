@@ -1,0 +1,23 @@
+{
+  "pixel_accuracy": 0.6801952362060547,
+  "miou_foreground_present": 0.06416552916288577,
+  "f1_macro_foreground_present": 0.1076187487873177,
+  "precision_macro_foreground_present": 0.2712497857503339,
+  "recall_macro_foreground_present": 0.06719026871281461,
+  "miou_all_classes": 0.1284948583282238,
+  "n_test_tiles": 10,
+  "classes_present": [
+    "fundo",
+    "arvore_sem_identificacao",
+    "palmeira",
+    "jabuticabeira"
+  ],
+  "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+  "test_hash": "542d6a51182a96b9ac6fd92ab6462ad1dea4dd812d49887ee75caff67a997cb9",
+  "checkpoint": "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce_dice_initP1/checkpoint_best.pth",
+  "checkpoint_sha256": "1c258c5d2061cee8237e25b37a197a21d551c6f04bd7b529c490f5ee094da23c",
+  "normalize": "imagenet",
+  "inference_total_s": 0.6216765979770571,
+  "inference_per_tile_s": 0.06216765979770571,
+  "smoke_max_tiles": 10
+}

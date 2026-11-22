@@ -1,0 +1,486 @@
+[train] command=/home/paulomaciel/anaconda3/envs/siace/bin/python -u tree_segmentation_arquiteturas.py --arch Segformer --encoder mit_b1
+[train] git_commit=81ebf1db3242dd20a888b63020ed41407f16512a
+[train] started_at=2026-11-10T19:15:10+00:00
+Imagens: 1018
+Pretos integralmente excluidos: 0
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:256: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:308: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+/home/paulomaciel/proj/lab_2026/tree_segmentation_arquiteturas.py:334: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=(device.type == "cuda")):
+
+=== Época 1/40 ===
+Train Loss: 0.3428
+Val Loss:   0.2739
+
+--- MÉTRICAS ---
+Acc:  0.9099
+Prec: 0.7841
+Rec:  0.8333
+F1:   0.8079
+IoU:  0.6778
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10082053
+FP: 2775922
+FN: 2017382
+TN: 38339842
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.6778)
+
+=== Época 2/40 ===
+Train Loss: 0.2609
+Val Loss:   0.2842
+
+--- MÉTRICAS ---
+Acc:  0.8825
+Prec: 0.6779
+Rec:  0.9205
+F1:   0.7808
+IoU:  0.6404
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11137281
+FP: 5290937
+FN: 962154
+TN: 35824827
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 1/5
+
+=== Época 3/40 ===
+Train Loss: 0.2175
+Val Loss:   0.2682
+
+--- MÉTRICAS ---
+Acc:  0.8982
+Prec: 0.7111
+Rec:  0.9299
+F1:   0.8059
+IoU:  0.6749
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11251779
+FP: 4572264
+FN: 847656
+TN: 36543500
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 2/5
+
+=== Época 4/40 ===
+Train Loss: 0.2024
+Val Loss:   0.1996
+
+--- MÉTRICAS ---
+Acc:  0.9280
+Prec: 0.8380
+Rec:  0.8471
+F1:   0.8425
+IoU:  0.7279
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10249246
+FP: 1981671
+FN: 1850189
+TN: 39134093
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7279)
+
+=== Época 5/40 ===
+Train Loss: 0.1693
+Val Loss:   0.2299
+
+--- MÉTRICAS ---
+Acc:  0.9163
+Prec: 0.7666
+Rec:  0.9082
+F1:   0.8314
+IoU:  0.7115
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10988666
+FP: 3345846
+FN: 1110769
+TN: 37769918
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 1/5
+
+=== Época 6/40 ===
+Train Loss: 0.1773
+Val Loss:   0.1985
+
+--- MÉTRICAS ---
+Acc:  0.9246
+Prec: 0.7885
+Rec:  0.9136
+F1:   0.8465
+IoU:  0.7338
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11054319
+FP: 2964667
+FN: 1045116
+TN: 38151097
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7338)
+
+=== Época 7/40 ===
+Train Loss: 0.1520
+Val Loss:   0.1924
+
+--- MÉTRICAS ---
+Acc:  0.9327
+Prec: 0.8420
+Rec:  0.8666
+F1:   0.8541
+IoU:  0.7454
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10485074
+FP: 1967754
+FN: 1614361
+TN: 39148010
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7454)
+
+=== Época 8/40 ===
+Train Loss: 0.1480
+Val Loss:   0.2135
+
+--- MÉTRICAS ---
+Acc:  0.9216
+Prec: 0.7885
+Rec:  0.8955
+F1:   0.8386
+IoU:  0.7221
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10834622
+FP: 2905650
+FN: 1264813
+TN: 38210114
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 1/5
+
+=== Época 9/40 ===
+Train Loss: 0.1427
+Val Loss:   0.2033
+
+--- MÉTRICAS ---
+Acc:  0.9268
+Prec: 0.8623
+Rec:  0.8068
+F1:   0.8336
+IoU:  0.7147
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9761311
+FP: 1558958
+FN: 2338124
+TN: 39556806
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 2/5
+
+=== Época 10/40 ===
+Train Loss: 0.1261
+Val Loss:   0.2114
+
+--- MÉTRICAS ---
+Acc:  0.9242
+Prec: 0.7832
+Rec:  0.9221
+F1:   0.8470
+IoU:  0.7345
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11156407
+FP: 3088995
+FN: 943028
+TN: 38026769
+LR atual: 0.000100
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 3/5
+
+=== Época 11/40 ===
+Train Loss: 0.1113
+Val Loss:   0.2081
+
+--- MÉTRICAS ---
+Acc:  0.9288
+Prec: 0.8813
+Rec:  0.7936
+F1:   0.8352
+IoU:  0.7170
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 9602200
+FP: 1293138
+FN: 2497235
+TN: 39822626
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 4/5
+
+=== Época 12/40 ===
+Train Loss: 0.0989
+Val Loss:   0.1905
+
+--- MÉTRICAS ---
+Acc:  0.9336
+Prec: 0.8237
+Rec:  0.9006
+F1:   0.8604
+IoU:  0.7550
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10896911
+FP: 2332629
+FN: 1202524
+TN: 38783135
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7550)
+
+=== Época 13/40 ===
+Train Loss: 0.1014
+Val Loss:   0.1919
+
+--- MÉTRICAS ---
+Acc:  0.9361
+Prec: 0.8501
+Rec:  0.8727
+F1:   0.8612
+IoU:  0.7563
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10558788
+FP: 1861855
+FN: 1540647
+TN: 39253909
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7563)
+
+=== Época 14/40 ===
+Train Loss: 0.0969
+Val Loss:   0.1902
+
+--- MÉTRICAS ---
+Acc:  0.9355
+Prec: 0.8688
+Rec:  0.8440
+F1:   0.8562
+IoU:  0.7486
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10212495
+FP: 1542890
+FN: 1886940
+TN: 39572874
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 1/5
+
+=== Época 15/40 ===
+Train Loss: 0.0904
+Val Loss:   0.1935
+
+--- MÉTRICAS ---
+Acc:  0.9349
+Prec: 0.8344
+Rec:  0.8901
+F1:   0.8614
+IoU:  0.7565
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10770300
+FP: 2136765
+FN: 1329135
+TN: 38978999
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7565)
+
+=== Época 16/40 ===
+Train Loss: 0.0868
+Val Loss:   0.1854
+
+--- MÉTRICAS ---
+Acc:  0.9384
+Prec: 0.8583
+Rec:  0.8735
+F1:   0.8658
+IoU:  0.7634
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10569074
+FP: 1745409
+FN: 1530361
+TN: 39370355
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+
+✔ Modelo salvo! (melhor IoU: 0.7634)
+
+=== Época 17/40 ===
+Train Loss: 0.0829
+Val Loss:   0.1924
+
+--- MÉTRICAS ---
+Acc:  0.9356
+Prec: 0.8395
+Rec:  0.8860
+F1:   0.8621
+IoU:  0.7576
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10719644
+FP: 2049323
+FN: 1379791
+TN: 39066441
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 1/5
+
+=== Época 18/40 ===
+Train Loss: 0.0872
+Val Loss:   0.2160
+
+--- MÉTRICAS ---
+Acc:  0.9281
+Prec: 0.7928
+Rec:  0.9256
+F1:   0.8540
+IoU:  0.7453
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 11199087
+FP: 2927367
+FN: 900348
+TN: 38188397
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 2/5
+
+=== Época 19/40 ===
+Train Loss: 0.0856
+Val Loss:   0.2082
+
+--- MÉTRICAS ---
+Acc:  0.9299
+Prec: 0.8267
+Rec:  0.8750
+F1:   0.8502
+IoU:  0.7394
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10587006
+FP: 2219551
+FN: 1512429
+TN: 38896213
+LR atual: 0.000050
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 3/5
+
+=== Época 20/40 ===
+Train Loss: 0.0829
+Val Loss:   0.2046
+
+--- MÉTRICAS ---
+Acc:  0.9326
+Prec: 0.8290
+Rec:  0.8862
+F1:   0.8566
+IoU:  0.7492
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10722588
+FP: 2212148
+FN: 1376847
+TN: 38903616
+LR atual: 0.000025
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 4/5
+
+=== Época 21/40 ===
+Train Loss: 0.0779
+Val Loss:   0.1937
+
+--- MÉTRICAS ---
+Acc:  0.9367
+Prec: 0.8454
+Rec:  0.8830
+F1:   0.8638
+IoU:  0.7602
+Threshold de validacao atual: 0.50
+
+--- MATRIZ DE CONFUSÃO ---
+TP: 10683352
+FP: 1953487
+FN: 1416083
+TN: 39162277
+LR atual: 0.000025
+CSV atualizado com sucesso
+CSV do run salvo em: runs/arq_segformer_mit_b1_20261110/seg_metrics_512_Segformer_mit_b1_arq_segformer_mit_b1_20261110.csv
+Sem melhora: 5/5
+
+🛑 Early Stopping ativado
+Limiar congelado pela validacao: 0.40
+Curva salva em: runs/arq_segformer_mit_b1_20261110/threshold_iou_curve.csv
+[train] ended_at=2026-11-10T21:30:46+00:00 rc=0

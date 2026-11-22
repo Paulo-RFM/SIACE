@@ -1,0 +1,27 @@
+{
+  "n_tiles_perimetro": 13360,
+  "n_tiles_sem_dado": 0,
+  "n_tiles_borda_perimetro": 978,
+  "limiar": 0.40000000000000013,
+  "celula_m": 100.0,
+  "area_perimetro_ha": 344.2988397526428,
+  "area_observada_ha": 344.2981478204163,
+  "area_copa_ha": 20.499222198423947,
+  "cobertura_area_observada_pct": 5.953915909276459,
+  "n_celulas": 421,
+  "n_celulas_exibidas": 374,
+  "cobertura_celulas_quantis": {
+    "p10": 0.35052498064951776,
+    "p25": 1.243687299683216,
+    "p50": 3.177853847354856,
+    "p75": 7.327546724015209,
+    "p90": 12.758853168245402
+  },
+  "celulas_por_classe": {
+    "0-5": 228,
+    "5-10": 91,
+    "10-20": 34,
+    "20-30": 12,
+    "30-100": 9
+  }
+}

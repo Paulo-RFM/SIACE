@@ -1,0 +1,2 @@
+epoch,train_loss,val_loss,accuracy,precision,recall,f1,iou,threshold,tp,fp,fn,tn,model,total_parameters,trainable_parameters,img_size,batch_size,lr,split,lr_efetiva,gpu_mem_alloc_mb,gpu_mem_res_mb,seed,run_id,tempo_epoca_s,tempo_val_s,fracao_pixels_positivos
+1,0.4703637528068879,0.3851903449086582,0.8796494587946575,0.672945343696163,0.9157275525675372,0.775785366570917,0.633700452017883,0.5,11079786,5384829,1019649,35730935,Unet_resnet34,24436369,24436369,512,6,0.0001,val,0.0001,1839.09,2320.0,42,20261101_184405_512softAug4,93.656,9.716,0.22736803070115363

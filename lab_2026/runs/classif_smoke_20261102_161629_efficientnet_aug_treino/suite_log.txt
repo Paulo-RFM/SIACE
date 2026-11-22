@@ -1,0 +1,79 @@
+
+[augment] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/augment_rare_species.py", "--manifest", "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--out-dir", "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_efficientnet_aug_treino/train_augmented", "--target", "300"]
+[augment] started_at=2026-11-02T19:17:01.032382+00:00
+Antes:
+ split    train  val  test
+species                  
+1         1000  303   321
+2          128   20    20
+3           22    6     3
+4           28   21    19
+5           94   38    48
+6           12    6     6 
+Depois:
+ split    train  val  test
+species                  
+1         1000  303   321
+2          300   20    20
+3          300    6     3
+4          300   21    19
+5          300   38    48
+6          300    6     6
+{
+  "imbalance_ratio_before": {
+    "train": 83.33333333333333,
+    "val": 50.5,
+    "test": 107.0
+  },
+  "imbalance_ratio_after": {
+    "train": 3.3333333333333335,
+    "val": 50.5,
+    "test": 107.0
+  }
+}
+CSV: /home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_efficientnet_aug_treino/train_augmented/train_augmented.csv
+[augment] ended_at=2026-11-02T19:19:35.361106+00:00
+[augment] elapsed_s=154.329
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/train_species_efficientnet.py", "--manifest", "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json", "--runs-dir", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "classif_smoke_20261102_161629_efficientnet_aug_treino", "--augmented-manifest", "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_efficientnet_aug_treino/train_augmented/train_augmented.csv", "--smoke"]
+[train] started_at=2026-11-02T19:19:35.361179+00:00
+[split] /home/paulomaciel/proj/unet_spatial_split/tiles_split.csv
+        sha256=8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658
+        tiles por particao={'train': 611, 'val': 203, 'test': 204} | tiles em >1 particao=0
+
+[auditoria] amostras por especie e particao (todas as origens):
+split    train  val  test  total
+species                         
+1         1000  303   321   1624
+2          300   20    20    340
+3          300    6     3    309
+4          300   21    19    340
+5          300   38    48    386
+6          300    6     6    312
+
+[auditoria] por particao e origem:
+species             1    2    3    4    5    6
+split origin                                  
+test  anotado     321   20    3   19   48    6
+train anotado    1000  128   22   28   94   12
+      aumentado     0  172  278  272  206  288
+val   anotado     303   20    6   21   38    6
+
+[auditoria] razao maior/menor classe: {'train': 3.3333333333333335, 'val': 50.5, 'test': 107.0}
+[auditoria] vazamento: {"tiles_shared": {"train&val": 0, "train&test": 0, "val&test": 0}, "instances_shared": {"train&val": 0, "train&test": 0, "val&test": 0}, "tiles_per_split": {"train": 608, "val": 203, "test": 202}}
+AVISO: especie 3 tem 3 amostras no teste (< 10); metricas por classe dessa especie nao sao estatisticamente estaveis.
+AVISO: especie 6 tem 6 amostras no teste (< 10); metricas por classe dessa especie nao sao estatisticamente estaveis.
+[auditoria] especies com >= 10 amostras no teste: [1, 2, 4, 5] (4)
+run_id=classif_smoke_20261102_161629_efficientnet_aug_treino device=cuda
+Loaded pretrained weights for efficientnet-b0
+epoch 1/1 lr=1.00e-04 train_loss=1.7461 train_f1=0.2446 val_loss=1.8492 val_f1=0.1526 val_acc=0.1417 (14.7s)
+  -> novo melhor val_f1_macro=0.1526
+/home/paulomaciel/anaconda3/envs/siace/lib/python3.10/site-packages/sklearn/metrics/_classification.py:2801: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+[val] {"accuracy": 0.14166666666666666, "balanced_accuracy": 0.4204081632653061, "f1_macro": 0.15264907764907765, "f1_weighted": 0.17202809952809953, "number_of_samples": 120}
+/home/paulomaciel/anaconda3/envs/siace/lib/python3.10/site-packages/sklearn/metrics/_classification.py:2801: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+[test] {"accuracy": 0.10833333333333334, "balanced_accuracy": 0.13166666666666665, "f1_macro": 0.09153439153439154, "f1_weighted": 0.15312169312169313, "number_of_samples": 120}
+Run salvo em /home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_efficientnet_aug_treino
+[train] ended_at=2026-11-02T19:20:06.253363+00:00
+[train] elapsed_s=30.892

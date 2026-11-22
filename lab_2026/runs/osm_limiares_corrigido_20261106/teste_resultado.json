@@ -1,0 +1,17 @@
+{
+  "copas_detectadas": 322,
+  "copas_aprovadas": 188,
+  "precisao_arvore": 0.9468085106382979,
+  "precisao_arvore_sem_filtro": 0.8322981366459627,
+  "fracao_das_copas_sobre_arvore_mantidas": 0.664179104477612,
+  "especies_no_conjunto_enviado": [],
+  "especies_em_todas_as_copas": [],
+  "vies_de_especie_seg_prob_mean_val": {
+    "1": 0.919,
+    "2": 0.899,
+    "3": 0.874,
+    "4": 0.967,
+    "5": 0.91,
+    "6": 0.859
+  }
+}

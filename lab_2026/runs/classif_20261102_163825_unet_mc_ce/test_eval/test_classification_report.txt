@@ -1,0 +1,10 @@
+classe                     precision    recall        f1       iou    support_px
+fundo                         0.9518    0.9569    0.9544    0.9128      43410438
+arvore_sem_identificacao      0.6555    0.7934    0.7179    0.5599       7707370
+palmeira                      0.0000    0.0000    0.0000    0.0000        201513
+arvore_seca                   0.0000    0.0000    0.0000    0.0000        255066
+mangueira                     0.0000    0.0000    0.0000    0.0000        933951
+bananeira                     0.8477    0.5163    0.6417    0.4725        830173
+jabuticabeira                 0.0000    0.0000    0.0000    0.0000        138865
+
+pixel_accuracy=0.8992  mIoU(fg presentes)=0.1721

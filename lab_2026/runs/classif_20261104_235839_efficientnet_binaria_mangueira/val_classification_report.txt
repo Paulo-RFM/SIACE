@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+      outras     0.9763    0.9788    0.9775       378
+   mangueira     0.6000    0.5714    0.5854        21
+
+    accuracy                         0.9574       399
+   macro avg     0.7881    0.7751    0.7815       399
+weighted avg     0.9565    0.9574    0.9569       399

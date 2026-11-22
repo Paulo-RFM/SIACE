@@ -1,0 +1,19 @@
+{
+  "accuracy": 0.9573934837092731,
+  "balanced_accuracy": 0.7751322751322751,
+  "f1_macro": 0.7814543931436673,
+  "f1_weighted": 0.9569020337356263,
+  "precision_macro": 0.7881266490765171,
+  "recall_macro": 0.7751322751322751,
+  "f1_macro_present_classes": 0.7814543931436673,
+  "cohen_kappa": 0.5629228687415426,
+  "number_of_samples": 399,
+  "number_of_classes": 2,
+  "number_of_classes_present": 2,
+  "loss": 0.1185017786337994,
+  "inference_total_s": 9.756433486938477,
+  "split": "val",
+  "checkpoint": "checkpoint_best.pth",
+  "best_epoch": 6,
+  "ece": 0.012579088372395433
+}

@@ -1,0 +1,2 @@
+epoch,lr,train_loss,train_accuracy,train_f1_macro,val_loss,val_accuracy,val_precision_macro,val_recall_macro,val_f1_macro,epoch_time_s,val_f1_class_arvore_sem_identificacao,val_f1_class_palmeira,val_f1_class_arvore_seca,val_f1_class_mangueira,val_f1_class_bananeira,val_f1_class_jabuticabeira
+1,0.0001,1.7461443662643432,0.25833333333333336,0.24458511093697852,1.849226039648056,0.14166666666666666,0.2582556332556333,0.35034013605442177,0.15264907764907765,14.700721979141235,0.18018018018018017,0.2,0.2857142857142857,0.0,0.25,0.0

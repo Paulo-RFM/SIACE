@@ -1,0 +1,42 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/train_species_efficientnet.py", "--manifest", "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json", "--runs-dir", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "classif_smoke_20261102_161629_efficientnet_anotados", "--smoke"]
+[train] started_at=2026-11-02T19:16:30.242316+00:00
+[split] /home/paulomaciel/proj/unet_spatial_split/tiles_split.csv
+        sha256=8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658
+        tiles por particao={'train': 611, 'val': 203, 'test': 204} | tiles em >1 particao=0
+
+[auditoria] amostras por especie e particao (todas as origens):
+split    train  val  test  total
+species                         
+1         1000  303   321   1624
+2          128   20    20    168
+3           22    6     3     31
+4           28   21    19     68
+5           94   38    48    180
+6           12    6     6     24
+
+[auditoria] por particao e origem:
+species           1    2   3   4   5   6
+split origin                            
+test  anotado   321   20   3  19  48   6
+train anotado  1000  128  22  28  94  12
+val   anotado   303   20   6  21  38   6
+
+[auditoria] razao maior/menor classe: {'train': 83.33333333333333, 'val': 50.5, 'test': 107.0}
+[auditoria] vazamento: {"tiles_shared": {"train&val": 0, "train&test": 0, "val&test": 0}, "instances_shared": {"train&val": 0, "train&test": 0, "val&test": 0}, "tiles_per_split": {"train": 608, "val": 203, "test": 202}}
+AVISO: especie 3 tem 3 amostras no teste (< 10); metricas por classe dessa especie nao sao estatisticamente estaveis.
+AVISO: especie 6 tem 6 amostras no teste (< 10); metricas por classe dessa especie nao sao estatisticamente estaveis.
+[auditoria] especies com >= 10 amostras no teste: [1, 2, 4, 5] (4)
+run_id=classif_smoke_20261102_161629_efficientnet_anotados device=cuda
+Loaded pretrained weights for efficientnet-b0
+epoch 1/1 lr=1.00e-04 train_loss=1.7526 train_f1=0.2242 val_loss=1.8258 val_f1=0.2133 val_acc=0.1417 (14.7s)
+  -> novo melhor val_f1_macro=0.2133
+/home/paulomaciel/anaconda3/envs/siace/lib/python3.10/site-packages/sklearn/metrics/_classification.py:2801: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+[val] {"accuracy": 0.14166666666666666, "balanced_accuracy": 0.48299319727891155, "f1_macro": 0.21333727772545422, "f1_weighted": 0.15780959453258955, "number_of_samples": 120}
+/home/paulomaciel/anaconda3/envs/siace/lib/python3.10/site-packages/sklearn/metrics/_classification.py:2801: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+[test] {"accuracy": 0.15833333333333333, "balanced_accuracy": 0.21583333333333332, "f1_macro": 0.13440846192856626, "f1_weighted": 0.19883503586176915, "number_of_samples": 120}
+Run salvo em /home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_efficientnet_anotados
+[train] ended_at=2026-11-02T19:17:01.031931+00:00
+[train] elapsed_s=30.790

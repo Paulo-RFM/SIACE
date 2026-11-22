@@ -1,0 +1,3 @@
+arvores anotadas=418 instancias=361 TP(IoU>=0.5)=244
+precisao=0.676 recall=0.584 F1=0.626 IoU medio dos acertos=0.787
+erro de contagem por tile: medio=-0.28 MAE=0.81 contagem exata=48.5% | razao inst/arv=0.86

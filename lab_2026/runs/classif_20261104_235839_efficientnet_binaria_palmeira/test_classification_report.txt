@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+      outras     0.9873    0.9799    0.9836       398
+    palmeira     0.6522    0.7500    0.6977        20
+
+    accuracy                         0.9689       418
+   macro avg     0.8198    0.8649    0.8406       418
+weighted avg     0.9713    0.9689    0.9699       418

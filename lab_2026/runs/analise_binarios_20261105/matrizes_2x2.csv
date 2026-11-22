@@ -1,0 +1,10 @@
+especie,modelo,real_outra_pred_outra,real_outra_pred_alvo,real_alvo_pred_outra,real_alvo_pred_alvo
+palmeira,Multiclasse (argmax),390,8,4,16
+palmeira,Multiclasse (limiar da validação),396,2,8,12
+palmeira,Binário,390,8,5,15
+mangueira,Multiclasse (argmax),366,33,2,17
+mangueira,Multiclasse (limiar da validação),386,13,7,12
+mangueira,Binário,388,11,8,11
+bananeira,Multiclasse (argmax),360,10,4,44
+bananeira,Multiclasse (limiar da validação),363,7,4,44
+bananeira,Binário,367,3,5,43

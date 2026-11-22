@@ -1,0 +1,12 @@
+                          precision    recall  f1-score   support
+
+arvore_sem_identificacao     0.9359    0.9068    0.9211       322
+                palmeira     0.7619    0.8000    0.7805        20
+             arvore_seca     0.3333    0.3333    0.3333         3
+               mangueira     0.4444    0.6316    0.5217        19
+               bananeira     0.8776    0.8958    0.8866        48
+           jabuticabeira     0.1667    0.1667    0.1667         6
+
+                accuracy                         0.8732       418
+               macro avg     0.5866    0.6224    0.6017       418
+            weighted avg     0.8832    0.8732    0.8772       418

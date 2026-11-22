@@ -1,0 +1,73 @@
+{
+  "deteccao": {
+    "iou_threshold": 0.5,
+    "n_test_tiles": 204,
+    "n_gt_trees_per_tile": 418,
+    "n_instances": 361,
+    "tp": 244,
+    "precision": 0.6759002770083102,
+    "recall": 0.583732057416268,
+    "f1": 0.626444159178434,
+    "mean_iou_tp": 0.7866721228074721,
+    "count_error_mean_per_tile": -0.27941176470588236,
+    "count_mae_per_tile": 0.8088235294117647,
+    "exact_count_tiles_pct": 48.529411764705884,
+    "instances_per_gt": 0.8636363636363636
+  },
+  "classificacao_nas_arvores_detectadas": {
+    "accuracy": 0.8032786885245902,
+    "balanced_accuracy": 0.5919928025191182,
+    "f1_macro": 0.5441142972478122,
+    "f1_weighted": 0.8233323477840384,
+    "precision_macro": 0.5372306956609282,
+    "recall_macro": 0.5919928025191182,
+    "f1_macro_present_classes": 0.5441142972478122,
+    "cohen_kappa": 0.527741935483871,
+    "number_of_samples": 244,
+    "number_of_classes": 6,
+    "number_of_classes_present": 6
+  },
+  "regressao_mascara_vs_P1": {
+    "tiles_comparados": 204,
+    "pixels_diferentes": 18
+  },
+  "pipeline": {
+    "script": "pipeline_cidade.py",
+    "tiles_dir": "/home/paulomaciel/proj/imagens",
+    "partition": "test",
+    "n_tiles": 204,
+    "tile_list_sha256": "0342cd4fc76dc76476c9321ce46f5422eee887124f4aeec82fcb9951167e11ad",
+    "segmentation_run": "/home/paulomaciel/proj/lab_2026/runs/p1_20261101_140519",
+    "segmentation_checkpoint_sha256": "a5f78fe432b3887aac0fb1bd71e2ee848145d48d5ed82199c1b51ae44ca2b616",
+    "segmentation_threshold": 0.6500000000000001,
+    "threshold_criterion": "validation_iou",
+    "watershed_params": {
+      "min_area": 1000,
+      "peak_footprint": 251
+    },
+    "watershed_params_file": "/home/paulomaciel/proj/lab_2026/runs/watershed_ref_calib_20261102/frozen_watershed_params.json",
+    "classifier_run": "runs/classif_20261102_163825_efficientnet_anotados",
+    "classifier_checkpoint_sha256": "e4fd4f7790120e5af845ba75d9d3ed1025d30f5b225568c6506c26d48225df07",
+    "classifier_selection": "best_val_f1_macro=0.5981114498644986",
+    "class_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "class_names": [
+      "arvore_sem_identificacao",
+      "palmeira",
+      "arvore_seca",
+      "mangueira",
+      "bananeira",
+      "jabuticabeira"
+    ],
+    "crop_pad_px": 20,
+    "cls_batch_size": 8,
+    "crop_size": 512,
+    "device": "cuda"
+  }
+}

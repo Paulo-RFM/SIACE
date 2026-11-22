@@ -1,0 +1,19 @@
+{
+ "n_val_tiles": 203,
+ "n_gt": 399,
+ "tiles_mesmo_numero_de_instancias": 134,
+ "cc": {
+  "instancias": 328,
+  "tp": 320,
+  "precisao": 0.976,
+  "recall": 0.802,
+  "f1": 0.88
+ },
+ "ws": {
+  "instancias": 387,
+  "tp": 327,
+  "precisao": 0.845,
+  "recall": 0.82,
+  "f1": 0.832
+ }
+}

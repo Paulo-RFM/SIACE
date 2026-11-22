@@ -1,0 +1,61 @@
+{
+  "suite": "run_classification_suite.py",
+  "suite_run_id": "classif_smoke_20261102_161629",
+  "experiment": "unet_mc_ce_dice_initP1",
+  "description": "Igual a unet_mc_ce_dice, inicializada com o checkpoint binario do run P1",
+  "split": {
+    "split_path": "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+    "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+    "tiles_per_split": {
+      "train": 611,
+      "val": 203,
+      "test": 204
+    },
+    "tiles_in_multiple_splits": 0
+  },
+  "commands": {
+    "train": [
+      "/home/paulomaciel/anaconda3/envs/siace/bin/python",
+      "-u",
+      "/home/paulomaciel/proj/lab_2026/run_legacy_multiclass_training.py",
+      "--script",
+      "/home/paulomaciel/proj/lab_2026/resnet3.py",
+      "--images-dir",
+      "/home/paulomaciel/proj/imagens",
+      "--masks-dir",
+      "/home/paulomaciel/proj/lab_2026/masks_distin2",
+      "--run-root",
+      "/home/paulomaciel/proj/lab_2026/runs",
+      "--run-id",
+      "classif_smoke_20261102_161629_unet_mc_ce_dice_initP1",
+      "--split",
+      "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+      "--species-names",
+      "/home/paulomaciel/proj/lab_2026/species_names.json",
+      "--init-checkpoint",
+      "/home/paulomaciel/proj/lab_2026/runs/p1_20261101_140519/checkpoint_best.pth",
+      "--smoke"
+    ],
+    "test": [
+      "/home/paulomaciel/anaconda3/envs/siace/bin/python",
+      "-u",
+      "/home/paulomaciel/proj/lab_2026/evaluate_multiclass_test.py",
+      "--images",
+      "/home/paulomaciel/proj/imagens",
+      "--masks",
+      "/home/paulomaciel/proj/lab_2026/masks_distin2",
+      "--split",
+      "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv",
+      "--checkpoint",
+      "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce_dice_initP1/checkpoint_best.pth",
+      "--output",
+      "/home/paulomaciel/proj/lab_2026/runs/classif_smoke_20261102_161629_unet_mc_ce_dice_initP1/test_eval",
+      "--normalize",
+      "imagenet",
+      "--species-names",
+      "/home/paulomaciel/proj/lab_2026/species_names.json",
+      "--max-tiles",
+      "10"
+    ]
+  }
+}

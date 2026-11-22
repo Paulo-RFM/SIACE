@@ -1,0 +1,8 @@
+import rasterio
+
+
+base_image_tiles_dir = "/home/paulomaciel/proj/imagens/"
+
+imaewith rasterio.open("sua_imagem.tif") as src:
+    print(src.crs)        # sistema de coordenadas
+    print(src.transform)  # transformação

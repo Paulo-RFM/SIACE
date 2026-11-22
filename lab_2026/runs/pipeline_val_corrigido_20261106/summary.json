@@ -1,0 +1,55 @@
+{
+  "script": "pipeline_cidade.py",
+  "tiles_dir": "/home/paulomaciel/proj/imagens",
+  "partition": "val",
+  "n_tiles": 203,
+  "tile_list_sha256": "b08a896ae2c2497a52421d8987ca87d963db98f2cb30fcd83450fa42d8c01fe0",
+  "segmentation_run": "runs/alinhado_20261105_2215_softAug4",
+  "segmentation_checkpoint_sha256": "a9b8c8f9358cc0c3f6166cb11fb7089ae3c1f904d3f4db98e299c99b698e1b4c",
+  "segmentation_threshold": 0.40000000000000013,
+  "threshold_criterion": "validation_iou",
+  "watershed_params": {
+    "method": "componentes_conexas",
+    "min_area": 3000
+  },
+  "watershed_params_file": "/home/paulomaciel/proj/lab_2026/runs/watershed_vs_cc_val_20261103/frozen_instance_params.json",
+  "classifier_run": "runs/classif_20261102_163825_efficientnet_anotados",
+  "classifier_checkpoint_sha256": "e4fd4f7790120e5af845ba75d9d3ed1025d30f5b225568c6506c26d48225df07",
+  "classifier_selection": "best_val_f1_macro=0.5981114498644986",
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "class_names": [
+    "arvore_sem_identificacao",
+    "palmeira",
+    "arvore_seca",
+    "mangueira",
+    "bananeira",
+    "jabuticabeira"
+  ],
+  "crop_pad_px": 20,
+  "cls_batch_size": 8,
+  "crop_size": 512,
+  "device": "cuda",
+  "border_merge_rule": "uma_parte_por_tile",
+  "created_at": "2026-11-06T15:18:44.696272+00:00",
+  "duration_s": 31.458150550002756,
+  "n_tiles_nodata": 0,
+  "n_instances": 324,
+  "n_trees": 240,
+  "n_trees_merged_across_tiles": 59,
+  "trees_by_class": {
+    "arvore_seca": 2,
+    "arvore_sem_identificacao": 195,
+    "bananeira": 10,
+    "jabuticabeira": 1,
+    "mangueira": 21,
+    "palmeira": 11
+  },
+  "note": "Contagem e classes sao estimativas do modelo (ver avaliacao no teste); centroide da copa vista de cima, nao do tronco; precisao absoluta depende do GPS da ortofoto."
+}

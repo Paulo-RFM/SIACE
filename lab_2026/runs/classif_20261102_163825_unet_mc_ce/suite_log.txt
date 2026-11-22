@@ -1,0 +1,331 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_multiclass_training.py", "--script", "/home/paulomaciel/proj/lab_2026/resnet2.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/lab_2026/masks_distin2", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "classif_20261102_163825_unet_mc_ce", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json"]
+[train] started_at=2026-11-02T21:39:52.679824+00:00
+Imagens: 1018
+Máscaras: 1018
+
+===================================
+ ÉPOCA 1/50 | Tempo: 88.43s | ETA: 1:12:12
+-----------------------------------
+Train Loss: 1.1437 | Val Loss: 0.9365
+-----------------------------------
+Accuracy : 0.7685
+Precision: 0.0784  (macro, sem fundo)
+Recall   : 0.1547     (macro, sem fundo)
+F1-score : 0.0986        (macro, sem fundo)
+Mean IoU : 0.0698       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 2/50 | Tempo: 88.02s | ETA: 1:10:34
+-----------------------------------
+Train Loss: 0.7039 | Val Loss: 0.6303
+-----------------------------------
+Accuracy : 0.8334
+Precision: 0.0915  (macro, sem fundo)
+Recall   : 0.1206     (macro, sem fundo)
+F1-score : 0.1034        (macro, sem fundo)
+Mean IoU : 0.0749       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 3/50 | Tempo: 87.89s | ETA: 1:09:01
+-----------------------------------
+Train Loss: 0.5562 | Val Loss: 0.5280
+-----------------------------------
+Accuracy : 0.8518
+Precision: 0.0978  (macro, sem fundo)
+Recall   : 0.1252     (macro, sem fundo)
+F1-score : 0.1098        (macro, sem fundo)
+Mean IoU : 0.0819       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 4/50 | Tempo: 87.91s | ETA: 1:07:30
+-----------------------------------
+Train Loss: 0.4921 | Val Loss: 0.4999
+-----------------------------------
+Accuracy : 0.8533
+Precision: 0.0983  (macro, sem fundo)
+Recall   : 0.1292     (macro, sem fundo)
+F1-score : 0.1117        (macro, sem fundo)
+Mean IoU : 0.0840       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 5/50 | Tempo: 87.92s | ETA: 1:06:01
+-----------------------------------
+Train Loss: 0.4648 | Val Loss: 0.4763
+-----------------------------------
+Accuracy : 0.8535
+Precision: 0.0972  (macro, sem fundo)
+Recall   : 0.1342     (macro, sem fundo)
+F1-score : 0.1128        (macro, sem fundo)
+Mean IoU : 0.0852       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 6/50 | Tempo: 87.91s | ETA: 1:04:32
+-----------------------------------
+Train Loss: 0.4406 | Val Loss: 0.4670
+-----------------------------------
+Accuracy : 0.8496
+Precision: 0.0994  (macro, sem fundo)
+Recall   : 0.1169     (macro, sem fundo)
+F1-score : 0.1075        (macro, sem fundo)
+Mean IoU : 0.0793       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 7/50 | Tempo: 88.08s | ETA: 1:03:04
+-----------------------------------
+Train Loss: 0.4419 | Val Loss: 0.4847
+-----------------------------------
+Accuracy : 0.8439
+Precision: 0.1078  (macro, sem fundo)
+Recall   : 0.0889     (macro, sem fundo)
+F1-score : 0.0974        (macro, sem fundo)
+Mean IoU : 0.0688       (sem fundo)
+===================================
+
+Sem melhora: 1/5
+
+===================================
+ ÉPOCA 8/50 | Tempo: 88.08s | ETA: 1:01:37
+-----------------------------------
+Train Loss: 0.4149 | Val Loss: 0.4465
+-----------------------------------
+Accuracy : 0.8597
+Precision: 0.1024  (macro, sem fundo)
+Recall   : 0.1216     (macro, sem fundo)
+F1-score : 0.1111        (macro, sem fundo)
+Mean IoU : 0.0834       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 9/50 | Tempo: 88.04s | ETA: 1:00:09
+-----------------------------------
+Train Loss: 0.4192 | Val Loss: 0.4580
+-----------------------------------
+Accuracy : 0.8535
+Precision: 0.0943  (macro, sem fundo)
+Recall   : 0.1451     (macro, sem fundo)
+F1-score : 0.1143        (macro, sem fundo)
+Mean IoU : 0.0869       (sem fundo)
+===================================
+
+Sem melhora: 1/5
+
+===================================
+ ÉPOCA 10/50 | Tempo: 88.05s | ETA: 0:58:41
+-----------------------------------
+Train Loss: 0.4122 | Val Loss: 0.4357
+-----------------------------------
+Accuracy : 0.8569
+Precision: 0.1026  (macro, sem fundo)
+Recall   : 0.1178     (macro, sem fundo)
+F1-score : 0.1097        (macro, sem fundo)
+Mean IoU : 0.0817       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 11/50 | Tempo: 88.14s | ETA: 0:57:13
+-----------------------------------
+Train Loss: 0.3855 | Val Loss: 0.4416
+-----------------------------------
+Accuracy : 0.8538
+Precision: 0.1017  (macro, sem fundo)
+Recall   : 0.1141     (macro, sem fundo)
+F1-score : 0.1075        (macro, sem fundo)
+Mean IoU : 0.0794       (sem fundo)
+===================================
+
+Sem melhora: 1/5
+
+===================================
+ ÉPOCA 12/50 | Tempo: 88.14s | ETA: 0:55:45
+-----------------------------------
+Train Loss: 0.3800 | Val Loss: 0.4810
+-----------------------------------
+Accuracy : 0.8237
+Precision: 0.2126  (macro, sem fundo)
+Recall   : 0.0704     (macro, sem fundo)
+F1-score : 0.0966        (macro, sem fundo)
+Mean IoU : 0.0598       (sem fundo)
+===================================
+
+Sem melhora: 2/5
+
+===================================
+ ÉPOCA 13/50 | Tempo: 88.07s | ETA: 0:54:17
+-----------------------------------
+Train Loss: 0.3704 | Val Loss: 0.4230
+-----------------------------------
+Accuracy : 0.8498
+Precision: 0.2103  (macro, sem fundo)
+Recall   : 0.1207     (macro, sem fundo)
+F1-score : 0.1324        (macro, sem fundo)
+Mean IoU : 0.0910       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 14/50 | Tempo: 88.03s | ETA: 0:52:49
+-----------------------------------
+Train Loss: 0.3667 | Val Loss: 0.4303
+-----------------------------------
+Accuracy : 0.8598
+Precision: 0.2267  (macro, sem fundo)
+Recall   : 0.1411     (macro, sem fundo)
+F1-score : 0.1606        (macro, sem fundo)
+Mean IoU : 0.1112       (sem fundo)
+===================================
+
+Sem melhora: 1/5
+
+===================================
+ ÉPOCA 15/50 | Tempo: 88.07s | ETA: 0:51:21
+-----------------------------------
+Train Loss: 0.3592 | Val Loss: 0.4079
+-----------------------------------
+Accuracy : 0.8644
+Precision: 0.2106  (macro, sem fundo)
+Recall   : 0.1852     (macro, sem fundo)
+F1-score : 0.1911        (macro, sem fundo)
+Mean IoU : 0.1370       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 16/50 | Tempo: 88.09s | ETA: 0:49:53
+-----------------------------------
+Train Loss: 0.3568 | Val Loss: 0.4044
+-----------------------------------
+Accuracy : 0.8608
+Precision: 0.1775  (macro, sem fundo)
+Recall   : 0.2071     (macro, sem fundo)
+F1-score : 0.1862        (macro, sem fundo)
+Mean IoU : 0.1307       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 17/50 | Tempo: 88.09s | ETA: 0:48:25
+-----------------------------------
+Train Loss: 0.3417 | Val Loss: 0.3787
+-----------------------------------
+Accuracy : 0.8761
+Precision: 0.2082  (macro, sem fundo)
+Recall   : 0.2063     (macro, sem fundo)
+F1-score : 0.2047        (macro, sem fundo)
+Mean IoU : 0.1506       (sem fundo)
+===================================
+
+Melhor modelo salvo!
+
+===================================
+ ÉPOCA 18/50 | Tempo: 88.06s | ETA: 0:46:57
+-----------------------------------
+Train Loss: 0.3401 | Val Loss: 0.4073
+-----------------------------------
+Accuracy : 0.8615
+Precision: 0.1951  (macro, sem fundo)
+Recall   : 0.1787     (macro, sem fundo)
+F1-score : 0.1695        (macro, sem fundo)
+Mean IoU : 0.1214       (sem fundo)
+===================================
+
+Sem melhora: 1/5
+
+===================================
+ ÉPOCA 19/50 | Tempo: 88.10s | ETA: 0:45:29
+-----------------------------------
+Train Loss: 0.3377 | Val Loss: 0.4378
+-----------------------------------
+Accuracy : 0.8543
+Precision: 0.2142  (macro, sem fundo)
+Recall   : 0.1552     (macro, sem fundo)
+F1-score : 0.1800        (macro, sem fundo)
+Mean IoU : 0.1240       (sem fundo)
+===================================
+
+Sem melhora: 2/5
+
+===================================
+ ÉPOCA 20/50 | Tempo: 88.11s | ETA: 0:44:01
+-----------------------------------
+Train Loss: 0.3305 | Val Loss: 0.4081
+-----------------------------------
+Accuracy : 0.8649
+Precision: 0.1696  (macro, sem fundo)
+Recall   : 0.2510     (macro, sem fundo)
+F1-score : 0.1969        (macro, sem fundo)
+Mean IoU : 0.1422       (sem fundo)
+===================================
+
+Sem melhora: 3/5
+
+===================================
+ ÉPOCA 21/50 | Tempo: 88.15s | ETA: 0:42:33
+-----------------------------------
+Train Loss: 0.3122 | Val Loss: 0.4240
+-----------------------------------
+Accuracy : 0.8601
+Precision: 0.1691  (macro, sem fundo)
+Recall   : 0.2336     (macro, sem fundo)
+F1-score : 0.1878        (macro, sem fundo)
+Mean IoU : 0.1329       (sem fundo)
+===================================
+
+Sem melhora: 4/5
+
+===================================
+ ÉPOCA 22/50 | Tempo: 88.09s | ETA: 0:41:05
+-----------------------------------
+Train Loss: 0.3158 | Val Loss: 0.4321
+-----------------------------------
+Accuracy : 0.8512
+Precision: 0.1763  (macro, sem fundo)
+Recall   : 0.1578     (macro, sem fundo)
+F1-score : 0.1665        (macro, sem fundo)
+Mean IoU : 0.1139       (sem fundo)
+===================================
+
+Sem melhora: 5/5
+Early stopping ativado.
+
+Treinamento finalizado!
+✔ Melhor modelo salvo em: /home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce/checkpoint_best.pth
+Modelo multiclasse treinado com split espacial: resnet2.py -> /home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce
+[train] ended_at=2026-11-02T22:12:28.309530+00:00
+[train] elapsed_s=1955.630
+
+[test] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/evaluate_multiclass_test.py", "--images", "/home/paulomaciel/proj/imagens", "--masks", "/home/paulomaciel/proj/lab_2026/masks_distin2", "--split", "/home/paulomaciel/proj/unet_spatial_split/tiles_split.csv", "--checkpoint", "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce/checkpoint_best.pth", "--output", "/home/paulomaciel/proj/lab_2026/runs/classif_20261102_163825_unet_mc_ce/test_eval", "--normalize", "none", "--species-names", "/home/paulomaciel/proj/lab_2026/species_names.json"]
+[test] started_at=2026-11-02T22:12:28.309657+00:00
+Teste avaliado uma unica vez: 204 tiles
+{
+  "pixel_accuracy": 0.8991651909024108,
+  "miou_foreground_present": 0.1720670449381765,
+  "f1_macro_foreground_present": 0.22660528442901917
+}
+[test] ended_at=2026-11-02T22:12:44.863633+00:00
+[test] elapsed_s=16.554

@@ -1,0 +1,6 @@
+run_id=species_smoke_annotated_only_20261102_150857 device=cuda
+epoch 1/1 lr=1.00e-04 train_loss=1.7526 train_f1=0.2242 val_loss=1.8258 val_f1=0.2133 val_acc=0.1417 (15.3s)
+  -> novo melhor val_f1_macro=0.2133
+[val] {"accuracy": 0.14166666666666666, "balanced_accuracy": 0.48299319727891155, "f1_macro": 0.21333727772545422, "f1_weighted": 0.15780959453258955, "number_of_samples": 120}
+[test] {"accuracy": 0.15833333333333333, "balanced_accuracy": 0.21583333333333332, "f1_macro": 0.13440846192856626, "f1_weighted": 0.19883503586176915, "number_of_samples": 120}
+Run salvo em /home/paulomaciel/proj/lab_2026/runs/species_smoke_annotated_only_20261102_150857

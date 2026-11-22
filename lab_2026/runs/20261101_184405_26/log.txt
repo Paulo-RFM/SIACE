@@ -1,0 +1,44 @@
+
+[train] command=["/home/paulomaciel/anaconda3/envs/siace/bin/python", "-u", "/home/paulomaciel/proj/lab_2026/run_legacy_binary_training.py", "--script", "/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26.py", "--images-dir", "/home/paulomaciel/proj/imagens", "--masks-dir", "/home/paulomaciel/proj/masks", "--run-root", "/home/paulomaciel/proj/lab_2026/runs", "--run-id", "20261101_184405_26", "--smoke"]
+[train] started_at=2026-11-01T18:46:01.417630+00:00
+Imagens: 1018
+Máscaras: 1018
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26.py:165: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26.py:212: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/paulomaciel/proj/lab_2026/tree_segmentation_resnet_26.py:239: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+
+=== Época 1/1 ===
+Train Loss: 0.4910
+Val Loss:   0.3474
+
+--- MÉTRICAS ---
+Acc:  0.8733
+Prec: 0.6738
+Rec:  0.8587
+F1:   0.7551
+IoU:  0.6065
+
+--- MATRIZ DE CONFUSÃO (pixel) ---
+TP: 10389300
+FP: 5029612
+FN: 1710139
+TN: 36086181
+
+--- INTERPRETAÇÃO ---
+TP: árvore detectada corretamente
+FP: falso positivo (detectou árvore onde não tem)
+FN: perdeu árvore
+TN: fundo correto
+
+✔ Modelo salvo! (melhor IoU: 0.6065)
+CSV salvo em: /home/paulomaciel/proj/unet_metrics01.csv
+
+Treinamento finalizado!
+Melhor IoU: 0.6065309747749598
+Modelo salvo em: /home/paulomaciel/proj/lab_2026/runs/20261101_184405_26/checkpoint_best.pth
+Modelo legado treinado com split espacial: tree_segmentation_resnet_26.py
+[train] ended_at=2026-11-01T18:47:57.072723+00:00
+[train] elapsed_s=115.655

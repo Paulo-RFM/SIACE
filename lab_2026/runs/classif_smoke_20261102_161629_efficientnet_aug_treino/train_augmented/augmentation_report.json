@@ -1,0 +1,82 @@
+{
+  "manifest": "/home/paulomaciel/proj/species_dataset_v2/species_manifest.csv",
+  "split_sha256": "8adf3e724ef313ad7ed6260d181f87fc77ecefad9c16b9c5de2ba5607838b658",
+  "target_per_class": 300,
+  "seed": 42,
+  "n_augmented": 1216,
+  "before": {
+    "1": {
+      "train": 1000,
+      "val": 303,
+      "test": 321
+    },
+    "2": {
+      "train": 128,
+      "val": 20,
+      "test": 20
+    },
+    "3": {
+      "train": 22,
+      "val": 6,
+      "test": 3
+    },
+    "4": {
+      "train": 28,
+      "val": 21,
+      "test": 19
+    },
+    "5": {
+      "train": 94,
+      "val": 38,
+      "test": 48
+    },
+    "6": {
+      "train": 12,
+      "val": 6,
+      "test": 6
+    }
+  },
+  "after": {
+    "1": {
+      "train": 1000,
+      "val": 303,
+      "test": 321
+    },
+    "2": {
+      "train": 300,
+      "val": 20,
+      "test": 20
+    },
+    "3": {
+      "train": 300,
+      "val": 6,
+      "test": 3
+    },
+    "4": {
+      "train": 300,
+      "val": 21,
+      "test": 19
+    },
+    "5": {
+      "train": 300,
+      "val": 38,
+      "test": 48
+    },
+    "6": {
+      "train": 300,
+      "val": 6,
+      "test": 6
+    }
+  },
+  "imbalance_ratio_before": {
+    "train": 83.33333333333333,
+    "val": 50.5,
+    "test": 107.0
+  },
+  "imbalance_ratio_after": {
+    "train": 3.3333333333333335,
+    "val": 50.5,
+    "test": 107.0
+  },
+  "note": "val e test permanecem identicos (somente anotados)."
+}
