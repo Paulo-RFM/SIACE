@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-11-22 — requirements.txt, inventário e scripts de João Pessoa
+
+- `requirements.txt` do projeto (versões do ambiente conda siace; GDAL pelo ambiente geo).
+- `FERRAMENTAS_E_SCRIPTS.txt`: hardware, bibliotecas, ferramentas e todos os scripts por etapa.
+- `joao_pessoa/`: cópias dos scripts usados em ~/proj_JoaoPessoa211126 (preparo, mapas, cobertura, conferência).
+
 ## 2026-11-22 — Contêiner Docker (inferência)
 
 - Nova pasta `docker/`: `Dockerfile` (base GDAL 3.6.2 + PyTorch 2.5.1 cu121), `requirements.txt`, `siace.sh` (entrada: `processar` ortomosaico → tiles → pipeline; `--modelo 3cm|8cm`; zona UTM automática), `preparar_ortomosaico.py` (generaliza `preparar_jp_3cm.py`), `slicer.py` (cópia de `~/proj_JoaoPessoa211126/slicer.py`), `baixar_modelos.sh` (pesos por release do GitHub, conferidos por SHA-256) e `LEIAME.md`.

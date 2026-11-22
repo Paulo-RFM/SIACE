@@ -1,0 +1,44 @@
+# SIACE - dependências Python do projeto (treino, avaliação, figuras e inferência).
+# Versões do ambiente conda "siace" (Python 3.10.19, Ubuntu 20.04) em que os resultados da monografia foram obtidos.
+# Instalação:  pip install -r requirements.txt
+# O PyTorch abaixo é o build para CUDA 12.1 (GPU NVIDIA, driver >= 525). Para só CPU, troque a linha do índice por
+#   --index-url https://download.pytorch.org/whl/cpu   e remova o sufixo +cu121 de torch e torchvision.
+# GDAL (osgeo) não entra aqui: foi usado pelo ambiente conda "geo" (GDAL 3.6.2), por exemplo
+#   conda create -n geo -c conda-forge python=3.10 gdal=3.6.2 matplotlib pyproj
+# Para o contêiner de inferência, veja docker/requirements.txt (versões compatíveis com o GDAL da imagem base).
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# Aprendizado profundo
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+segmentation-models-pytorch==0.5.0
+timm==1.0.22
+efficientnet-pytorch==0.7.1
+
+# Numérico e dados
+numpy==2.2.5
+scipy==1.15.2
+pandas==2.3.3
+scikit-learn==1.7.2
+joblib==1.5.2
+
+# Imagem
+scikit-image==0.25.2
+opencv-python~=4.12.0
+pillow==12.0.0
+
+# Geoespacial
+shapely==2.1.2
+pyproj==3.6.1
+rasterio==1.4.3
+geopandas==1.1.1
+
+# Gráficos e utilitários
+matplotlib==3.10.6
+seaborn==0.13.2
+tqdm==4.67.1
+requests==2.32.5
+psutil==7.2.2
+
+# Só para o script histórico catboost_final.py (não usado nos resultados finais; não instalado no ambiente):
+# catboost

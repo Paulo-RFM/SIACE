@@ -1,0 +1,171 @@
+SIACE - FERRAMENTAS E SCRIPTS USADOS
+====================================
+Inventário de 22/11/2026. Caminhos relativos a lab_2026/. As dependências Python com versão estão em
+requirements.txt (projeto) e docker/requirements.txt (contêiner de inferência).
+As descrições dos scripts foram tiradas da documentação de cada arquivo. Os scripts sem documentação
+estão listados à parte, sem descrição.
+
+
+1. HARDWARE E SISTEMA
+---------------------
+- CPU Intel Core i5-4430 (3,0 GHz), 30 GB de RAM
+- GPU NVIDIA GeForce GTX 1050 Ti, 4 GB; driver 535.183.01; CUDA 12.1 (build do PyTorch)
+- Ubuntu 20.04.6 LTS
+- Anaconda, com dois ambientes:
+    siace : Python 3.10.19, PyTorch 2.5.1 (treino, avaliação, inferência, figuras)
+    geo   : Python 3.10, GDAL 3.6.2, matplotlib (recorte e reprojeção de rasters, mapas)
+
+
+2. BIBLIOTECAS PRINCIPAIS (versões em requirements.txt)
+-------------------------------------------------------
+- PyTorch / torchvision ............ treino e inferência das redes
+- segmentation-models-pytorch ...... U-Net, U-Net++, DeepLabV3+ e SegFormer (codificadores ResNet-34 e MiT-B1)
+- timm ............................. codificadores usados pelo segmentation-models-pytorch
+- efficientnet-pytorch ............. classificador de espécies EfficientNet-B0
+- scikit-learn ..................... métricas, divisões e relatórios de classificação
+- scikit-image / SciPy ............. Watershed, h-maxima, transformada de distância, morfologia
+- OpenCV ........................... contornos, máscaras e operações de imagem
+- NumPy / pandas ................... dados e tabelas
+- Pillow ........................... leitura de tiles e das tags GeoTIFF
+- Shapely / pyproj ................. geometria das copas, união entre tiles e projeções (SIRGAS 2000 / UTM)
+- GDAL 3.6.2 (osgeo) ............... recorte em tiles, reprojeção, rasterização, GeoPackage
+- rasterio / geopandas ............. leitura de rasters e vetores em scripts auxiliares
+- matplotlib / seaborn ............. gráficos e mapas
+- requests ......................... API 0.6 do OpenStreetMap (servidor de testes)
+- tqdm / psutil .................... progresso e memória
+
+
+3. OUTRAS FERRAMENTAS E SERVIÇOS
+--------------------------------
+- LabelMe .......................... anotação manual dos polígonos de copa e espécie (fonte dos rótulos,
+                                     conforme build_species_manifest.py)
+- QGIS ............................. conferência visual das árvores, das copas e do georreferenciamento
+- Google Earth ..................... desenho do polígono KML da área urbana de João Pessoa
+- OpenStreetMap, API 0.6 ........... envio de árvores, só no servidor de testes
+                                     (master.apis.dev.openstreetmap.org)
+- Docker ........................... contêiner de inferência (docker/); a imagem ainda não foi construída
+- Git / GitHub ..................... versionamento (github.com/Paulo-RFM/SIACE, ramo siace-publicacao)
+- Overleaf / LaTeX (abnTeX2) ....... redação da monografia (não versionada no GitHub)
+
+
+4. MODELOS E PARÂMETROS DO SISTEMA (incluídos no ramo siace-publicacao)
+----------------------------------------------------------------------
+- runs/arq_segformer_mit_b1_20261110/   SegFormer MiT-B1, 3,19 cm (modelo do sistema), limiar 0,40
+- runs/res_segformer_8cm_20261121/      SegFormer MiT-B1, imagens degradadas para 8 cm (variante), limiar 0,50
+- runs/classif_20261102_163825_efficientnet_anotados/   EfficientNet-B0, 6 classes de espécie
+- runs/individualizacao_val_segformer_20261111/frozen_instance_params_hmax.json
+                                        Watershed h-maxima: h = 0,75 m, área mínima 3000 px
+
+
+5. SCRIPTS DO SISTEMA FINAL (inferência)
+----------------------------------------
+pipeline_cidade.py ................. tile -> segmentação -> individualização -> EfficientNet-B0 -> árvore
+                                     georreferenciada (GeoJSON/CSV)
+separate_tree_crowns_whatershed.py . separa as copas individuais a partir da máscara binária (Watershed / h-maxima)
+tree_georef.py ..................... georreferencia as copas pelas tags GeoTIFF e une as partes cortadas entre tiles
+species_data.py .................... regras de dados da classificação de espécies (split espacial, recortes, classes)
+docker/siace.sh .................... entrada do contêiner: ortomosaico -> tiles -> pipeline (--modelo 3cm|8cm)
+docker/preparar_ortomosaico.py ..... reprojeta um ortomosaico RGB para a grade de 3,19 cm (EPSG:4326) e recorta
+docker/slicer.py ................... recorte em tiles de 512 x 512 px, sem sobreposição, bordas brancas, com GDAL
+docker/baixar_modelos.sh ........... baixa ou confere (SHA-256) os pesos dos modelos
+docker/Dockerfile .................. imagem com GDAL 3.6.2 e PyTorch 2.5.1
+
+
+6. SCRIPTS DE TREINO
+--------------------
+tree_segmentation_arquiteturas.py .. treino das arquiteturas de segmentação (SegFormer, U-Net++, DeepLabV3+),
+                                     cópia do script da U-Net principal com a arquitetura como parâmetro
+tree_segmentation_resnet_26_512softAug4.py
+                                     treino da U-Net ResNet-34 (modelo experimentado de referência)
+aligned_augmentation.py ............ augmentation geométrica sincronizada entre imagem e máscara (correção de 06/11)
+train_species_efficientnet.py ...... treino auditável do classificador de espécies EfficientNet-B0
+run_classification_suite.py ........ orquestra os treinos de classificação de espécies
+run_binary_species_suite.py ........ classificadores binários "uma espécie contra as demais"
+build_species_manifest.py .......... manifesto auditável dos recortes de espécies a partir das anotações LabelMe
+augment_rare_species.py ............ balanceamento por aumento offline, só no treino do split espacial
+degradar_resolucao.py .............. simula imagens de 8 cm e 15 cm a partir dos tiles anotados de 3,19 cm
+
+
+7. SCRIPTS DE AVALIAÇÃO E EXPERIMENTOS
+--------------------------------------
+evaluate_seg_arquiteturas_test.py .. avaliação única no teste das arquiteturas de segmentação
+evaluate_pipeline_test.py .......... avaliação de ponta a ponta do pipeline nos tiles de teste
+evaluate_multiclass_test.py ........ avaliação no teste da U-Net multiclasse
+calibrar_individualizacao_val.py ... calibração da individualização sobre máscaras preditas, só na validação
+avaliar_arquiteturas.py ............ benchmark de arquiteturas de segmentação
+avaliar_seeds.py ................... repetição com sementes da U-Net (código antigo x corrigido)
+avaliar_seeds_segformer.py ......... repetição com sementes: SegFormer MiT-B1 x U-Net ResNet-34
+avaliar_alinhamento.py ............. benchmark antes e depois da correção do alinhamento
+comparar_e2e_alinhamento.py ........ detecção de ponta a ponta: U-Net antiga x corrigida
+reavaliar_limiar_herdados.py ....... reavalia configurações herdadas com limiar escolhido na validação
+verificar_alinhamento_visual.py .... evidência visual do desalinhamento antigo e do crop corrigido
+bootstrap_ic.py, bootstrap_ic_corrigido.py, bootstrap_ic_segformer.py
+                                     intervalos de confiança de 95% por bootstrap por tile (B = 2000, semente 42)
+analisar_binarios.py ............... classificadores binários por espécie x multiclasse
+compare_binary_vs_multiclass.py .... compara binário e multiclasse para uma classe
+species_metrics.py ................. métricas, tabelas e gráficos do classificador de espécies
+build_classification_index.py ...... índice dos runs de classificação
+comparar_resolucao.py .............. experimento de resolução (3, 8 e 15 cm): tabelas, IC, gráficos, João Pessoa
+teste_memoria_efficientnet.py ...... pico de memória da GPU no treino da EfficientNet
+teste_memoria_segmentacao.py ....... memória da GPU e determinismo das arquiteturas de segmentação
+tests/ ............................. testes unitários (alinhamento, georreferenciamento, envio OSM, espécies)
+
+
+8. SCRIPTS DE APLICAÇÃO
+----------------------
+cobertura_dossel.py ................ cobertura de dossel da área urbana em grade de 100 m
+filtro_altura.py ................... filtro de altura para falsas árvores (escolha do limiar na validação)
+osm_calibrar_limiares.py ........... calibra na validação os filtros para sugerir árvores ao OpenStreetMap
+osm_envio_dev.py ................... envio de árvores ao servidor de testes do OpenStreetMap
+osm_filtro_altura.py ............... altura (MDS - MDT) no filtro do OSM
+osm_corrigir_bananeiras_dev.py ..... corrige no servidor de testes as bananeiras enviadas como natural=tree
+osm_remover_envio_antigo_dev.py .... apaga do servidor de testes os nós de um run substituído
+run_pos_suite.sh ................... encadeia pipeline e avaliação depois da suíte de classificação
+runs/*.sh .......................... cadeias de execução em segundo plano (nohup) de cada experimento
+
+
+9. SCRIPTS DE FIGURAS E MAPAS
+-----------------------------
+gerar_curvas_p1.py ................. curvas de treinamento do modelo de segmentação do sistema
+gerar_figura_parametros.py ......... tabela e figura do número de parâmetros dos modelos
+gerar_figuras_resultados.py ........ figuras de resultados a partir dos runs salvos
+gerar_fluxograma.py ................ fluxograma das etapas do projeto
+gerar_graficos_monografia.py ....... gráficos do capítulo de resultados
+gerar_mapa_cidade.py ............... árvores detectadas sobre a ortofoto
+gerar_mapa_urbano.py ............... árvores detectadas só na área urbana (perímetro em KML)
+gerar_mapa_cobertura_ortofoto.py ... mapa da cobertura de dossel sobre a ortofoto (apresentação)
+gerar_matrizes_confusao.py ......... matrizes de confusão dos modelos
+
+
+10. TESTE EM JOÃO PESSOA (joao_pessoa/; cópias dos scripts usados em ~/proj_JoaoPessoa211126)
+---------------------------------------------------------------------------------------------
+preparar_jp_3cm.py ................. reprojeta a ortoimagem de 8 cm para a grade de 3,19 cm e recorta
+mapa_joao_pessoa.py ................ mapa da cidade com as árvores e recorte de detalhe dos 3 modelos
+cobertura_joao_pessoa.py ........... cobertura de copa em células de 100 m (mapa de calor)
+conferencia_100/sortear.py ......... sorteio de 100 árvores para a conferência visual no QGIS
+conferencia_100/analisar.py ........ precisão de detecção da conferência, com IC de Wilson
+(o recorte em tiles usou o slicer.py, hoje em docker/slicer.py)
+
+
+11. SCRIPTS HISTÓRICOS OU SEM DOCUMENTAÇÃO NO CÓDIGO
+----------------------------------------------------
+Versões anteriores, testes e utilitários do início do projeto. Não fazem parte do sistema final, e a função
+de cada um não está documentada no próprio arquivo:
+Unet_plus_banchmark.py, banchmark_Unet.py, build_run_index.py, build_unet_spatial_split.py,
+catboost_final.py, correct_unet_positive_fraction.py, count_unet_spatial_neighbors.py,
+create_pseudo_dataset61k_geral_classes_.py, create_pseudo_dataset_classes.py, evaluate_unet_binary_test.py,
+extract_zoomed_species_crops.py, fix_species.py, generate_balanced_pseudo_dataset.py, generate_binary_masks.py,
+generate_crops_from_json.py, make_mask.py, make_mask_distin.py, make_pseudo_label_512.py, masks_dist.py,
+plot_species_distribution.py, prepare_unet_spatial_split.py, resnet.py, resnet2.py, resnet3.py,
+run_legacy_binary_training.py, run_training_suite.py, simple_pipeline_predict_masks.py,
+tree_segmentation_resnet.py, tree_segmentation_resnet_26.py, tree_segmentation_resnet_26_256softAug2.py,
+tree_segmentation_resnet_26_512Aug5.py, tree_segmentation_resnet_26_512semAug.py,
+tree_segmentation_resnet_26_512semAug2.py, tree_segmentation_resnet_26_512softAug2.py,
+tree_segmentation_resnet_26_512softAug4_codigo_antigo.py, unet_spatial_protocol.py,
+verificaGeo.py, modelos70_30/
+
+Scripts históricos com documentação, também fora do sistema final:
+run_legacy_multiclass_training.py .. adaptador dos scripts multiclasse (resnet2.py, resnet3.py) ao protocolo espacial
+pipeline_predict_jsons.py .......... gera um JSON estilo LabelMe por tile
+pipeline_segment_classify_to_shapefile.py
+                                     pipeline antigo: U-Net, pós-processamento e classificação para shapefile
