@@ -18,9 +18,9 @@ O fluxo é o da monografia, sem nenhuma mudança:
 O repositório tem cerca de 600 MB, a maior parte em resultados de execuções. O contêiner precisa de menos de 1 MB de código, mais os modelos. Por isso, use um clone parcial:
 
 ```bash
-git clone --depth 1 --filter=blob:none --sparse -b siace-publicacao https://github.com/Paulo-RFM/SIACE.git siace
+git clone --depth 1 --filter=blob:none --no-checkout -b siace-publicacao https://github.com/Paulo-RFM/SIACE.git siace
 cd siace
-git sparse-checkout set --no-cone lab_2026/docker/ lab_2026/.dockerignore \
+git checkout siace-publicacao -- lab_2026/docker lab_2026/.dockerignore \
   lab_2026/pipeline_cidade.py lab_2026/tree_georef.py lab_2026/separate_tree_crowns_whatershed.py \
   lab_2026/species_data.py \
   lab_2026/runs/arq_segformer_mit_b1_20261110/frozen_threshold.json \
@@ -32,6 +32,8 @@ git sparse-checkout set --no-cone lab_2026/docker/ lab_2026/.dockerignore \
   lab_2026/runs/classif_20261102_163825_efficientnet_anotados/checkpoint_best.pth
 cd lab_2026
 ```
+
+Esse comando baixa só os arquivos listados, cerca de 120 MB, e leva menos de 1 minuto. Funciona em qualquer versão do git com suporte a `--filter` (2.25 ou mais nova). Para o projeto inteiro (cerca de 600 MB), basta `git clone --depth 1 -b siace-publicacao <URL>`.
 
 ## 2. Conferir os modelos
 
@@ -81,4 +83,5 @@ Opções:
 ## Estado
 
 - **Fluxo testado fora do Docker:** em 22/11/2026, com a mesma estrutura de `/app` e um recorte de 2.500 × 2.500 px de João Pessoa, o fluxo gerou 169 tiles e 90 árvores com o modelo de 3 cm e 104 com o de 8 cm, e a zona UTM detectada foi 31985.
+- **Clone parcial testado:** em 22/11/2026, os comandos do passo 1 baixaram os arquivos do GitHub em 23 s, e os SHA-256 dos três modelos conferiram.
 - **Imagem Docker nunca construída:** esta máquina não tem Docker. Em particular, falta verificar a instalação das dependências sobre a imagem base do GDAL.
